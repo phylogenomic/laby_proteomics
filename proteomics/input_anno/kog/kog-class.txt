@@ -1,0 +1,26 @@
+#Class	No_families	Coverage	Abundance	Description
+J	320	0.85625	0.053997	Translation, ribosomal structure and biogenesis 
+A	254	0.767716	0.04529	RNA processing and modification 
+K	368	0.573369	0.042632	Transcription 
+L	182	0.813186	0.028534	Replication, recombination and repair 
+B	85	0.717647	0.01687	Chromatin structure and dynamics 
+D	179	0.731843	0.026744	Cell cycle control, cell division, chromosome partitioning 
+Y	33	0.787878	0.01075	Nuclear structure 
+V	42	0.5	0.009459	Defense mechanisms 
+T	539	0.595547	0.145193	Signal transduction mechanisms 
+M	46	0.804347	0.010158	Cell wall/membrane/envelope biogenesis 
+N	10	0.7	0.001732	Cell motility 
+Z	144	0.791666	0.048048	Cytoskeleton 
+W	40	0.45	0.003748	Extracellular structures 
+U	328	0.762195	0.061474	Intracellular trafficking, secretion, and vesicular transport 
+O	454	0.792951	0.101806	Posttranslational modification, protein turnover, chaperones 
+C	196	0.770408	0.050347	Energy production and conversion 
+G	159	0.704402	0.037823	Carbohydrate transport and metabolism 
+E	174	0.810344	0.050983	Amino acid transport and metabolism 
+F	75	0.693333	0.015073	Nucleotide transport and metabolism 
+H	75	0.866666	0.016188	Coenzyme transport and metabolism 
+I	180	0.8	0.059882	Lipid transport and metabolism 
+P	121	0.727272	0.031478	Inorganic ion transport and metabolism 
+Q	42	0.833333	0.026177	Secondary metabolites biosynthesis, transport and catabolism 
+R	687	0.672489	0.153723	General function prediction only 
+S	651	0.606758	0.082193	Function unknown 
