@@ -53,7 +53,6 @@ proteomics/DEP_results/df_anno.merged.csv
 proteomics/DEP_results/df_long.mmetsp.csv
 proteomics/input_data/database searching result (CPJS06062101)_revised.xlsx
 proteomics/input_data/database searching result (CPJS06062101).xlsx
-proteomics/input_anno/all_anno_combined.csv
 proteomics/input_anno/blast_mmetsptojgi.out
 proteomics/input_anno/interpro_output.txt.tsv
 proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa_original.fa
