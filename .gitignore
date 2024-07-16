@@ -179,7 +179,6 @@ proteomics/DEP_results/df_anno.merged.t0.csv
 proteomics/DEP_results/df_long.jgi.t0.csv
 proteomics/input_data/database searching result (CPJS06062101)_revised.xlsx
 proteomics/input_data/database searching result (CPJS06062101).xlsx
-proteomics/input_anno/all_anno_combined.csv
 proteomics/input_anno/blast_mmetsptojgi.out
 proteomics/input_anno/interpro_output.txt.tsv
 proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa_original.fa
@@ -306,7 +305,6 @@ proteomics/DEP_results/df_anno.merged.t0.csv
 proteomics/DEP_results/df_long.jgi.t0.csv
 proteomics/input_data/database searching result (CPJS06062101)_revised.xlsx
 proteomics/input_data/database searching result (CPJS06062101).xlsx
-proteomics/input_anno/all_anno_combined.csv
 proteomics/input_anno/blast_mmetsptojgi.out
 proteomics/input_anno/interpro_output.txt.tsv
 proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa_original.fa
@@ -888,7 +886,6 @@ rnaseq/3.rna_diffabn_shble_allcont/tables/processed_abundance/MB-M0-M005-media_d
 rnaseq/3.rna_diffabn_shble_allcont/tables/processed_abundance/media-BY-GPY-condition_day_MB_replicate.vst.tsv
 rnaseq/3.rna_diffabn_shble_allcont/tables/processed_abundance/MB-M0-M005-media_day_condition_replicate.normalised_counts.tsv
 rnaseq/3.rna_diffabn_shble_allcont/tables/processed_abundance/MB-M005-M01-media_day_condition_replicate.vst.tsv
-rnaseq/4.input_coex/all_anno_combined.csv
 rnaseq/2.input_diff_abun_shble_1.4.0/salmon.merged.gene_lengths.tsv
 rnaseq/0.Aurli1_genome/Aurli1_AssemblyScaffolds_Repeatmasked.fasta
 rnaseq/0.Aurli1_genome/Aurli1_2023_ed2.gtf
