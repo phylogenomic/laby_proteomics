@@ -1,0 +1,203 @@
+---
+title: "GO_Compare"
+author: "Alex Gil"
+date: "8/13/2021"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Comparing GO terms from an old and a new analysis
+
+file location: /gpfs/projects/RestGroup/mariana/GO/
+
+## The old analysis was generated with JGI
+  * GO ID:  
+    - Aurli1_GeneCatalog_proteins_20120618_GO.tab
+
+## The new analysis was generated with [sanspanz](http://ekhidna2.biocenter.helsinki.fi/sanspanz/)
+
+  * GO ID:    
+    - GO_predi_det_Aurli1_ekhidna2.txt
+
+## Load files
+
+```{r echo=T, messages='false', echo=TRUE}
+library("tidyverse")
+library("here")
+library("knitr")
+
+jgi <- read_delim(here("GO_comparison","Aurli1_GeneCatalog_proteins_20120618_GO.tab"),delim = "\t")
+jgi_GO <- jgi %>% 
+  select(goAcc) %>%
+  unique() %>% 
+  pull()
+
+sans <- read_delim(here("GO_comparison","GO_predi_det_Aurli1_ekhidna2.txt"),delim = "\t")%>% rename(goAcc=goid) %>%
+  mutate(goAcc=paste0("GO:",goAcc))
+sans_GO <- sans  %>%
+  select(goAcc) %>% 
+  unique() %>% 
+  pull()
+```
+# How many unique GO terms were found in each analysis?
+```{r}
+print("JGI")
+jgi_GO  %>% length() #2156 unique Go_ids
+
+print("Sanzpanz")
+sans_GO  %>% length() #7234  unique Go_ids
+```
+
+# Which GO terms are in each set?
+```{r}
+tot <- c(sans_GO,jgi_GO) #8060 unique GO terms in total
+first <- setdiff(jgi_GO,sans_GO) #826 unique GO terms in JGI
+second <- setdiff(sans_GO,jgi_GO)  #5904 unique GO terms in Sans
+both <- intersect(sans_GO,jgi_GO) #1330 unique GO terms in both
+```
+
+## Genes that were present in analysis 1, but not in 2.
+
+```{r}
+set1 <- jgi %>% filter(goAcc %in% first) %>% 
+  select(goAcc,goName) %>%
+  distinct() %>% 
+  arrange(goAcc) 
+
+set1
+```
+
+
+## Genes that were present in analysis 2, but not in 1.
+
+```{r}
+set2 <- sans %>% filter(goAcc %in% second) %>% 
+  select(goAcc,desc) %>%
+  distinct() %>% 
+  arrange(goAcc)
+
+set2
+```
+
+## Genes that were present in both analyses.
+
+```{r}
+set_both <- sans %>% filter(goAcc %in% both) %>% 
+  select(goAcc,desc) %>%
+  distinct() %>% 
+  arrange(goAcc)
+
+set_both
+```
+
+## Save results.
+```{r}
+write_csv(set1,here("GO_comparison","set1.csv"))
+write_csv(set2,here("GO_comparison","set2.csv"))
+write_csv(set_both,here("GO_comparison","set_both.csv"))
+```
+
+## Annotations
+
+  * Is there a difference in the # of genes that got annotations?
+  
+  Yes, JGI got 6935 unique protein IDs, SansPanz got 5755 unique protein IDs.
+
+```{r}
+jgi_anno <- jgi %>% 
+  rename(Protein_ID = `#proteinId`) %>% 
+  select(Protein_ID) %>% 
+  distinct() %>% 
+  arrange(Protein_ID) %>% 
+  pull() 
+  
+
+jgi_anno %>% length()  # 6935 protein IDs
+
+sans_anno <- sans  %>%
+  select(qpid) %>% 
+  mutate(anno = str_split(qpid, "\\|",4)) %>% 
+  mutate(Protein_ID = map(anno,nth,3)) %>% 
+  mutate(Protein_ID=as.numeric(Protein_ID)) %>% 
+  select(Protein_ID) %>% 
+  distinct() %>% 
+  arrange(Protein_ID) %>% 
+  pull() 
+
+sans_anno %>% length() # 5755 protein IDs
+```
+
+# Which annotations are in each set?
+```{r}
+tot <- c(sans_anno,jgi_anno) #8567 unique protein  IDs in total
+first <- setdiff(jgi_anno,sans_anno) #2812 unique protein  IDs in JGI
+second <- setdiff(sans_anno,jgi_anno)  #1632 unique protein  IDs in Sans
+both <- intersect(sans_anno,jgi_anno) #4123 unique protein  IDs in both
+```
+
+* How many genes were annotated in the old and new versions?
+
+4123
+
+```{r}
+set_both <- sans  %>%
+  select(qpid) %>% 
+  mutate(anno = str_split(qpid, "\\|",4)) %>% 
+  mutate(Protein_ID = map(anno,nth,3)) %>% 
+  mutate(Protein_ID=as.numeric(Protein_ID)) %>% 
+  select(Protein_ID) %>% 
+  filter(Protein_ID %in% both) %>% 
+  select(Protein_ID) %>%
+  distinct() %>% 
+  arrange(Protein_ID) %>% pull()
+```
+
+* How many not annotated in the old are now annotated in the new?
+
+1632
+
+```{r}
+set2 <- sans  %>%
+  select(qpid) %>% 
+  mutate(anno = str_split(qpid, "\\|",4)) %>% 
+  mutate(Protein_ID = map(anno,nth,3)) %>% 
+  mutate(Protein_ID=as.numeric(Protein_ID)) %>% 
+  select(Protein_ID) %>%
+  filter(Protein_ID %in% second) %>% 
+  select(Protein_ID) %>%
+  distinct() %>% 
+  arrange(Protein_ID) %>% pull()
+```
+
+* How many not annotated in the new were annotated in the old?
+
+2812
+
+
+## How many GO terms out of the annotated in the first set not present in the second.
+
+```{r}
+set1 <- jgi %>%  
+  rename(Protein_ID = `#proteinId`) %>% 
+  distinct() %>%
+  filter(Protein_ID %in% first) %>% 
+  select(Protein_ID) %>% 
+  distinct() %>% 
+  pull()
+```
+
+```{r}
+jgi %>%  
+  rename(Protein_ID = `#proteinId`) %>% 
+  select(Protein_ID,goAcc) %>% 
+  filter(Protein_ID %in% first) 
+```
+
+
+```{r}
+sessionInfo()
+```
+
