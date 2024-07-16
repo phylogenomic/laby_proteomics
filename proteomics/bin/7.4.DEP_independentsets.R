@@ -1354,6 +1354,14 @@ pdf(pdf_path,
 heatmap_list
 dev.off()
 
+png(png_path,
+    width = 3.5 * a,
+    height = 4 * a,
+    units = "in",
+    res = 300)
+heatmap_list[[3]]
+dev.off()
+
 # Obtain clusters
 heatmap_list |>
   map(draw)
@@ -1491,6 +1499,14 @@ pdf(paste0("proteomics/img_IndependentSets/indset.fig6_",contr,".pdf"),
 volcano_plots #Figure 6
 dev.off()
 
+png_path <- paste0("proteomics/img_IndependentSets/indset.fig6.",contr,".png")
+png(png_path,
+    width = 3.5 * a,
+    height = 4 * a,
+    units = "in",
+    res = 300)
+volcano_plots[[3]]
+dev.off()
 
 # Merge cluster to annotations.
 cluster_anno <- data_get_results1 |> 
@@ -2458,6 +2474,15 @@ for (i in 25){
 
 ## KogClass colored by ko_values
 pdf(paste0("proteomics/img_IndependentSets/Transcription_plot.",contr,".pdf"))
+list_plot[[25]]
+dev.off()
+
+png_path <- paste0("proteomics/img_IndependentSets/Transcription_plot.",contr,".png")
+png(png_path,
+    width = 4 * a,
+    height = 4 * a,
+    units = "in",
+    res = 300)
 list_plot[[25]]
 dev.off()
 
