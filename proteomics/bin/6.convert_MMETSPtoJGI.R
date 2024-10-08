@@ -120,9 +120,7 @@ MQ2 <- result1_FALSE |>
   arrange(MMETSP_ID) |> 
   sample_n(1)
 
-
 result <- rbind(MQ_both,MQ1,MQ2)
-
 
 # Which MMETSP have more than 1 hit?
 # "A0A6S8EWL1" (75431,137653). 137653 is in the detected set
@@ -322,7 +320,8 @@ df <- clusters |>
 
 # df = JGI by 94% identity JGI groups
 df |> 
-  rename(MMETSP_g=group) |> write_csv("proteomics/input_anno/mmetsp_highpercentidentity_may24.csv")
+  rename(MMETSP_g=group) |>
+  write_csv("proteomics/input_anno/mmetsp_highpercentidentity_may24.csv")
 
 #Blast output
 

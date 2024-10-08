@@ -81,7 +81,7 @@ experimental_design <- data.frame(label = c("T0-1", "T0-2", "T0-3",
                                                 "T8", "T8", "T8"),
                                   replicate = rep(1:3, 5))
 
-# MMETSPs IDs. Not mapped to JGI.
+# MMETSPs IDs.
 data_mmetsp <- data |> 
   select(-Fasta_headers) 
 data_mmetsp$set <- "mmetsp"
@@ -239,7 +239,6 @@ for (i in 1:length(dep_get_results)){
   }
 }
 
-
 # Venn diagrams:
 # Venn by size in nVennR. Venn normal is ggVennDiagram.
 # Venn of detected. GGVenndiagram
@@ -271,8 +270,10 @@ significant_name <- dep_get_results_an |>
 mmetsp_sig <- significant_name[[1]]|>
   select(name_anno) |> arrange(desc(name_anno)) |> 
   pull()
+# MMETSP proteins that didn't map to JGI
 mmetsp_sig_M <- mmetsp_sig[str_detect(mmetsp_sig,"A")]
-mmetsp_sig_MAP <- mmetsp_sig[str_detect(mmetsp_sig,"A",negate=TRUE)]
+# MMETSP proteins that map to JGI
+mmetsp_sig_MAP <- mmetsp_sig[str_detect(mmetsp_sig,"A",negate=TRUE)] 
 jgi_sig <- significant_name[[2]]|> select(name_anno) |> pull()
 
 setdiff(mmetsp_sig_MAP,jgi_sig)
@@ -324,83 +325,100 @@ ggsave(
 
 # Create all_det set:
 # For proteins significant in both take MMETSP version,
-# If there is a dispute (significant/not M/J),
-# take the one that is significant.
+# If there is a dispute (significant/not significant M vs J), take the sign one.
 venn_detected
 
 mmetsp_det_names <- detected_name[[1]] |> 
-  filter(name_anno %in% mmetsp_det) 
+  filter(name_anno %in% mmetsp_det) # Detected in MMETSP
 mmetsp_sig_names <- significant_name[[1]] |> 
-  filter(name_anno %in% mmetsp_sig) 
-mmetsp_notsig_names <- setdiff(mmetsp_det_names$name_anno,mmetsp_sig_names$name_anno)
+  filter(name_anno %in% mmetsp_sig) # Significant in MMETSP
+mmetsp_notsig_names <- setdiff(mmetsp_det_names$name_anno,
+                               mmetsp_sig_names$name_anno) # Not significant in MMETSP
 jgi_det <- detected_name[[2]] |> 
-  select(name_anno) |> pull()
+  select(name_anno) |> pull() # Detected in JGI
 jgi_sig <- significant_name[[2]] |> 
-  select(name_anno) |> pull()
-jgi_notsig <- setdiff(jgi_det,jgi_sig)
+  select(name_anno) |> pull() # Significant in JGI
+jgi_notsig <- setdiff(jgi_det,jgi_sig) # Not significant in JGI
 
 # Possibilities for all detected set (+ means significant)
 # M J Final_detected
-# + + M. 
-msig_jsig <- intersect(mmetsp_sig_names$name_anno,jgi_sig)
+# + + Detected_both Get_M 
+msig_jsig <- intersect(mmetsp_sig_names$name_anno,jgi_sig) 
+msig_jsig |> length() # 301 sig M and sig J
 msig_jsig_names <- detected_name[[1]] |> 
   filter(name_anno %in% msig_jsig) |> 
   select(name) |> pull()
-msig_jsig_names |> length() # 307 MMETSP names
+msig_jsig_names |> length() # 307 MMETSP names match name_anno
+#msig_jsig_names <- msig_jsig_names[msig_jsig_names %in% mmetsp_sig_names$name]
+#msig_jsig_names |> length() # 302 MMETSP names
 dep1_msig_jsig_names <- dep[[1]][rownames(dep[[1]])%in%msig_jsig_names,]
 
-# + - M. 
-msig_jnotsig <- intersect(mmetsp_sig_names$name_anno,jgi_notsig)
+# + - Detected_both Get_M 
+msig_jnotsig <- intersect(mmetsp_sig_names$name_anno,jgi_notsig) 
+msig_jnotsig |> length() # 150 sig M and not J
 msig_jnotsig_names <- detected_name[[1]] |> 
   filter(name_anno %in% msig_jnotsig) |> 
   select(name) |> pull()
+#msig_jnotsig_names <- msig_jnotsig_names[msig_jnotsig_names %in% mmetsp_sig_names$name]
 msig_jnotsig_names |> length() # 152
 dep1_msig_jnotsig_names <- dep[[1]][rownames(dep[[1]])%in%msig_jnotsig_names,]
 
-# - + J.
-mnotsig_jsig <- intersect(mmetsp_notsig_names,jgi_sig)
+# - + Detected_both Get_J.
+mnotsig_jsig <- intersect(mmetsp_notsig_names,jgi_sig) 
+mnotsig_jsig |> length() # 52 not M and sig J
 mnotsig_jsig_names <- mnotsig_jsig 
 mnotsig_jsig_names |> length() #52
-dep2_msig_jnotsig_names <- dep[[2]][rownames(dep[[2]])%in%mnotsig_jsig_names,]
+dep2_mnotsig_jsig_names <- dep[[2]][rownames(dep[[2]])%in%mnotsig_jsig_names,]
 
-# - - M. 2040
-mnotsig_jnotsig <- intersect(mmetsp_notsig_names,jgi_notsig)
+# - - Detected_both Get_M. 2040
+mnotsig_jnotsig <- intersect(mmetsp_notsig_names,jgi_notsig) # 2014 not M and not J
+mnotsig_jnotsig |> length() # 2014 not M and not J
 mnotsig_jnotsig_names <- detected_name[[1]] |> 
   filter(name_anno %in% mnotsig_jnotsig) |> 
   select(name) |> pull() 
 mnotsig_jnotsig_names |> length() #2040
 dep1_mnotsig_jnotsig_names <- dep[[1]][rownames(dep[[1]])%in%mnotsig_jnotsig_names,]
 
-# Absent:
+# Detect None. Absent:
 mmetsp_detected_notjgi <- setdiff(mmetsp_det_names$name_anno,jgi_det)
+mmetsp_detected_notjgi |> length() # 737 Detected M not in J
 jgi_detected_notmmetsp <- setdiff(jgi_det,mmetsp_det_names$name_anno)
+jgi_detected_notmmetsp |> length()  # 489 Detected J not in M
 
-# + 0 M.
-msig_jnotdet <- intersect(mmetsp_sig_names$name_anno,mmetsp_detected_notjgi)
+# + 0 Detected_M Get_M.
+msig_jnotdet <- intersect(mmetsp_sig_names$name_anno,
+                          mmetsp_detected_notjgi) 
+msig_jnotdet|> length()# 77 Sig M and not found in J
 msig_jnotdet_names <- detected_name[[1]] |> 
   filter(name_anno %in% msig_jnotdet) |> 
   select(name) |> pull()
+#msig_jnotdet_names <- msig_jnotdet_names[msig_jnotdet_names %in% mmetsp_sig_names$name]
 msig_jnotdet_names |> length() #81
 dep1_msig_jnotdet_names <- dep[[1]][rownames(dep[[1]])%in%msig_jnotdet_names,]
 
-# 0 + J.
-mnotdet_jsig <- intersect(jgi_detected_notmmetsp,jgi_sig)
+# 0 + Detected_J Get_J.
+mnotdet_jsig <- intersect(jgi_detected_notmmetsp,jgi_sig) 
+mnotdet_jsig |> length() # 41 sig J and not found in M
 mnotdet_jsig_names <- detected_name[[2]] |> 
   filter(name_anno %in% mnotdet_jsig) |> 
   select(name) |> pull()
 mnotdet_jsig_names |> length() #41
 dep2_mnotdet_jsig_names <- dep[[2]][rownames(dep[[2]])%in%mnotdet_jsig_names,]
 
-# - 0 M.
-mnotsig_jnotdet <- intersect(mmetsp_notsig_names,mmetsp_detected_notjgi)
+# - 0 Detected_M Get_M.
+mnotsig_jnotdet <- intersect(mmetsp_notsig_names,
+                             mmetsp_detected_notjgi)
+mnotsig_jnotdet |> length() # 660 notS in M and not found in J
 mnotsig_jnotdet_names <- detected_name[[1]] |> 
   filter(name_anno %in% mnotsig_jnotdet) |> 
   select(name) |> pull()
 mnotsig_jnotdet_names |> length() #662
 dep1_mnotsig_jnotdet_names <- dep[[1]][rownames(dep[[1]])%in%mnotsig_jnotdet_names,]
 
-# 0 - J.
-mnotdet_jnotsig <- intersect(jgi_detected_notmmetsp,jgi_notsig)
+# 0 - Detected_J Get_J.
+mnotdet_jnotsig <- intersect(jgi_detected_notmmetsp,
+                             jgi_notsig) 
+mnotdet_jnotsig |> length() # 448 notS in J and not found in M
 mnotdet_jnotsig_names <- detected_name[[2]] |> 
   filter(name_anno %in% mnotdet_jnotsig) |> 
   select(name) |> pull()#448
@@ -408,29 +426,36 @@ mnotdet_jnotsig_names |> length()
 dep2_mnotdet_jnotsig_names <- dep[[2]][rownames(dep[[2]])%in%mnotdet_jnotsig_names,]
 
 # 0 0 Not found. 0
-intersect(jgi_detected_notmmetsp,mmetsp_detected_notjgi)
+intersect(jgi_detected_notmmetsp,
+          mmetsp_detected_notjgi) # 0 not found
 
 # Make all_det following the rules:
 # For proteins significant in both take MMETSP version,
 # If there is a dispute (significant/not M/J),
 # take the one that is significant.
-c(msig_jsig_names,
-      msig_jnotsig_names,
-      msig_jnotsig_names,
-      mnotsig_jnotsig_names,
-      msig_jnotdet_names,
-      mnotdet_jsig_names,
-      mnotsig_jnotdet_names,
-      mnotdet_jnotsig_names) |> unique() |> length() # 3731
+c(msig_jsig_names, # 302 sig M and sig J
+  msig_jnotsig_names, # 151 sig M and notS J
+  mnotsig_jsig_names,# 52 notS M and sig J
+  mnotsig_jnotsig_names, # 2040 notS M and notS J
+  msig_jnotdet_names, # 77 Sig M and not found in J
+  mnotdet_jsig_names, # 41 sig J and not found in M
+  mnotsig_jnotdet_names, # 662 notS in M and not found in J
+  mnotdet_jnotsig_names)|>  # 448 notS in J and not found in M
+  unique() |> 
+  length() # 3783
 
-dep_alldet <- rbind(dep1_msig_jsig_names,
-                    dep1_msig_jnotsig_names,
-                    dep2_msig_jnotsig_names,
-                    dep1_mnotsig_jnotsig_names,
-                    dep1_msig_jnotdet_names,
-                    dep2_mnotdet_jsig_names,
-                    dep1_mnotsig_jnotdet_names,
-                    dep2_mnotdet_jnotsig_names)
+# Make all_det following the rules:
+# For proteins significant in both take MMETSP version,
+# If there is a dispute (significant/not M/J), take the one that is significant.
+dep_alldet <- rbind(dep1_msig_jsig_names, # SET M: 307 significant both
+                    dep1_msig_jnotsig_names, # SET M: 152 significant M
+                    dep2_mnotsig_jsig_names, # SET J: 52 significant in J
+                    dep1_mnotsig_jnotsig_names, # SET M: 2040 not significant
+                    dep1_msig_jnotdet_names, # SET M: 81 significant M
+                    dep2_mnotdet_jsig_names, # SET J: 41 significant J
+                    dep1_mnotsig_jnotdet_names, # SET M: 662 not significant
+                    dep2_mnotdet_jnotsig_names) # SET J: 448 not significant
+# 3783
 
 dep[[3]] <- dep_alldet
 names(dep)[3] <- "data_alldet"
@@ -439,15 +464,15 @@ names(dep)[3] <- "data_alldet"
 venn_significant
 mmetsp_sig_names <- significant_name[[1]] |> 
   filter(name_anno %in% mmetsp_sig) |> 
-  select(name) |> pull()
-jgisig_only_ids <- setdiff(jgi_sig,mmetsp_sig_MAP)
+  select(name) |> pull() # 530
+jgisig_only_ids <- setdiff(jgi_sig,mmetsp_sig_MAP) # 93
 
 dep1_sig <- dep[[1]][rownames(dep[[1]])%in%mmetsp_sig_names,]
 dep2_sig <- dep[[2]][rownames(dep[[2]])%in%jgisig_only_ids,]
 dep[[4]] <- rbind(dep1_sig,dep2_sig)
 names(dep)[4] <- "data_allsig"
 
-dep[[4]] |> dim()
+dep[[4]] |> dim() # 623
 significant_name
 
 # Count total significant:
@@ -457,6 +482,25 @@ dep |>
   map(summarise, n())
 # 530, 394, 623, 623
 
+# 
+x <- dep |>
+map(get_results) |>
+  map(filter, significant == TRUE) 
+
+sig_in_alldet <- x[[3]]$name
+expected_sig <- c(rownames(dep1_msig_jsig_names), # SET M: 307 significant both
+                  rownames(dep1_msig_jnotsig_names), # SET M: 152 significant M
+                  rownames(dep2_mnotsig_jsig_names), # SET J: 52 significant in M
+                  rownames(dep1_msig_jnotdet_names), # SET M: 81 significant M
+                  rownames(dep2_mnotdet_jsig_names) # SET J: 41 significant J
+                  ) # 633
+sig_miss <- setdiff(expected_sig,sig_in_alldet)
+setdiff(rownames(dep1_msig_jnotdet_names),sig_in_alldet)
+
+# 5 first in 1st set. "A0A6S8BS59" "A0A6S8C0L7" "A0A6S8C3V9" "A0A6S8E961" "A0A6S8F057"  
+# 1 in 2nd set. "A0A6S8G6P9"
+# 4 in last set. "A0A6S8B3X8" "A0A6S8DAW0" "A0A6S8DMD4" "A0A6S8F133"
+  
 dep_get_wide <- dep |> map(get_df_wide)
 
 # DEP
@@ -534,7 +578,9 @@ if (contr == "t0") {
   # Add your code here
 }
 
-results1 |> map(colnames) |> map(length)
+results1 |> 
+  map(colnames) |> 
+  map(length)
 
 # Columns named the following:
 # RAW.T#_#: Raw intensities. Not present in results1
@@ -1329,8 +1375,6 @@ dep_sigonly <- dep |>
 
 rownames(dep[[3]])
 rownames(dep[[4]])
-
-
 
 #HEATMAPS.
 ht_significant <- dep |>

@@ -10,13 +10,6 @@ pacman::p_load(tidyverse, Biostrings, FactoMineR,
                ggrepel, RColorBrewer,
                ggVennDiagram, grid, here,ggplotify)
 
-pacman::p_load(tidyverse, Biostrings, FactoMineR,
-               data.table, plotly, DEP, sva,
-               SummarizedExperiment, ComplexHeatmap,
-               patchwork, factoextra,
-               ggrepel, RColorBrewer,
-               ggVennDiagram, grid, here,ggplotify)
-
 contr <- "t0" 
 #contr <- "tx" 
 
@@ -269,7 +262,6 @@ raw_sets |>
 col_gradient <- c("#ffffd4","#fed98e","#fe9929","#d95f0e","#993404")
 
 load("proteomics/input_data/independentSets.R")
-
 
 # Are there any duplicate entries?
 raw_sets |>
