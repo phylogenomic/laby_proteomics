@@ -8,8 +8,8 @@ pacman::p_load(CHNOSZ,tidyverse,Biostrings)
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
 #BLAST RESULTS
-# db <- "JGI_to_marDB.out"
-db <-  "mmetsp_to_marDB.out"
+ db <- "JGI_to_marDB.out"
+#db <-  "mmetsp_to_marDB.out"
 blast <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",db),
                     col_names = FALSE)|>
                     select(-X9)
@@ -214,4 +214,4 @@ result_all <- rbind(df,result_l_s,result_s_ns)
 
 result_all |> filter(perc_diff_Tscore=="97.5%-100%") |> dim()
 
-write.csv(result1,file = paste0("proteomics/input_anno/Aurliprot_conserved_",db,"_Stram.csv"))
+write.csv(result_all,file = paste0("proteomics/input_anno/Aurliprot_conserved_",db,"_Stram.csv"))
