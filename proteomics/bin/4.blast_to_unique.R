@@ -16,6 +16,7 @@ blast <- read_table("proteomics/output_blasts/all_aurli_to_stramenopiles/Aurlipr
 colnames(blast) <- c("qseqid","sseqid","pident","length","mismatch","gapopen",
                 "evalue","bitscore","stitle")
 
+
 blast <- blast |> 
   group_by(qseqid) |> 
   slice_min(order_by = evalue,n = 5) |> 
@@ -59,7 +60,7 @@ full_Table <- full_join(HondT,HondF,by="qseqid",suffix = c("_hondaea", "_stramen
                       ifelse(!is.na(Hondaea_hondaea)&is.na(Hondaea_stramenopiles),"Laby_only",
                              ifelse(!is.na(Hondaea_hondaea)&!is.na(Hondaea_stramenopiles),"both","error"))))
 
-#Option 1:
+#Option 1: Aurli only
 #No hits in the blast.
 fastafile <- readAAStringSet("proteomics/input_fasta/Aurli1_aa.fa")
 seq_name <- names(fastafile)
@@ -68,7 +69,7 @@ aurli_only <- seq_name[!seq_name %in% full_Table$qseqid]
 #3190 in the proteome. 71 detected. 3 Significant
 
 #Option 2:
-#Protein found in Hondaea but not Stramenopiles.
+#Protein found in Hondaea but not Stramenopiles. Laby only
 # To do: Assume it is unique to Labys.
 laby_only <- full_Table |> filter(group=="Laby_only") |> select(qseqid) |> pull()
 #1290 in the proteome. 157 detected. 27 significant.

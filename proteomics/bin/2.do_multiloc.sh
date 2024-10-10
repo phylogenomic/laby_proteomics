@@ -26,4 +26,5 @@ pwd
 
 
 # VARIABLE. 
-python /gpfs/projects/RestGroup/agilgomez/tools/MultiLoc2/MultiLoc2/src/multiloc2_prediction.py -fasta=input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta -origin=fungal -result=input_anno/multiloc_anno.txt
+python /gpfs/projects/RestGroup/agilgomez/tools/MultiLoc2/MultiLoc2/src/multiloc2_prediction.py \
+-fasta=input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta -origin=fungal -result=input_anno/multiloc_anno.txt
