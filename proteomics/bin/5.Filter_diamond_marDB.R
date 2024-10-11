@@ -1,5 +1,5 @@
 library(pacman)
-pacman::p_load(CHNOSZ,tidyverse,Biostrings)
+pacman::p_load(tidyverse,Biostrings)
 
 # This script takes as input the blast of the JGI and MMETSP proteome to Mariana's DB.
 # and outputs annotations (Aurliprot_conserved_Stram.csv) based on
@@ -8,7 +8,8 @@ pacman::p_load(CHNOSZ,tidyverse,Biostrings)
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
 #BLAST RESULTS
- db <- "JGI_to_marDB.out"
+# db <- "JGI_to_marDB.out"
+db <- "mmetsp_ENA_to_marDB.out"
 #db <-  "mmetsp_to_marDB.out"
 blast <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",db),
                     col_names = FALSE)|>
@@ -42,7 +43,8 @@ blast_sum <- blast |>
         ifelse(laby_s == strameno_s & non_strameno_s==0,"Laby_only",
         ifelse(laby_s != strameno_s,"Laby_and_Strameno",
         ifelse(non_strameno_s==0,"Strameno_only",
-        ifelse(non_strameno_s>0 & strameno_s>0,"Strameno_and_Nonstrameno","ERROR"))))))
+        ifelse(non_strameno_s>0 & strameno_s>0,"Strameno_and_Nonstrameno",
+        ifelse(non_strameno_s>0 & laby_s==0,"Self_and_Nonstrameno","ERROR")))))))
 
 blast_sum |>
 select(qseqid,category) |> distinct() |> select(category) |> table()
@@ -52,17 +54,17 @@ blast1 <- left_join(blast,blast_sum,by="qseqid")
 
 # Group 1: Aurantio only (only found in the Aurantio sp genomes). Aurantio=Laby=Stramenopiles
 aurantio_only <- blast1 |> filter(category=="Aurantio_only") |> select(qseqid) |> pull() |> unique()
-aurantio_only |> length() # 3623 JGI; 174 MMETSP
+aurantio_only |> length() # 3623 JGI; 174 MMETSP; 2293 MMETSP ENA
 
 # Group 2: Laby only. Protein found in Labys but not in Stramenopiles. Laby=Stramenopiles.  
 laby_only <- blast1 |> filter(category=="Laby_only") |> select(qseqid) |> pull() |> unique()
-laby_only |> length() # 8672 JGI; 2846 MMETSP
+laby_only |> length() # 8672 JGI; 2846 MMETSP; 9422 MMETSP ENA
 
 #Group 3: Protein found in Labys and in other Stramenopiles. Laby!=Stramenopiles
 # To do: Substract %identity, E-value, bit-score (compare differences between Laby and Stramenopile
 #with the highest similarity).
 strameno_laby <- blast1 |> filter(category=="Laby_and_Strameno") |> select(qseqid) |> pull() |> unique()
-strameno_laby |> length() # 1359 JGI; 112 MMETSP
+strameno_laby |> length() # 1359 JGI; 112 MMETSP; 1003 MMETSP ENA
 
 LabyT <- blast1|> 
   filter(category=="Laby_and_Strameno") |> 
@@ -88,10 +90,15 @@ LabyF <- blast1|>
   slice_min(order_by = gapopen,n = 1)|> 
   slice_sample(n=1)
 
+dim(LabyT)
+dim(LabyF)
+
 Laby_str_Table <- full_join(LabyT,LabyF,
 by="qseqid",suffix = c("_laby", "_stramenopiles"))
 
 result1_strameno_laby <- Laby_str_Table |> 
+filter(!is.na(bitscore_laby))|>
+filter(!is.na(bitscore_stramenopiles))|>
   mutate(diff_Tscore=bitscore_laby-bitscore_stramenopiles) |> 
   mutate(diff_E_Value=evalue_laby-evalue_stramenopiles) |> 
   mutate(diff_P_Ident=pident_laby-pident_stramenopiles) 
@@ -129,7 +136,7 @@ strameno_only |> length() # 0
 # To do: Substract %identity, E-value, bit-score (compare differences between Stramenopile and non-Stramenopile
 #with the highest similarity).
 non_strameno <- blast1 |> filter(category=="Strameno_and_Nonstrameno") |> select(qseqid) |> pull() |> unique()
-non_strameno |> length() # 1139 JGI; 158 MMETSP
+non_strameno |> length() # 1139 JGI; 158 MMETSP; 1000 MMETSP ENA
 
 strT <- blast1|> 
   filter(category=="Strameno_and_Nonstrameno") |> 
@@ -155,6 +162,8 @@ strF <- blast1|>
   slice_min(order_by = gapopen,n = 1)|> 
   slice_sample(n=1)
 
+dim(strT)
+dim(strF)
 
 Str_nStr_Table <- full_join(strT,strF,
 by="qseqid",suffix = c("_stramenopiles", "_nonstramenopiles"))

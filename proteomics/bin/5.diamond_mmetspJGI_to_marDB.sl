@@ -17,10 +17,15 @@ module load diamond/2.0.10
 
 #RUN WITH:
 
-# MMETSP
+# MMETSP (UNIPARC)
 #sbatch --export=input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta',
 # input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/mmetsp_uniprot.fa',
 # output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetsp_to_marDB.out' bin/5.diamond_mmetspJGI_to_marDB.sl
+
+# MMETSP (ENA)
+#sbatch --export=input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta',
+# input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/ox87102.2020_06.faa',
+# output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetsp_ENA_to_marDB.out' bin/5.diamond_mmetspJGI_to_marDB.sl
 
 # JGI
 #sbatch --export=input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta',
