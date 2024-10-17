@@ -41,8 +41,8 @@ diamond makedb  --in $input_db \
 diamond blastp --db $input_db.db \
 --query $input_query \
 --very-sensitive \
---outfmt 6 qseqid sseqid pident length mismatch gapopen evalue bitscore pident stitle \
---evalue 1e-5 \
+--outfmt 6 qseqid sseqid pident length mismatch gapopen evalue bitscore stitle \
+--evalue 1e-3 \
 --max-hsps 1 \
 --max-target-seqs 10 \
 --threads 96  \

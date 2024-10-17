@@ -8,12 +8,11 @@ pacman::p_load(tidyverse,Biostrings)
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
 #BLAST RESULTS
-# db <- "JGI_to_marDB.out"
-db <- "mmetsp_ENA_to_marDB.out"
-#db <-  "mmetsp_to_marDB.out"
+#db <- "JGI_to_marDB.out"
+#db <- "mmetsp_ENA_to_marDB.out"
+db <-  "mmetsp_to_marDB.out"
 blast <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",db),
-                    col_names = FALSE)|>
-                    select(-X9)
+                    col_names = FALSE)
 
 colnames(blast) <- c("qseqid","sseqid","pident","length","mismatch","gapopen",
                 "evalue","bitscore","stitle")
