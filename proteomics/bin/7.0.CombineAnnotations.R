@@ -4,7 +4,7 @@ pacman::p_load(tidyverse, Biostrings, FactoMineR,
                data.table, plotly, DEP, sva,
                SummarizedExperiment, ComplexHeatmap,
                patchwork, factoextra,
-               nVennR, ggrepel, RColorBrewer, ggVennDiagram, grid, here)
+               ggrepel, RColorBrewer, ggVennDiagram, grid, here)
 
 
 # Add annotations:
@@ -173,16 +173,17 @@ anno10 <- read_tsv("proteomics/input_anno/proteome_KEGG_mapping.tsv") |>
   group_by(name) |> 
   summarise("ko_values"= paste0(ko_values, collapse = "; ")) |> 
   rename(name_anno=name)
+
 #Unique to Aurli, Labys or Different in Stramenopiles vs Labys.
-anno11 <- read_csv("proteomics/input_anno/Aurliprot_conserved_Stram.csv") |> 
+# Old JGI diamond search: proteomics/input_anno/Aurliprot_conserved_Stram.csv
+# New JGI diamond search Mariana's database: 
+
+anno11 <- read_csv("proteomics/input_anno/Aurliprot_conserved_JGI_to_marDB.out_Stram.csv") |> 
   select(-1) |> 
   separate(qseqid, sep = "\\|", into = letters[1:4]) |>
   select(-c("a", "b", "d")) |>
   rename("name_anno" = "c",
          "conservation_group"="Group")
-
-
-
 
 fastafile <- readAAStringSet("proteomics/input_fasta/Aurli1_aa.fa")
 seq_name <- names(fastafile)
@@ -211,4 +212,4 @@ results <- orthoclust |>
   left_join(anno11, by = "name_anno") |> 
   left_join(df,by= "name_anno")
 
-write_csv(results,"proteomics/input_anno/all_anno_combined.csv")
+write_csv(results,"proteomics/input_anno/all_anno_combined_marDB.csv")

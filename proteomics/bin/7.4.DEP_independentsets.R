@@ -2410,6 +2410,39 @@ df <- results_anno[[1]] |>
                               ifelse(Time == "T6_vs_T0", "T6 vs T0",
                                      ifelse(Time == "T8_vs_T0", "T8 vs T0", "NA")))))
 
+# Alpha-tubulins
+alpha <- plot_single(dep[[3]], proteins = c("146288","A0A6S8DQS1","117061"),
+            type = "centered") +
+  theme_minimal() +
+  ggtitle("Alpha tubulins")+
+  theme(text = element_text(size = 18))+
+  scale_y_continuous(minor_breaks = seq(-1 , 1, 0.2),
+                     breaks =seq(-1 , 1, 0.2))
+
+pdf(paste0("proteomics/img_IndependentSets/alphatub.pdf"))
+alpha
+dev.off()
+
+# Mixed
+mix <- plot_single(dep[[3]], proteins = c("A0A6S8FSW4","A0A6S8GDE0", # Beta
+                                           "A0A1J0I0B7", # Beta
+                                           "A0A6S8F0Y0","A0A6S8FBM5", # Spoke
+                                           "70287","84586" # Mastig
+                                           ),
+                     type = "centered") +
+  theme_minimal() +
+  ggtitle("Beta tubulins, mastigoneme and spoke")+
+  theme(text = element_text(size = 18))+
+  scale_y_continuous(minor_breaks = seq(-1 , 1, 0.2),
+                     breaks =seq(-1 , 1, 0.2))
+
+pdf(paste0("proteomics/img_IndependentSets/mix.pdf"))
+mix
+dev.off()
+
+# Do the same for candidate proteins (Josh)
+
+
 ## KogClass colored by clusters.
 list_plot <- list()
 for (i in 1:length(unique(df$kogClass))){
@@ -2858,7 +2891,10 @@ write_csv(d_kv,paste0("proteomics/DEP_results_IndependentSets/","ET_data_ko_valu
 FT <- list()
 #FT[[1]] <- read_csv("proteomics/DEP_results_MultiMapping/ET_data_FisherTables_Nov2023.csv")
 #FT[[2]] <- read_csv("proteomics/DEP_results_IndependentSets/ET_data_FisherTables_March2023_Fisher_fig_s.csv")
-FT[[1]] <- read_csv("proteomics/DEP_results_IndependentSets/ET_data_FisherTables_March2023 - Fisher_fig_IndSets.csv")
+#FT[[1]] <- read_csv("proteomics/DEP_results_IndependentSets/ET_data_FisherTables_March2023 - Fisher_fig_IndSets.csv")
+
+FT[[1]] <- read_csv("proteomics/DEP_results_IndependentSets/ET_data_FisherTables_March2023 - Fisher_fig_IndSets_newFig.csv")
+
 
 colnames(FT[[1]]) <- c("category","detected","significant",
                        "clu1","clu2","clu3","clu4","down","up",
