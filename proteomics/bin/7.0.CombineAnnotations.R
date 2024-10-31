@@ -182,6 +182,7 @@ anno10 <- read_tsv("proteomics/input_anno/proteome_KEGG_mapping.tsv") |>
   group_by(name) |> 
   summarise("ko_values"= paste0(ko_values, collapse = "; ")) |> 
   rename(name_anno=name)
+
 #Unique to Aurli, Labys or Different in Stramenopiles vs Labys.
 anno11 <- read_csv(paste0("proteomics/input_anno/Aurliprot_conserved_",database_name,"_split.csv")) |>
   separate(qseqid, sep = "\\|", into = letters[1:4]) |>
