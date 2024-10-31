@@ -4,7 +4,17 @@ pacman::p_load(tidyverse, Biostrings, FactoMineR,
                data.table, plotly, DEP, sva,
                SummarizedExperiment, ComplexHeatmap,
                patchwork, factoextra,
-               nVennR, ggrepel, RColorBrewer, ggVennDiagram, grid, here)
+                ggrepel, RColorBrewer, ggVennDiagram, grid, here)
+
+setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
+
+# Dataset:
+# database_name <- "JGI"
+# seq_path <- 'proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta'
+# database_name <- "mmetsp"
+# seq_path <- 'proteomics/input_fasta/mmetsp_uniprot.fa'
+ database_name <-"mmetspENA"
+ seq_path <- 'proteomics/input_fasta/ox87102.2020_06.faa'
 
 
 # Add annotations:
@@ -156,7 +166,6 @@ anno8 <- anno8|>
             "KOG_info" = paste0(KOG_info, collapse = "; "),
             "KOG_with_actin" = paste0(KOG_actin, collapse = "; "))
 
-
 #Keg
 anno9 <- read_tsv(
   "proteomics/input_anno/Keg_numbers.txt",col_names = FALSE) |> 
@@ -174,17 +183,13 @@ anno10 <- read_tsv("proteomics/input_anno/proteome_KEGG_mapping.tsv") |>
   summarise("ko_values"= paste0(ko_values, collapse = "; ")) |> 
   rename(name_anno=name)
 #Unique to Aurli, Labys or Different in Stramenopiles vs Labys.
-anno11 <- read_csv("proteomics/input_anno/Aurliprot_conserved_Stram.csv") |> 
-  select(-1) |> 
+anno11 <- read_csv(paste0("proteomics/input_anno/Aurliprot_conserved_",database_name,"_split.csv")) |>
   separate(qseqid, sep = "\\|", into = letters[1:4]) |>
   select(-c("a", "b", "d")) |>
   rename("name_anno" = "c",
          "conservation_group"="Group")
 
-
-
-
-fastafile <- readAAStringSet("proteomics/input_fasta/Aurli1_aa.fa")
+fastafile <- readAAStringSet(seq_path)
 seq_name <- names(fastafile)
 sequence <- paste(fastafile)
 df <- data.frame(seq_name, sequence) |>
@@ -211,4 +216,4 @@ results <- orthoclust |>
   left_join(anno11, by = "name_anno") |> 
   left_join(df,by= "name_anno")
 
-write_csv(results,"proteomics/input_anno/all_anno_combined.csv")
+write_csv(results,paste0("proteomics/input_anno/all_anno_",database_name,"_combined.csv"))
