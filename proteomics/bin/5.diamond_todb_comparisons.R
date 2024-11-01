@@ -10,10 +10,10 @@ setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 #BLAST RESULTS
 # database_name <- "JGI"
 # seq_path <- 'proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta'
-# database_name <- "mmetsp"
-#seq_path <- 'proteomics/input_fasta/mmetsp_uniprot.fa'
- database_name <-"mmetspENA"
-seq_path <- 'proteomics/input_fasta/ox87102.2020_06.faa'
+ database_name <- "mmetsp"
+seq_path <- 'proteomics/input_fasta/mmetsp_uniprot.fa'
+# database_name <-"mmetspENA"
+#seq_path <- 'proteomics/input_fasta/ox87102.2020_06.faa'
 
 
 fastafile <- readAAStringSet(seq_path)
@@ -134,7 +134,6 @@ group_by(db,qseqid)|>
 
 comb_table <- left_join(best_diamond,blast_sum,by="qseqid")
 
-########## PREVIOUS SCRIPT:
 # Group 0: All things in the blast have one copy in Aurli (the query).
 
 # Group 1: Aurantio only (only found in the Aurantio sp genomes).

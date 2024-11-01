@@ -10,8 +10,10 @@ pacman::p_load(tidyverse, Biostrings, FactoMineR,
                ggVennDiagram, grid, here,ggplotify,
                ggvenn)
 
-contr <- "t0" 
-#contr <- "tx" 
+setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
+
+#contr <- "t0" 
+contr <- "tx" 
 
 fold_threshold <- 1.0001 #1.2, 
 inverse_fold <- 1 / fold_threshold
@@ -569,7 +571,10 @@ if (contr == "t0") {
         starts_with("T2_vs_T0_"),
         starts_with("T4_vs_T0_"),
         starts_with("T6_vs_T0_"),
-        starts_with("T8_vs_T0_")) |> 
+        starts_with("T8_vs_T0_"),
+        starts_with("T4_vs_T2_"),
+        starts_with("T6_vs_T4_"),
+        starts_with("T8_vs_T6_"),) |> 
     map(~ mutate(.x, across(starts_with("T") & ends_with("ratio"), ~ 2^., .names = "FC_{.col}"))) |> 
     map(~ .x  |> rename_with(~ str_remove(., "_ratio"), starts_with("FC") & ends_with("_ratio")))
   
@@ -799,7 +804,7 @@ results4 |> map(colnames) |> map(length)
 
 ############
 #### MERGE ANNOTATIONS WITH EXTERNAL DATA.
-ext_anno <- read_csv("proteomics/input_anno/all_anno_combined.csv") |> 
+ext_anno <- read_csv("proteomics/input_anno/all_anno_JGI_combined.csv") |> 
   mutate(name_anno=as.character(name_anno))
 
 results_anno <- results4 |> 
@@ -3035,4 +3040,3 @@ c34[!c34 %in% up]
 
 up[!up %in% c34]
 #Not in c34: "142158-jgi-mmetsp"
-
