@@ -2,13 +2,10 @@
 # Differential enrichment analysis for Proteomics data.
 # author: "Alejandro Gil-Gomez"
 library(pacman)
-pacman::p_load(tidyverse, Biostrings, FactoMineR,
-               data.table, plotly, DEP, sva,
-               SummarizedExperiment, ComplexHeatmap,
-               patchwork, factoextra,
-               #nVennR, 
-               ggrepel, RColorBrewer,
-               ggVennDiagram, grid, here,ggplotify)
+pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel, # CRAN
+               RColorBrewer,ggVennDiagram,factoextra,FactoMineR, #CRAN
+               ggplotify,ggvenn, # CRAN
+               Biostrings,DEP, sva,SummarizedExperiment, ComplexHeatmap)
 
 contr <- "t0" 
 #contr <- "tx" 

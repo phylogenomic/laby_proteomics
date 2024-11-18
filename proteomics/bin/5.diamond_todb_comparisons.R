@@ -1,5 +1,6 @@
 library(pacman)
-pacman::p_load(tidyverse,Biostrings)
+pacman::p_load(tidyverse,
+               Biostrings)
 
 # This script takes as input the blast of the JGI and MMETSP proteome to Mariana's DB.
 # and outputs annotations (Aurliprot_conserved_Stram.csv) based on

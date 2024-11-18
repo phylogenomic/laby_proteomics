@@ -1,11 +1,9 @@
 library(pacman)
 
-pacman::p_load(tidyverse, Biostrings, FactoMineR,
-               data.table, plotly, DEP, sva,
-               SummarizedExperiment, ComplexHeatmap,
-               patchwork, factoextra,
-               nVennR, ggrepel, RColorBrewer, ggVennDiagram, grid, here)
 
+pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel, # CRAN
+               RColorBrewer,ggVennDiagram,factoextra,FactoMineR, #CRAN
+               Biostrings,DEP, sva,SummarizedExperiment, ComplexHeatmap)
 
 # Comparison of different MMETSP versions, to check what Creative Proteomics used.
 

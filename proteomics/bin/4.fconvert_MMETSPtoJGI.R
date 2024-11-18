@@ -1,10 +1,11 @@
 library(pacman)
 
-pacman::p_load(tidyverse,Biostrings,FactoMineR,
-               data.table,plotly,DEP,sva,
-               SummarizedExperiment,ComplexHeatmap,
-               patchwork,factoextra,plotly,
-               ggrepel,RColorBrewer,ggVennDiagram,grid,igraph)
+pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel, # CRAN
+               RColorBrewer,ggVennDiagram,factoextra,FactoMineR, #CRAN
+               igraph, #CRAN
+               Biostrings,DEP, sva,SummarizedExperiment, ComplexHeatmap)
+
+pacman::p_load(igraph)
 
 
 #JGI
