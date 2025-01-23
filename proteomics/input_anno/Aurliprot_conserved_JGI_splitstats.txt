@@ -1,6 +1,5 @@
 "gr" "gr_p"
-"Aurantio_only" 768 5.184
-"Aurli_only" 1908 12.878
+"Aurli_only" 2676 18.062
 "Eukaryote" 9821 66.286
 "Laby_only" 2069 13.965
 "Str_only" 250 1.687

@@ -1,9 +1,9 @@
 library(pacman)
 pacman::p_load(tidyverse,Biostrings)
 
-# This script takes as input the blast of the JGI and MMETSP proteome to Mariana's DB.
-# and outputs annotations (Aurliprot_conserved_Stram.csv) based on
-# whether it maps to Hondaea, Stramenopiles, Labys, or only to Aurli
+# This script takes as input the blast of the JGI and MMETSP proteome to different db filtered from Mariana's DB.
+# and outputs annotations (Aurliprot_conserved_***.csv) based on
+# whether it maps to Aurli_only, Aurantio_only, Laby_only, Stramenopile_only, or Eukaryotes
 
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
@@ -11,24 +11,22 @@ setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 # database_name <- "JGI"
 # seq_path <- 'proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta'
  database_name <- "mmetsp"
-seq_path <- 'proteomics/input_fasta/mmetsp_uniprot.fa'
+ seq_path <- 'proteomics/input_fasta/mmetsp_uniprot.fa'
 # database_name <-"mmetspENA"
-#seq_path <- 'proteomics/input_fasta/ox87102.2020_06.faa'
+# seq_path <- 'proteomics/input_fasta/ox87102.2020_06.faa'
 
-
-fastafile <- readAAStringSet(seq_path)
-seq_name <- names(fastafile)
-sequence <- paste(fastafile)
-df <- data.frame(seq_name, sequence) |>
-  as_tibble() 
-df$seq_name |> unique() |> length()
 
 diam_colnames <- c("qseqid","sseqid","pident","length","mismatch","gapopen",
                 "evalue","bitscore","stitle")
-aurantio_only <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",
-                    database_name,"_to_Aurantio_only.out"),
+aurli_only <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",
+                    database_name,"_to_Aurli_only.out"),
                     col_names = FALSE)
-colnames(aurantio_only) <- diam_colnames
+colnames(aurli_only) <- diam_colnames
+
+aurantio_not_aurli <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",
+                    database_name,"_to_Aurantio_notAurli.out"),
+                    col_names = FALSE)
+colnames(aurantio_not_aurli) <- diam_colnames
 laby_not_aurantio <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",
                     database_name,"_to_Laby_notAurantio.out"),
                     col_names = FALSE)
@@ -42,29 +40,39 @@ nonstr <- read_table(paste0("proteomics/output_blasts/diamond_to_marDB/",
                     col_names = FALSE)
 colnames(nonstr) <- diam_colnames
 
-Aurli_sum <- aurantio_only |> 
+
+
+Aurli_sum <- aurli_only |> 
   mutate(Aurli=ifelse(str_detect(stitle,"Aurli"),TRUE,FALSE))|>
   group_by(qseqid) |>
   summarise(total_Aurli=sum(Aurli))
 
-Aurantio_not_Aurli_sum <- aurantio_only |> 
-  mutate(not_Aurli=ifelse(str_detect(stitle,"Aurli"),FALSE,TRUE))|>
+Aurantio_lim_sum <- aurli_only |> 
+  mutate(Aurli=ifelse(str_detect(stitle,"Aurantiochytrium_limacinum"),TRUE,FALSE))|>
   group_by(qseqid) |>
-  summarise(total_Aurantio_not_Aurli=sum(not_Aurli))
+  summarise(total_Aurli=sum(Aurli))
 
 # Number of hits to Aurli
-aurantio_only$qseqid |> unique() |> length()
+aurli_only$qseqid |> unique() |> length()
 Aurli_sum |> dim()
 
 sum(Aurli_sum$total_Aurli ==50)
 max(Aurli_sum$total_Aurli)
-# 0 proteins only have hits to Aurli (JGI). 50 hits. Max 35 in Aurli
-# 0  proteins only have hits to Aurli (mmetsp). 50 hits. Max 30 in Aurli
+# 0 proteins only have hits to Aurli (JGI). 50 hits. Max 35 in Aurli JGI
+# 0  proteins only have hits to Aurli (mmetsp). 50 hits. Max 30 in Aurli JGI
 # 0 proteins only have hits to Aurli (mmetspENA). 50 hits. Max 33 in Aurli
-Aurantio <- left_join(Aurli_sum,Aurantio_not_Aurli_sum,by="qseqid")
-laby_not_aurantio$qseqid |> unique() |> length()
 
-aurantio_only$qseqid |> unique() |> length() # 14816 JGI
+sum(Aurantio_lim_sum$total_Aurli ==50)
+max(Aurantio_lim_sum$total_Aurli)
+# More than 50 if including MMETSP
+
+# Aurantio_notAurli
+Aurantio_notAurli_sum <- aurantio_not_aurli |> 
+  group_by(qseqid) |>
+  summarise(total_Aurantio_not_Aurli=n())
+aurantio_not_aurli$qseqid |> unique() |> length() # 94 JGI
+
+Aurantio <- left_join(Aurli_sum,Aurantio_notAurli_sum,by="qseqid")
 
 # Labys not Aurantio:
 Laby_sum <- laby_not_aurantio |> 
@@ -82,10 +90,12 @@ Nonstr_sum <- nonstr |>
   summarise(total_nonStr=n())
 nonstr$qseqid |> unique() |> length() # 9821 JGI
 
-Counts <- Aurantio |>
+Counts <- Aurli_sum |>
+  left_join(Aurantio_notAurli_sum,by="qseqid")  |>
   left_join(Laby_sum,by="qseqid")  |>
   left_join(Str_not_Laby_sum,by="qseqid") |> 
   left_join(Nonstr_sum,by="qseqid")|>
+  mutate(total_Aurantio_not_Aurli=ifelse(is.na(total_Aurantio_not_Aurli),0,total_Aurantio_not_Aurli))|>
   mutate(total_Laby_not_Aurantio=ifelse(is.na(total_Laby_not_Aurantio),0,total_Laby_not_Aurantio))|>
   mutate(total_Str_not_laby=ifelse(is.na(total_Str_not_laby),0,total_Str_not_laby))|>
   mutate(total_nonStr=ifelse(is.na(total_nonStr),0,total_nonStr))
@@ -116,11 +126,12 @@ gr_p <- round(100*gr/sum(gr),3)
 gr_x <- cbind(gr,gr_p)
 write.table(gr_x,file = paste0("proteomics/input_anno/Aurliprot_conserved_",database_name,"_splitstats.txt"))
 
-aurantio_only$db <- "Aurantio_only"
+aurli_only$db <- "Aurli_only"
+aurantio_not_aurli$db <- "Aurantio_notAurli"
 laby_not_aurantio$db <- "Laby_notAurantio"
 str_not_laby$db <- "Str_notLaby"
 nonstr$db <- "NonStr"
-all_diamond <- rbind(aurantio_only,laby_not_aurantio,str_not_laby,nonstr)
+all_diamond <- rbind(aurli_only,aurantio_not_aurli,laby_not_aurantio,str_not_laby,nonstr)
 
 best_diamond <- all_diamond |>
 group_by(db,qseqid)|>
@@ -138,18 +149,18 @@ comb_table <- left_join(best_diamond,blast_sum,by="qseqid")
 
 # Group 1: Aurantio only (only found in the Aurantio sp genomes).
 aurli_only <- comb_table |> filter(category=="Aurli_only")
-aurli_only$qseqid |> unique() |> length() # 1908 JGI; x MMETSP; x MMETSP ENA
+aurli_only$qseqid |> unique() |> length() # 2676 JGI; 28 MMETSP; x MMETSP ENA
 
 aurantio_only <- comb_table |> filter(category=="Aurantio_only")
-aurantio_only$qseqid |> unique() |> length()  # 768 JGI; x MMETSP; x MMETSP ENA
+aurantio_only$qseqid |> unique() |> length()  # 0 JGI; 0 MMETSP; x MMETSP ENA
 
 # Group 2: Laby only. Protein found in Labys but not in Stramenopiles.
 laby_only <- comb_table |> filter(category=="Laby_only")
-laby_only$qseqid |> unique() |> length()  # 2069 JGI; x MMETSP; x MMETSP ENA
+laby_only$qseqid |> unique() |> length()  # 2069 JGI; 218 MMETSP; x MMETSP ENA
 
 # Group 3: Str_only
 str_only <- comb_table |> filter(category=="Str_only")
-str_only$qseqid |> unique() |> length() # 250 JGI; x MMETSP; x MMETSP ENA
+str_only$qseqid |> unique() |> length() # 250 JGI; 34 MMETSP; x MMETSP ENA
 
 StrnotLaby_T <- str_only |> 
   filter(db=="Str_notLaby")|>
@@ -280,9 +291,11 @@ ggplot(result1_euk_TF, aes(x=diff_Tscore)) +
 ####
 # Combine results:
 group_a <- cbind(unique(aurli_only$qseqid),"aurli_only")
-group_b <- cbind(unique(aurantio_only$qseqid),"aurantio_only")
+#group_b <- cbind(unique(aurantio_only$qseqid),"aurantio_only")
 group_c <- cbind(unique(laby_only$qseqid),"laby_only")
-df <- rbind(group_a,group_b,group_c)
+df <- rbind(group_a,
+            #group_b, # No Aurantio_only proteins
+            group_c)
 colnames(df) <- c("qseqid","Group")
 df <- df |> 
   as.data.frame() |> 
@@ -301,4 +314,16 @@ mutate(Group="Eukaryote")
 
 result_all <- rbind(df,result_l_s,result_l_ns)
 
-write.csv(result_all,file = paste0("proteomics/input_anno/Aurliprot_conserved_",database_name,"_split.csv"),row.names=FALSE)
+fastafile <- readAAStringSet(seq_path)
+qseqid <- names(fastafile)
+sequence <- paste(fastafile)
+df_seq <- data.frame(qseqid, sequence) |>
+  as_tibble() |>
+ separate(qseqid,sep=" ",into=c("qseqid","other_anno"))|>
+ select(qseqid,sequence)
+
+df_seq$qseqid |> unique() |> length()
+
+result_all1 <- left_join(result_all,df_seq,by="qseqid")
+
+write.csv(result_all1,file = paste0("proteomics/input_anno/Aurliprot_conserved_",database_name,"_split.csv"),row.names=FALSE)

@@ -1,19 +1,23 @@
 ####################################
 # Differential enrichment analysis for Proteomics data.
 # author: "Alejandro Gil-Gomez"
+
+# In MILAN
+# module load R/4.4.1
+# module load netcdf/intel2023.1/4.9.0
 library(pacman)
-pacman::p_load(tidyverse, Biostrings, FactoMineR,
-               data.table, plotly, DEP, sva,
-               SummarizedExperiment, ComplexHeatmap,
-               patchwork, factoextra,
-               ggrepel, RColorBrewer,
-               ggVennDiagram, grid, here,ggplotify,
-               ggvenn)
+
+
+pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel,
+                RColorBrewer,ggVennDiagram,factoextra,FactoMineR,furrr,ggplotify)# CRAN
+
+pacman::p_load(Biostrings,DEP,sva,ComplexHeatmap,SummarizedExperiment)
+
 
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
-#contr <- "t0" 
-contr <- "tx" 
+contr <- "t0" 
+#contr <- "tx" 
 
 fold_threshold <- 1.0001 #1.2, 
 inverse_fold <- 1 / fold_threshold
@@ -52,8 +56,8 @@ experimental_design <- data.frame(label = c("T0-1", "T0-2", "T0-3",
 
 data_jgi <- data |>
   separate(name_ID, sep = "\\|", into = letters[1:4]) |>
-  select(-c("a", "b", "d")) |>
-  rename("name_ID" = "c") |>
+  select(-c(a,b,d)) |>
+  dplyr::rename("name_ID" = "c") |>
   select(-Fasta_headers)
 
 data_jgi$set <- "jgi"
@@ -202,27 +206,23 @@ if (contr == "t0") {
                                              "T6_vs_T4",
                                              "T8_vs_T6"
     ))
-} else {
-  print("error with contrasts")
-}
+} 
 
 dep <- data_diff_manual |>
   map(add_rejections,alpha = p_value, lfc = log2(fold_threshold))
-
-#save(dep,file="proteomics/dep_sets.R")
 
 dep_get_results <- dep |> 
   map(get_results)
 row_names <- dep_get_results|>
   map(rownames) |>
   map(as.data.frame) |>
-  map(rename, rownumber = ".x[[i]]")
+  map(dplyr::rename, rownumber = ".x[[i]]")
 dep_get_results <- map2(dep_get_results, row_names, cbind)
 
 # Add mapping: name_anno
 mapping1 <- read_csv("proteomics/input_anno/jgimmetsp_result_may24.csv") |> 
-  rename(name=MMETSP_ID) |> 
-  rename(name_anno=JGI_ID)
+  dplyr::rename(name=MMETSP_ID) |> 
+  dplyr::rename(name_anno=JGI_ID)
 
 dep_get_results_an <- list()
 for (i in 1:length(dep_get_results)){
@@ -245,16 +245,52 @@ for (i in 1:length(dep_get_results)){
 # Venn by size in nVennR. Venn normal is ggVennDiagram.
 # Venn of detected. GGVenndiagram
 detected_name <- dep_get_results_an |>
-  map(select, name, name_anno) 
+  map(select, name, name_anno,significant) 
+
+jgi_det <- detected_name[[2]] |> 
+        mutate(jgiset_name=name) |>
+        dplyr::rename(jgi_significant=significant)|>
+        select(name,jgiset_name,jgi_significant) # 3006, S=394
 
 mmetsp_det <- detected_name[[1]] |>
-  select(name_anno) |> arrange(desc(name_anno)) |> 
-  pull()
-  
+  dplyr::rename(mmetspset_name=name)|>
+    dplyr::rename(name=name_anno)|>
+    dplyr::rename(mmetsp_significant=significant)|>
+    select(name,mmetspset_name,mmetsp_significant) # 3298
+
+ mmetsp_det$name[mmetsp_det$name |> table() |> sort() >1] # 39 MMETSP with more than 1 JGI
+
+save(mmetsp_det,file="test.R")
+
+mmestp_sum <- mmetsp_det %>%
+ group_by(mmetspset_name) %>%
+ summarise(name_s = paste0(name,collapse=";"), .groups = "drop")
+
+
+combined_det <- full_join(mmetsp_det,jgi_det,by="name") |>
+distinct() |>
+arrange(name)|>
+mutate(type=ifelse(!is.na(mmetspset_name) & is.na(jgiset_name),"MMETSP_only",
+        ifelse(!is.na(mmetspset_name) & !is.na(jgiset_name),"MMETSP-JGI",
+        ifelse(is.na(mmetspset_name) & !is.na(jgiset_name), "JGI_only","error"))))
+
+combined_det |> dim() # 3787
+combined_det$name[combined_det$name |> table() |> sort() >1] # 39 MMETSP with more than 1 JGI
+
+combined_det |> filter(type=="JGI_only") |> select(name) |> pull()  |> unique() #489
+combined_det |> filter(type=="MMETSP_only") |> select(name) |> pull() |> unique() #737
+combined_det |> filter(type=="MMETSP-JGI") |> select(mmetspset_name) |> pull() |> unique() #2555
+
+
+
+
+
+
+## Previous
 mmetsp_det_M <- mmetsp_det[str_detect(mmetsp_det,"A")]
 mmetsp_det_MAP <- mmetsp_det[str_detect(mmetsp_det,"A",negate=TRUE)]
-jgi_det <- detected_name[[2]] |> select(name_anno) |> pull()
-setdiff(mmetsp_det,jgi_det)
+
+setdiff(mmetsp_det,jgi_det) |>length()
 
 y <- list("MMETSP only" = mmetsp_det_M,
           "MMETSP mapped" = mmetsp_det_MAP,
@@ -314,15 +350,13 @@ ggsave(
   filename = paste0("proteomics/img_IndependentSets/indset.fig2_t0_vennplot.pdf"),
   plot = venn_plot,
   width = 15,
-  height = 13
-)
+  height = 13)
 
 ggsave(
   filename = paste0("proteomics/img_IndependentSets/indset.fig2_t0_vennplot.png"),
   plot = venn_plot,
   width = 15,
-  height = 13
-)
+  height = 13)
 
 
 # Create all_det set:
@@ -428,23 +462,22 @@ mnotdet_jnotsig_names |> length()
 dep2_mnotdet_jnotsig_names <- dep[[2]][rownames(dep[[2]])%in%mnotdet_jnotsig_names,]
 
 # 0 0 Not found. 0
-intersect(jgi_detected_notmmetsp,
-          mmetsp_detected_notjgi) # 0 not found
+intersect(jgi_detected_notmmetsp,mmetsp_detected_notjgi)
 
 # Make all_det following the rules:
 # For proteins significant in both take MMETSP version,
 # If there is a dispute (significant/not M/J),
 # take the one that is significant.
-c(msig_jsig_names, # 302 sig M and sig J
-  msig_jnotsig_names, # 151 sig M and notS J
+c(msig_jsig_names, # 307 sig M and sig J
+  msig_jnotsig_names, # 152 sig M and notS J
   mnotsig_jsig_names,# 52 notS M and sig J
   mnotsig_jnotsig_names, # 2040 notS M and notS J
-  msig_jnotdet_names, # 77 Sig M and not found in J
+  msig_jnotdet_names, # 81 Sig M and not found in J
   mnotdet_jsig_names, # 41 sig J and not found in M
   mnotsig_jnotdet_names, # 662 notS in M and not found in J
   mnotdet_jnotsig_names)|>  # 448 notS in J and not found in M
   unique() |> 
-  length() # 3783
+  length() # T0=3783 or TX=3781 
 
 # Make all_det following the rules:
 # For proteins significant in both take MMETSP version,
@@ -479,9 +512,9 @@ significant_name
 
 # Count total significant:
 dep |>
-  map(get_results) |>
-  map(filter, significant == TRUE) |>
-  map(summarise, n())
+  purrr::map(get_results) |>
+  purrr::map(filter, significant == TRUE) |>
+  purrr::map(summarise, n())
 # 530, 394, 623, 623
 
 # 
@@ -511,7 +544,7 @@ dep_get_results <- dep |>
 row_names <- dep_get_results|>
   map(rownames) |>
   map(as.data.frame) |>
-  map(rename, rownumber = ".x[[i]]")
+  map(dplyr::rename, rownumber = ".x[[i]]")
 dep_get_results <- map2(dep_get_results, row_names, cbind)
 dep_get_results |> 
   map(colnames) |> 
@@ -577,10 +610,6 @@ if (contr == "t0") {
         starts_with("T8_vs_T6_"),) |> 
     map(~ mutate(.x, across(starts_with("T") & ends_with("ratio"), ~ 2^., .names = "FC_{.col}"))) |> 
     map(~ .x  |> rename_with(~ str_remove(., "_ratio"), starts_with("FC") & ends_with("_ratio")))
-  
-} else {
-  # Code to execute if 'set' is neither "t0" nor "tx"
-  # Add your code here
 }
 
 results1 |> 
@@ -602,7 +631,7 @@ results1 |>
 
 
 # DEP results:
-if (contr == "t0") {
+if (contr == "t0"){
   results2 <- results1 |> map(mutate,
                               T2v0.reg = ifelse(FC_T2_vs_T0 > fold_threshold & T2_vs_T0_p.adj <= p_value, "UP",
                                                 ifelse(FC_T2_vs_T0 < inverse_fold & T2_vs_T0_p.adj <= p_value, "DOWN", "NO")),
@@ -624,9 +653,8 @@ if (contr == "t0") {
   
   for (i in seq_along(results2)){
     results2[[i]] <- results2[[i]] |> 
-      mutate(above_median_exp_t0 = T0_1 > median_t0[[i]] | T0_2 > median_t0[[i]] | T0_3 > median_t0[[i]])
-  }
-  
+      mutate(above_median_exp_t0 = T0_1 > median_t0[[i]] | T0_2 > median_t0[[i]] | T0_3 > median_t0[[i]])}  
+
   results2 <- results2 |> 
     map(mutate,
         UP_AND468 = ifelse(T4v0.reg == "UP" & T6v0.reg == "UP" & T8v0.reg == "UP",
@@ -648,6 +676,7 @@ if (contr == "t0") {
     map(ungroup)
   
 } else if (contr == "tx") {
+  # Fix this chunk
   results2 <- results1 |> map(mutate,
                               T2v0.reg = ifelse(FC_T2_vs_T0 > fold_threshold & T2_vs_T0_p.adj <= p_value, "UP",
                                                 ifelse(FC_T2_vs_T0 < inverse_fold & T2_vs_T0_p.adj <= p_value, "DOWN", "NO")),
@@ -674,10 +703,10 @@ if (contr == "t0") {
     map(pull) |>
     map(median)
   
-  for (i in seq_along(results2)){
+    for (i in seq_along(results2)){
     results2[[i]] <- results2[[i]] |> 
-      mutate(above_median_exp_t0 = T0_1 > median_t0[[i]] | T0_2 > median_t0[[i]] | T0_3 > median_t0[[i]])
-  }
+      mutate(above_median_exp_t0 = T0_1 > median_t0[[i]] | T0_2 > median_t0[[i]] | T0_3 > median_t0[[i]])} 
+
   
   results2 <- results2 |> 
     map(mutate,
@@ -701,16 +730,13 @@ if (contr == "t0") {
                               T4_vs_T0_diff > T2_vs_T0_diff,
                             TRUE, FALSE)) |>
     map(ungroup)
-} else {
-  # Code to execute if 'set' is neither "t0" nor "tx"
-  # Add your code here
-}
+} 
 
 results2 |> map(colnames) |> map(length)
 
 # Add mapping: name_anno
 results3 <- list()
-for (i in 1:length(results2)){
+for (i in seq_along(results2)){
   if(names(results2)[[i]]=="data_mmetsp"){
     # map mmetsp to jgi
     results3[[i]] <- left_join(results2[[i]],mapping1,by="name") |>
@@ -800,13 +826,12 @@ for (i in 1:length(results3)){
 }
 results4 |> map(colnames) |> map(length)
 
-
-
 ############
 #### MERGE ANNOTATIONS WITH EXTERNAL DATA.
-ext_anno <- read_csv("proteomics/input_anno/all_anno_JGI_combined.csv") |> 
+ext_anno <- read_csv("proteomics/input_anno/all_anno_combined.csv") |> 
   mutate(name_anno=as.character(name_anno))
 
+# name_anno dependent annotations, meaning JGI based annotations:
 results_anno <- results4 |> 
   map(left_join,ext_anno,by="name_anno")
 
@@ -816,9 +841,129 @@ results_anno[[3]]$table <- "alldet"
 results_anno[[4]]$table <- "allsig"
 
 results_anno |> map(colnames)
+results_anno |> map(dim)
 
+# Add Orthogroup value to each protein:
+mmetsp_orthogroups <- read_csv(file="/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/mmetsp_to_orthogroup.csv")
+jgi_orthogroups <- read_csv(file="/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/jgi_to_orthogroup.csv")
+
+ortho_list <- list()
+for(an in 1:dim(results_anno[[1]])[1]){
+  cur_an <- results_anno[[1]][an,]$name_anno
+
+  if(grepl("^[0-9]+$", cur_an)){
+    # annotation composed by numbers
+     ortho_list[an] <-paste(jgi_orthogroups$Orthogroup[jgi_orthogroups$qseqid == cur_an],collapse = ", ")
+  }else{
+    ortho_list[an] <- paste(mmetsp_orthogroups$Orthogroup[str_detect(mmetsp_orthogroups$qseqid, cur_an)],collapse = ", ")
+  }
+}
+
+ortho_vec <- unlist(ortho_list)
+results_anno[[1]]$orthogroup <- ortho_vec
+
+results_anno <- map(results_anno, function(df) {
+  df %>%
+    mutate(
+      orthogroup = map_chr(name_anno, function(cur_an) {
+        if (grepl("^[0-9]+$", cur_an)) {
+          # Annotation composed of numbers
+          paste(
+            jgi_orthogroups$Orthogroup[jgi_orthogroups$qseqid == cur_an],
+            collapse = ", "
+          )
+        } else {
+          # Annotation not composed of numbers
+          paste(
+            mmetsp_orthogroups$Orthogroup[str_detect(mmetsp_orthogroups$qseqid, cur_an)],
+            collapse = ", "
+          )
+        }
+      })
+    )
+})
+
+# Add orthofinder orthogroup columns
+orthofinder <- read_csv(file="/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/ortholabyanno.csv")|>
+mutate(orthogroup=Orthogroup)|> 
+select(orthogroup,starts_with("Eukaryota"),starts_with("Aurli"),starts_with("Total"),starts_with("Present"),starts_with("Perc"))|>
+distinct()|>filter(!is.na(orthogroup))
+
+results_anno1 <- results_anno |> 
+  map(left_join,orthofinder,by="orthogroup")
+results_anno <- results_anno1  
+
+save(results_anno,file="proteomics/results_anno.R") # results_anno saved.
+load("proteomics/results_anno.R")
 # Annotations added!
 
+
+# Conservation groups and sequences from Diamond results
+  anno1_11 <- read_csv(paste0("proteomics/input_anno/Aurliprot_conserved_mmetsp_split.csv")) |>
+  mutate(seq_name=qseqid)|>
+  dplyr::rename("conservation_group"="Group")
+
+  anno2_11 <- read_csv(paste0("proteomics/input_anno/Aurliprot_conserved_JGI_split.csv")) |>
+  mutate(seq_name=qseqid) |>
+  separate(qseqid, sep = "\\|", into = letters[1:4]) |>
+  select(-c("a", "b", "d")) |>
+  dplyr::rename("name_anno" = "c",
+         "conservation_group"="Group")
+
+results_anno1 <- list()
+
+anno1_split <- anno1_11 %>%
+  mutate(qseqid_parts = str_split(qseqid, pattern = "\\;")) |>  
+  unnest(qseqid_parts) %>%
+  mutate(qseqid_parts = str_trim(qseqid_parts))
+
+results_anno_matched <- results_anno[[1]] %>%
+  rowwise() %>%
+  mutate(match_found = list(anno1_split %>%
+                              filter(str_detect(qseqid_parts, fixed(name))) %>%
+                              pull(qseqid))) %>%
+  unnest(match_found, keep_empty = TRUE) |>
+  dplyr::rename(qseqid=match_found)
+
+results_anno1[[1]] <- results_anno_matched |> left_join(anno1_11, by="qseqid")|>
+select(!qseqid)
+results_anno1[[2]] <- results_anno[[2]] |> left_join(anno2_11, by="name_anno")
+
+
+# all_det set
+all_jgi <- results_anno[[3]][str_detect(results_anno[[3]]$Protein_id,"jgi"),]
+all_jgi2 <- all_jgi |> left_join(anno2_11, by="name_anno")
+all_mmetsp <- results_anno[[3]][str_detect(results_anno[[3]]$Protein_id,"mmetsp"),]
+results_anno_matched <- all_mmetsp %>%
+  rowwise() %>%
+  mutate(match_found = list(anno1_split %>%
+                              filter(str_detect(qseqid_parts, fixed(name))) %>%
+                              pull(qseqid))) %>%
+  unnest(match_found, keep_empty = TRUE) |>
+  dplyr::rename(qseqid=match_found)
+all_mmetsp2 <- results_anno_matched |> left_join(anno1_11, by="qseqid")|>
+select(!qseqid)
+
+results_anno1[[3]] <- rbind(all_jgi2,all_mmetsp2)
+
+# all_sig set
+sig_jgi <- results_anno[[4]][str_detect(results_anno[[4]]$Protein_id,"jgi"),]
+sig_jgi2 <- all_jgi |> left_join(anno2_11, by="name_anno")
+sig_mmetsp <- results_anno[[4]][str_detect(results_anno[[4]]$Protein_id,"mmetsp"),]
+results_anno_matched <- sig_mmetsp %>%
+  rowwise() %>%
+  mutate(match_found = list(anno1_split %>%
+                              filter(str_detect(qseqid_parts, fixed(name))) %>%
+                              pull(qseqid))) %>%
+  unnest(match_found, keep_empty = TRUE) |>
+  dplyr::rename(qseqid=match_found)
+sig_mmetsp2 <- results_anno_matched |> left_join(anno1_11, by="qseqid")|>
+select(!qseqid)
+
+results_anno1[[4]] <- rbind(sig_jgi2,sig_mmetsp2)
+# Annotations added!
+
+results_anno <- results_anno1
 
 #Venn Diagrams Significant
 setnames <- c("MMETSP","JGI","ALLDET","ALLSIG")
@@ -1143,11 +1288,7 @@ if (contr == "t0") {
     width = 15,
     height = 13,dpi=500
   )
-  
-} else {
-  # Code to execute if 'set' is neither "t0" nor "tx"
-  # Add your code here
-}
+} 
 
 #################################
 ## DEP plots:
@@ -1197,7 +1338,7 @@ assay1 <- dep |>
 n <- assay1 |>
   map(rownames) |>
   map(as.data.frame) |>
-  map(rename, rownumber = ".x[[i]]")
+  map(dplyr::rename, rownumber = ".x[[i]]")
 assay2 <- map2(assay1, n, cbind)
 
 assay3 <- assay2 |>
@@ -1226,7 +1367,7 @@ ab <- dep |>
   map(as.vector)
 
 ab |>
-  map(min) #10.45
+  map(min) #10.8
 
 ab |>
   map(max) #24.4
@@ -1253,7 +1394,7 @@ data_get_results <- results_anno |>
   map(separate, category, sep = "_", into = c("C1", "C2", "C3", "type")) |> 
   map(mutate, Time = paste0(C1, "_", C2, "_", C3)) |>
   map(select, -c("C1", "C2", "C3", "ID")) |> 
-  map(rename, Sig.Any = significant) |> 
+  map(dplyr::rename, Sig.Any = significant) |> 
   map(pivot_wider, names_from = type, values_from = values) |>
   map(mutate, neg.log.p.val = -log(p.val)) |>
   map(mutate, Time = ifelse(Time == "T2_vs_T0", "T2 vs T0",
@@ -1315,18 +1456,25 @@ df_r <- data_get_results|>
 # What are the most abundant proteins?
 for (p in seq_along(results_anno)){
   
-mostabundant <- results_anno[[p]] |>
-  select(name,name_anno,T0_1,T0_2,T0_3,
-         T2_1,T2_2,T2_3,           
-         T4_1,T4_2,T4_3,                
-         T6_1,T6_2,T6_3,                
-         T8_1,T8_2,T8_3) |> 
+mostabundant1 <- results_anno[[p]] |>
+  select(name,name_anno
+  ,T0_1,T0_2,T0_3,T2_1,T2_2,T2_3,T4_1,T4_2,T4_3,T6_1,T6_2,T6_3,T8_1,T8_2,T8_3) |> 
   pivot_longer(names_to = "TR", values_to = "exp", 3:17) |> 
   group_by(name_anno) |>
-  summarise(max.exp = max(exp)) |>
-  arrange(desc(max.exp)) |>
-  mutate(max.exp=round(max.exp,2))|> 
-  head(20)
+  summarise(max_exp = max(exp)) |>
+  arrange(desc(max_exp)) |>
+  mutate(max_exp=round(max_exp,2))
+
+  mostabundant2 <- results_anno[[p]] |>
+  select(name,name_anno,starts_with("RAW")
+  ) |> 
+  pivot_longer(names_to = "TR", values_to = "exp", 3:17) |> 
+  group_by(name_anno) |>
+  summarise(max_exp_raw = max(exp)) |>
+  arrange(desc(max_exp_raw)) |>
+  mutate(max_exp_raw=round(max_exp_raw,2))
+
+  mostabundant <- left_join(mostabundant1,mostabundant2,by="name_anno")
 
 mostabundant |>
   write_csv(paste0("proteomics/DEP_results_IndependentSets/mostabundant_",file_set[p],".csv"))
@@ -1442,10 +1590,10 @@ cluster4 <- list.genes |>
   map(as.character)
 
 # How many genes in each cluster in the mmetsp?
-cluster1 |> map(length) #vs_t0:77, 158, 80, 91
-cluster2 |> map(length) #vs_t0:148, 65, 162, 177
-cluster3 |> map(length) #vs_t0:135, 82, 146, 160
-cluster4 |> map(length) #vs_t0:170, 89, 183, 195
+cluster1 |> map(length) #vs_t0:77, 158, 91, 91
+cluster2 |> map(length) #vs_t0:148, 65, 177, 177
+cluster3 |> map(length) #vs_t0:135, 82, 160, 160
+cluster4 |> map(length) #vs_t0:170, 89, 195, 195
 
 # Volcano plots (black and grey)
 a <- dep |>
@@ -1472,7 +1620,7 @@ data_get_results <- dep |>
 row_names <- data_get_results|>
   map(rownames) |>
   map(as.data.frame) |>
-  map(rename, rownumber = ".x[[i]]")
+  map(dplyr::rename, rownumber = ".x[[i]]")
 data_get_results <- map2(data_get_results, row_names, cbind)
 
 genes <- list()
@@ -1500,7 +1648,7 @@ data_get_results2 <- data_get_results1 |>
   map(separate, category, sep = "_", into = c("C1", "C2", "C3", "type")) |>
   map(mutate, Time = paste0(C1, "_", C2, "_", C3)) |>
   map(select, -c("C1", "C2", "C3", "rownumber", "ID")) |>
-  map(rename,any.significant=significant) |> 
+  map(dplyr::rename,any.significant=significant) |> 
   map(pivot_wider, names_from = type, values_from = values) |>
   map(mutate, neg.log.p.val = -log(p.val,10)) |>
   map(mutate, Time = ifelse(Time == "T2_vs_T0", "T2 vs T0",
@@ -1531,7 +1679,7 @@ for (i in seq_along(data_sig_false)) {
     theme_minimal() +
     theme(legend.position = "bottom") +
     scale_color_manual(breaks = c("Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "not significant"),
-                       values = c(brewer.pal(5, "Set1"), "grey"))+
+                       values = c(brewer.pal(4, "Set1"), "#e4e4e4"))+
     xlab(expression('log'[2]*'(Fold change)'))+
     ylab(expression('-log'[10]*'(p value)'))+
     xlim(-1.5, +1.5)+
@@ -1649,10 +1797,10 @@ for (i in seq_along(df_wide)) {
 }
 
 # With annotations.
-results_anno
-results_anno_onlysig
-results_anno_3s
-results_anno_onlysig_3s
+#results_anno
+#results_anno_onlysig
+#results_anno_3s
+#results_anno_onlysig_3s
 for (i in seq_along(df_wide)) {
   results_anno[[i]] |>
     write_csv(file.path("proteomics/DEP_results_IndependentSets", paste0("df_anno.", file_set[i],".",contr,".csv")))
@@ -2388,7 +2536,7 @@ df <- results_anno[[1]] |>
   select(name_anno,ID,significant,cluster,kogClass,ko_values,
          T2_vs_T0_ratio,T4_vs_T0_ratio,T6_vs_T0_ratio,T8_vs_T0_ratio,
          T2_vs_T0_p.val,T4_vs_T0_p.val,T6_vs_T0_p.val,T8_vs_T0_p.val) |> 
-  rename(Sig.Any = significant) |> 
+  dplyr::rename(Sig.Any = significant) |> 
   mutate(kogClass=ifelse(is.na(kogClass),"Unknown kogClass",kogClass)) |> 
   separate(kogClass,sep="; ",into=LETTERS[1:4]) |> 
   pivot_longer(names_to = "kogClass_name",

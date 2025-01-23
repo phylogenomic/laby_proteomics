@@ -41,9 +41,13 @@
 
 module load hts/1.0
 
-# DB1. Aurantio only
-seqkit grep -n -r -p "Aurantiochytrium" /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta > /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_only.fasta
-input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_only.fasta'
+# DB0. Aurli only
+seqkit grep -n -r -p "Aurantiochytrium_limacinum" /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta > /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurli_only.fasta
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurli_only.fasta'
+
+# DB1. Aurantio without Aurli
+seqkit grep -n -r -f /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/Aurantio_notAurli.txt /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta > /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_notAurli.fasta
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_notAurli.fasta'
 
 # DB2. Labys without Aurantio
 seqkit grep -n -r -f /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/Laby_notAurantio.txt /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020.fasta > /gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Laby_notAurantio.fasta
@@ -60,7 +64,8 @@ input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_str_not_laby.fas
 
 # Make DB
 module load diamond/2.0.10
-input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_only.fasta'
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurli_only.fasta'
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_notAurli.fasta'
 input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Laby_notAurantio.fasta'
 input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_nonstr_only.fasta'
 input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_str_not_laby.fasta'
@@ -69,16 +74,38 @@ diamond makedb  --in $input_db \
 
 
 # Search:
-#DB1
-input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_only.fasta'
+# DB0
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurli_only.fasta'
 input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/ox87102.2020_06.faa'
-output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetspENA_to_Aurantio_only.out'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetspENA_to_Aurli_only.out'
 
 input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/mmetsp_uniprot.fa'
-output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetsp_to_Aurantio_only.out'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetsp_to_Aurli_only.out'
 
 input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta'
-output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/JGI_to_Aurantio_only.out'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/JGI_to_Aurli_only.out'
+
+diamond blastp --db $input_db.db \
+--query $input_query \
+--very-sensitive \
+--outfmt 6 qseqid sseqid pident length mismatch gapopen evalue bitscore stitle \
+--evalue 1e-3 \
+--max-hsps 1 \
+--max-target-seqs 50 \
+--threads 96  \
+--out $output_blast # \ --masking 0 No-masking
+
+
+#DB1
+input_db='/gpfs/projects/RestGroup/mariana/carot/ref/rfdb3_2020_Aurantio_notAurli.fasta'
+input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/ox87102.2020_06.faa'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetspENA_to_Aurantio_notAurli.out'
+
+input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/mmetsp_uniprot.fa'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/mmetsp_to_Aurantio_notAurli.out'
+
+input_query='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/input_fasta/Aurli1_GeneCatalog_proteins_20120618.aa.fasta'
+output_blast='/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/proteomics/output_blasts/diamond_to_marDB/JGI_to_Aurantio_notAurli.out'
 
 diamond blastp --db $input_db.db \
 --query $input_query \

@@ -1,10 +1,9 @@
 library(pacman)
 
-pacman::p_load(tidyverse, Biostrings, FactoMineR,
-               data.table, plotly, DEP, sva,
-               SummarizedExperiment, ComplexHeatmap,
-               patchwork, factoextra,
-               nVennR, ggrepel, RColorBrewer, ggVennDiagram, grid, here)
+pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel, # CRAN
+               RColorBrewer,ggVennDiagram,factoextra,FactoMineR, #CRAN
+               ggplotify,ggvenn, # CRAN
+               Biostrings,DEP, sva,SummarizedExperiment, ComplexHeatmap)
 
 x <- read_delim("proteomics/output_blasts/mmetsp_and_jgi/jgi_to_mmetsp.out",col_names = FALSE)
 blast_jgi2mmetsp <- x |> 
