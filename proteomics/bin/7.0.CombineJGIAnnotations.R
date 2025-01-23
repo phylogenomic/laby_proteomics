@@ -5,6 +5,7 @@ pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel,
                 RColorBrewer,ggVennDiagram,factoextra,FactoMineR,furrr)# CRAN
 pacman::p_load(Biostrings)
 
+
 plan(multicore, workers = parallel::detectCores() - 1)
 setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 options(future.globals.maxSize = 800 * 1024^2)

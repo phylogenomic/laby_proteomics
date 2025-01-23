@@ -7,14 +7,11 @@
 # module load netcdf/intel2023.1/4.9.0
 library(pacman)
 
-
 pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel,
                 RColorBrewer,ggVennDiagram,factoextra,FactoMineR,furrr,ggplotify)# CRAN
 
 pacman::p_load(Biostrings,DEP,sva,ComplexHeatmap,SummarizedExperiment)
 
-
-setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/")
 
 contr <- "t0" 
 #contr <- "tx" 
