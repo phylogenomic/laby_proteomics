@@ -12,7 +12,7 @@ pacman::p_load(tidyverse, data.table,plotly,here,grid,patchwork,ggrepel,
 
 pacman::p_load(Biostrings,DEP,sva,ComplexHeatmap,SummarizedExperiment)
 
-
+setwd("/gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics")
 contr <- "t0" 
 #contr <- "tx" 
 
@@ -22,7 +22,7 @@ p_value <- 0.1 # 0.05
 
 col_gradient <- c("#ffffd4","#fed98e","#fe9929","#d95f0e","#993404")
 
-file_set <- c("mmetsp","jgi","all_det","all_sig")
+file_set <- c("mmetsp","jgi","all_det")
 
 ## Load data
 
@@ -242,60 +242,78 @@ for (i in 1:length(dep_get_results)){
 # Venn by size in nVennR. Venn normal is ggVennDiagram.
 # Venn of detected. GGVenndiagram
 detected_name <- dep_get_results_an |>
-  map(select, name, name_anno,significant) 
+  map(select, name, name_anno,T2_vs_T0_significant,
+        T4_vs_T0_significant,T6_vs_T0_significant,T8_vs_T0_significant,significant) 
 
 jgi_det <- detected_name[[2]] |> 
-        mutate(jgiset_name=name) |>
-        dplyr::rename(jgi_significant=significant)|>
-        select(name,jgiset_name,jgi_significant) # 3006, S=394
+        dplyr::rename(jgiset_name=name)  # T=3006, S=394
+names(jgi_det) <- gsub("significant", "significant_J", names(jgi_det))
+
 
 mmetsp_det <- detected_name[[1]] |>
-  dplyr::rename(mmetspset_name=name)|>
-    dplyr::rename(name=name_anno)|>
-    dplyr::rename(mmetsp_significant=significant)|>
-    select(name,mmetspset_name,mmetsp_significant) # 3298
+  dplyr::rename(mmetspset_name=name) # T=3298, S=530
+names(mmetsp_det) <- gsub("significant", "significant_M", names(mmetsp_det))
 
- mmetsp_det$name[mmetsp_det$name |> table() |> sort() >1] # 39 MMETSP with more than 1 JGI
+multijgi_mmetsp <- mmetsp_det$name_anno |> table() >1
+multijgi_mmetsp_n <- names(multijgi_mmetsp)[multijgi_mmetsp]  # 39 JGI with more than 1 MMETSP
+mmetsp_det |> filter(name_anno %in% multijgi_mmetsp_n) |> select(mmetspset_name) |> distinct() |> dim() #83 MMETSP
+count <- mmetsp_det |> filter(name_anno %in% multijgi_mmetsp_n)|>
+group_by(name_anno)|> summarise(total_mmetsp = n())
 
-save(mmetsp_det,file="test.R")
+multimmetsp_det <- mmetsp_det |> filter(name_anno %in% multijgi_mmetsp_n)|>
+group_by(name_anno)|>summarise(mmetsp_name_c=paste0(mmetspset_name,collapse=";"),
+                          mmetsp_T2_significant=paste0(T2_vs_T0_significant_M,collapse=";"),
+                          mmetsp_T4_significant=paste0(T4_vs_T0_significant_M,collapse=";"),
+                          mmetsp_T6_significant=paste0(T6_vs_T0_significant_M,collapse=";"),
+                          mmetsp_T8_significant=paste0(T8_vs_T0_significant_M,collapse=";"),
+                          mmetsp_significant=paste0(significant_M,collapse=";"))|>
+                          mutate(any_sig_mmetsp=str_detect(mmetsp_significant,"TRUE"))
 
-mmestp_sum <- mmetsp_det %>%
- group_by(mmetspset_name) %>%
- summarise(name_s = paste0(name,collapse=";"), .groups = "drop")
+multimap<-left_join(multimmetsp_det,count,by="name_anno")
 
-
-combined_det <- full_join(mmetsp_det,jgi_det,by="name") |>
-distinct() |>
-arrange(name)|>
-mutate(type=ifelse(!is.na(mmetspset_name) & is.na(jgiset_name),"MMETSP_only",
-        ifelse(!is.na(mmetspset_name) & !is.na(jgiset_name),"MMETSP-JGI",
-        ifelse(is.na(mmetspset_name) & !is.na(jgiset_name), "JGI_only","error"))))
-
-combined_det |> dim() # 3787
-combined_det$name[combined_det$name |> table() |> sort() >1] # 39 MMETSP with more than 1 JGI
-
-combined_det |> filter(type=="JGI_only") |> select(name) |> pull()  |> unique() #489
-combined_det |> filter(type=="MMETSP_only") |> select(name) |> pull() |> unique() #737
-combined_det |> filter(type=="MMETSP-JGI") |> select(mmetspset_name) |> pull() |> unique() #2555
+multimap <- left_join(multimap,jgi_det,by="name_anno") |>
+      mutate(both_significant=ifelse(is.na(significant_J),NA,
+            ifelse(any_sig_mmetsp==TRUE & significant_J ==TRUE,TRUE,FALSE)))
+multimap |> write.csv("multimap.csv", row.names = FALSE)
 
 
+# Single map proteins:
+single_map_M <- mmetsp_det |> filter(!name_anno %in% multijgi_mmetsp_n) |> filter(!str_detect(name_anno,"A"))
+single_map_J <- jgi_det |> filter(!name_anno %in% multijgi_mmetsp_n)
 
+mmetsp_only <- mmetsp_det |> filter(str_detect(name_anno,"A")) #309
+mmetsp_only |> filter(significant_M==TRUE) |> dim() #43
+mmetsp_only |> filter(significant_M==FALSE) |> dim() #266
 
+combined_det_single <- full_join(single_map_M,single_map_J,by="name_anno") |>
+      mutate(both_significant=ifelse(is.na(significant_J),NA,
+            ifelse(is.na(significant_M),NA,
+            ifelse(significant_M==TRUE & significant_J ==TRUE,TRUE,FALSE))))
 
+combined_det_single |> filter(significant_M==TRUE & significant_J ==TRUE) |> dim() # 295
+combined_det_single |> filter(significant_M==FALSE & significant_J ==FALSE) |> dim() #1990
+combined_det_single |> filter(significant_M==TRUE & significant_J ==FALSE) |> dim() # 148
+combined_det_single |> filter(significant_M==FALSE & significant_J ==TRUE) |> dim() # 50
 
-## Previous
-mmetsp_det_M <- mmetsp_det[str_detect(mmetsp_det,"A")]
-mmetsp_det_MAP <- mmetsp_det[str_detect(mmetsp_det,"A",negate=TRUE)]
+combined_det_single |> filter(significant_M==TRUE & is.na(significant_J)) |> filter(!str_detect(name_anno,"A")) |> dim() # 31
+combined_det_single |> filter(significant_M==FALSE & is.na(significant_J)) |> filter(!str_detect(name_anno,"A")) |> dim() # 392
 
-setdiff(mmetsp_det,jgi_det) |>length()
+combined_det_single |> filter(is.na(significant_M) & significant_J==TRUE) |> dim() # 41
+combined_det_single |> filter(is.na(significant_M) & significant_J==FALSE)|> dim() # 448
+
+# Venn
+mmetsp_det_M <- mmetsp_only$mmetspset_name
+mmetsp_det_MAP <- single_map_M$name_anno # Not multimapped, not MMETSP only
+jgi_det_J <- single_map_J$name_anno
+setdiff(mmetsp_det_MAP,jgi_det_J) |>length() # 423
 
 y <- list("MMETSP only" = mmetsp_det_M,
           "MMETSP mapped" = mmetsp_det_MAP,
-          "JGI" = jgi_det)
+          "JGI" = jgi_det_J)
 # 4D Venn diagram
 venn_detected <- ggVennDiagram(y, lwd = 0.8, lty = 1) +
   scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-  ggtitle("Detected proteins")
+  ggtitle("Single-map Detected proteins")
 
 # Venn of significants
 significant_name <- dep_get_results_an |>
@@ -307,38 +325,33 @@ mmetsp_sig <- significant_name[[1]]|>
   pull()
 # MMETSP proteins that didn't map to JGI
 mmetsp_sig_M <- mmetsp_sig[str_detect(mmetsp_sig,"A")]
-# MMETSP proteins that map to JGI
+# MMETSP proteins that map to JGI. Excluding multimapping JGI
 mmetsp_sig_MAP <- mmetsp_sig[str_detect(mmetsp_sig,"A",negate=TRUE)] 
-jgi_sig <- significant_name[[2]]|> select(name_anno) |> pull()
+mmetsp_sig_MAP_s <- mmetsp_sig_MAP[!mmetsp_sig_MAP %in% multijgi_mmetsp_n]
+jgi_sig <- significant_name[[2]]|> select(name_anno) |> filter(!name_anno %in% multijgi_mmetsp_n) |> pull()
 
-setdiff(mmetsp_sig_MAP,jgi_sig)
+setdiff(mmetsp_sig_MAP_s,jgi_sig) # 179
 
 y <- list("MMETSP only" = mmetsp_sig_M,
-          "MMETSP mapped" = mmetsp_sig_MAP,
+          "MMETSP mapped" = mmetsp_sig_MAP_s,
           "JGI" = jgi_sig)
 # 4D Venn diagram
 venn_significant <- ggVennDiagram(y, lwd = 0.8, lty = 1) +
   scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-  ggtitle("Significant proteins")
+  ggtitle("Single-map Significant proteins")
 
 # Both
-y <- list("MMETSP detected" = mmetsp_det,
-          "JGI detected" = jgi_det,
+y <- list("MMETSP detected" = c(mmetsp_only$mmetspset_name, single_map_M$name_anno),
+          "JGI detected" = jgi_det_J,
           "MMETSP significant" = mmetsp_sig,
           "JGI significant" = jgi_sig)
 
-y <- list("MMETSP only detected" = mmetsp_det_M,
-          "MMETSP mapped detected" = mmetsp_det_MAP,
-          "JGI detected" = jgi_det,
-          "MMETSP only sig" = mmetsp_sig_M,
-          "MMETSP mapped sig" = mmetsp_sig_MAP,
-          "JGI sig" = jgi_sig)
 # 4D Venn diagram
 venn_both <- ggVennDiagram(y, lwd = 0.8, lty = 1) +
   scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-  ggtitle("Proteins")
+  ggtitle("Single-map Detected Proteins")
 
-venn_plot <- wrap_plots(venn_detected, venn_significant,venn_both) +
+venn_plot <- wrap_plots(venn_detected, venn_significant) +
   plot_annotation(tag_levels = "A", tag_suffix = ".") &
   theme(plot.tag.position = c(0, 1),
         plot.tag = element_text(size = 15, hjust = 0, vjust = 0))
@@ -355,15 +368,13 @@ ggsave(
   width = 15,
   height = 13)
 
-
 # Create all_det set:
 # For proteins significant in both take MMETSP version,
 # If there is a dispute (significant/not significant M vs J), take the sign one.
 venn_detected
 
-mmetsp_det_names <- detected_name[[1]] |> 
-  filter(name_anno %in% mmetsp_det) # Detected in MMETSP
-mmetsp_sig_names <- significant_name[[1]] |> 
+mmetsp_det_names <- detected_name[[1]] # 3298 Detected in MMETSP
+mmetsp_sig_names <- significant_name[[1]] |>
   filter(name_anno %in% mmetsp_sig) # Significant in MMETSP
 mmetsp_notsig_names <- setdiff(mmetsp_det_names$name_anno,
                                mmetsp_sig_names$name_anno) # Not significant in MMETSP
@@ -492,27 +503,12 @@ dep_alldet <- rbind(dep1_msig_jsig_names, # SET M: 307 significant both
 dep[[3]] <- dep_alldet
 names(dep)[3] <- "data_alldet"
 
-# Create all_sig set:
-venn_significant
-mmetsp_sig_names <- significant_name[[1]] |> 
-  filter(name_anno %in% mmetsp_sig) |> 
-  select(name) |> pull() # 530
-jgisig_only_ids <- setdiff(jgi_sig,mmetsp_sig_MAP) # 93
-
-dep1_sig <- dep[[1]][rownames(dep[[1]])%in%mmetsp_sig_names,]
-dep2_sig <- dep[[2]][rownames(dep[[2]])%in%jgisig_only_ids,]
-dep[[4]] <- rbind(dep1_sig,dep2_sig)
-names(dep)[4] <- "data_allsig"
-
-dep[[4]] |> dim() # 623
-significant_name
-
 # Count total significant:
 dep |>
   purrr::map(get_results) |>
   purrr::map(filter, significant == TRUE) |>
   purrr::map(summarise, n())
-# 530, 394, 623, 623
+# 530, 394, 623
 
 # 
 x <- dep |>
@@ -758,23 +754,10 @@ for (i in seq_along(results2)){
       select(Protein_id,name_ID,name,name_anno,rownumber,5:67)
     
     results3[[i]] <- rbind(df_mmetsp1,df_jgi1)
-  }else if(names(results2)[i]=="data_allsig"){
-    df_mmetsp <- results2[[i]][str_detect(results2[[i]]$name,"A"),]
-    df_jgi <- results2[[i]][str_detect(results2[[i]]$name,"A",negate=TRUE),]
-    
-    df_mmetsp1 <- left_join(df_mmetsp,mapping1,by="name") |>
-      mutate(name_anno=ifelse(is.na(name_anno),name,name_anno)) |> 
-      select(Protein_id,name_ID,name,name_anno,rownumber,5:67)
-    
-    df_jgi1 <- df_jgi|> 
-      mutate(name_anno=as.character(name)) |> 
-      select(Protein_id,name_ID,name,name_anno,rownumber,5:67)
-    
-    results3[[i]] <- rbind(df_mmetsp1,df_jgi1)
   }
 }
 names(results3) <- c("data_mmetsp","data_jgi",
-                     "data_alldet","data_allsig")
+                     "data_alldet")
 results3 |> map(colnames) |> map(length)
 
 
@@ -835,7 +818,6 @@ results_anno <- results4 |>
 results_anno[[1]]$table <- "mmetsp"
 results_anno[[2]]$table <- "jgi"
 results_anno[[3]]$table <- "alldet"
-results_anno[[4]]$table <- "allsig"
 
 results_anno |> map(colnames)
 results_anno |> map(dim)
@@ -942,350 +924,315 @@ all_mmetsp2 <- results_anno_matched |> left_join(anno1_11, by="qseqid")|>
 select(!qseqid)
 
 results_anno1[[3]] <- rbind(all_jgi2,all_mmetsp2)
-
-# all_sig set
-sig_jgi <- results_anno[[4]][str_detect(results_anno[[4]]$Protein_id,"jgi"),]
-sig_jgi2 <- all_jgi |> left_join(anno2_11, by="name_anno")
-sig_mmetsp <- results_anno[[4]][str_detect(results_anno[[4]]$Protein_id,"mmetsp"),]
-results_anno_matched <- sig_mmetsp %>%
-  rowwise() %>%
-  mutate(match_found = list(anno1_split %>%
-                              filter(str_detect(qseqid_parts, fixed(name))) %>%
-                              pull(qseqid))) %>%
-  unnest(match_found, keep_empty = TRUE) |>
-  dplyr::rename(qseqid=match_found)
-sig_mmetsp2 <- results_anno_matched |> left_join(anno1_11, by="qseqid")|>
-select(!qseqid)
-
-results_anno1[[4]] <- rbind(sig_jgi2,sig_mmetsp2)
 # Annotations added!
+results_anno |> map(filter,significant==TRUE) |> map(dim)
 
 results_anno <- results_anno1
 
 #Venn Diagrams Significant
-setnames <- c("MMETSP","JGI","ALLDET","ALLSIG")
-which_set <- 3
+for (set in 1:3) {
+  if (contr == "t0") {
+    # Significant proteins for each comparison
+    t2v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T2v0.reg == "DOWN" | T2v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T4v0.reg == "DOWN" | T4v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T6v0.reg == "DOWN" | T6v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T8v0.reg == "DOWN" | T8v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    # List for 4D Venn Diagram
+    tx_t0 <- list(
+      "T2 vs T0" = t2v0_sig,
+      "T4 vs T0" = t4v0_sig,
+      "T6 vs T0" = t6v0_sig,
+      "T8 vs T0" = t8v0_sig
+    )
+    
+    # Generate 4D Venn Diagram
+    venn_sig <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " significant single-map proteins"))
+    
+    # Upregulated proteins
+    t2v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T2v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T4v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T6v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T8v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    # List for Upregulated Venn Diagram
+    tx_t0_up <- list(
+      "T2 vs T0" = t2v0_up,
+      "T4 vs T0" = t4v0_up,
+      "T6 vs T0" = t6v0_up,
+      "T8 vs T0" = t8v0_up
+    )
+    
+    # Generate Upregulated Venn Diagram
+    venn_up <- ggVennDiagram(tx_t0_up, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " upregulated single-map proteins"))
+    
+    # Downregulated proteins
+    t2v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T2v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T4v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T6v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(!name_anno %in% multimmetsp_det$name_anno) |>
+      filter(significant == TRUE) |>
+      filter(T8v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    # List for Downregulated Venn Diagram
+    tx_t0_down <- list(
+      "T2 vs T0" = t2v0_down,
+      "T4 vs T0" = t4v0_down,
+      "T6 vs T0" = t6v0_down,
+      "T8 vs T0" = t8v0_down
+    )
+    
+    # Generate Downregulated Venn Diagram
+    venn_down <- ggVennDiagram(tx_t0_down, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " downregulated single-map proteins"))
 
-if (contr == "t0") {
-  t2v0_sig <- results_anno|>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "DOWN" | T2v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "DOWN" | T4v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "DOWN" | T6v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "DOWN" | T8v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  
-  tx_t0 <- list("T2 vs T0" = t2v0_sig[[which_set]],
-                "T4 vs T0" = t4v0_sig[[which_set]],
-                "T6 vs T0" = t6v0_sig[[which_set]],
-                "T8 vs T0" = t8v0_sig[[which_set]])
-  
-  # 4D Venn diagram
-  venn_sig <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," significant proteins"))
-  
-  #Upregulated
-  t2v0_up <- results_anno |>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_up <- results_anno |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_up <- results_anno |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_up <- results_anno |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  
-  tx_t0 <- list("T2 vs T0" = t2v0_up[[which_set]],
-                "T4 vs T0" = t4v0_up[[which_set]],
-                "T6 vs T0" = t6v0_up[[which_set]],
-                "T8 vs T0" = t8v0_up[[which_set]])
-  
-  # 4D Venn diagram
-  venn_up <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," upregulated proteins"))
-  
-  #Downregulated
-  t2v0_down <- results_anno |>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_down <- results_anno |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_down <- results_anno |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_down <- results_anno |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  tx_t0 <- list("T2 vs T0" = t2v0_down[[which_set]],
-                "T4 vs T0" = t4v0_down[[which_set]],
-                "T6 vs T0" = t6v0_down[[which_set]],
-                "T8 vs T0" = t8v0_down[[which_set]])
-  
-  # 4D Venn diagram
-  venn_down <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," downregulated proteins"))
-  
-  layout <- "
-  ###AAAAA###
-  ###AAAAA###
-  BBBBB#CCCCC
-  BBBBB#CCCCC
-  "
-  
-  fig2.1 <- wrap_plots(venn_sig,
-                       venn_up,venn_down)+
-    plot_layout(design=layout)+
-    plot_annotation(tag_levels = "A", tag_suffix = ".") &
-    theme(plot.tag.position = c(0, 1),
-          plot.tag = element_text(size = 15, hjust = 0, vjust = 0))
-  
-  ggsave(
-    filename = paste0("proteomics/img_IndependentSets/indset.fig2_t0_",setnames[which_set],".pdf"),
-    plot = fig2.1,
-    width = 15,
-    height = 13
-  )
-  
-  ggsave(
-    filename = paste0("proteomics/img_IndependentSets/indset.fig2_t0_",setnames[which_set],".png"),
-    plot = fig2.1,
-    width = 15,
-    height = 13,dpi=500
-  )
-  
-  
-} else if (contr == "tx") {
-  t2v0_sig <- results_anno|>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "DOWN" | T2v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "DOWN" | T4v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "DOWN" | T6v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "DOWN" | T8v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v2_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T4v2.reg == "DOWN" | T4v2.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v4_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T6v4.reg == "DOWN" | T6v4.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v6_sig <- results_anno |>
-    map(ungroup) |>
-    map(filter, T8v6.reg == "DOWN" | T8v6.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  
-  tx_t0 <- list("T2 vs T0" = t2v0_sig[[which_set]],
-                "T4 vs T0" = t4v0_sig[[which_set]],
-                "T6 vs T0" = t6v0_sig[[which_set]],
-                "T8 vs T0" = t8v0_sig[[which_set]])
-  
-  tn2_tn1 <- list("T2 vs T0" = t2v0_sig[[which_set]],
-                  "T4 vs T2" = t4v2_sig[[which_set]],
-                  "T6 vs T4" = t6v4_sig[[which_set]],
-                  "T8 vs T6" = t8v6_sig[[which_set]])
-  
-  # 4D Venn diagram
-  venn_sig <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," Merged significant proteins"))
-  
-  venn_sig2 <- ggVennDiagram(tn2_tn1, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," Merged significant proteins"))
-  
-  #Upregulated
-  t2v0_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v2_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T4v2.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v4_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T6v4.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v6_up <- results4 |>
-    map(ungroup) |>
-    map(filter, T8v6.reg == "UP") |>
-    map(select, name_anno) |>
-    map(pull)
-  
-  tx_t0 <- list("T2 vs T0" = t2v0_up[[which_set]],
-                "T4 vs T0" = t4v0_up[[which_set]],
-                "T6 vs T0" = t6v0_up[[which_set]],
-                "T8 vs T0" = t8v0_up[[which_set]])
-  
-  tn2_tn1 <- list("T2 vs T0" = t2v0_up[[which_set]],
-                  "T4 vs T2" = t4v2_up[[which_set]],
-                  "T6 vs T4" = t6v4_up[[which_set]],
-                  "T8 vs T6" = t8v6_up[[which_set]])
-  
-  
-  # 4D Venn diagram
-  venn_up <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," upregulated proteins"))
-  
-  venn_up2 <- ggVennDiagram(tn2_tn1, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," upregulated proteins"))
-  
-  #Downregulated
-  t2v0_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T2v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v0_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T4v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v0_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T6v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v0_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T8v0.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t4v2_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T4v2.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t6v4_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T6v4.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  t8v6_down <- results4 |>
-    map(ungroup) |>
-    map(filter, T8v6.reg == "DOWN") |>
-    map(select, name_anno) |>
-    map(pull)
-  tx_t0 <- list("T2 vs T0" = t2v0_down[[which_set]],
-                "T4 vs T0" = t4v0_down[[which_set]],
-                "T6 vs T0" = t6v0_down[[which_set]],
-                "T8 vs T0" = t8v0_down[[which_set]])
-  
-  tn2_tn1 <- list("T2 vs T0" = t2v0_down[[which_set]],
-                  "T4 vs T2" = t4v2_down[[which_set]],
-                  "T6 vs T4" = t6v4_down[[which_set]],
-                  "T8 vs T6" = t8v6_down[[which_set]])
-  
-  # 4D Venn diagram
-  venn_down <- ggVennDiagram(tx_t0, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle(paste(setnames[which_set]," downregulated proteins"))
-  
-  venn_down2 <- ggVennDiagram(tn2_tn1, lwd = 0.8, lty = 1) +
-    scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
-    ggtitle("Merged downregulated proteins")
-  
-  layout <- "
-  ###AAAAA###
-  ###AAAAA###
-  BBBBB#CCCCC
-  BBBBB#CCCCC
-  "
-  
-  fig2.2 <- wrap_plots(venn_sig2,
-                       venn_up2,venn_down2)+
-    plot_annotation(tag_levels = "A", tag_suffix = ".") &
-    plot_layout(design=layout)+
-    theme(plot.tag.position = c(0, 1),
-          plot.tag = element_text(size = 15, hjust = 0, vjust = 0))
-  
-  ggsave(
-    filename = paste0("proteomics/img_IndependentSets/indset.fig2_tx_",setnames[which_set],".pdf"),
-    plot = fig2.2,
-    width = 15,
-    height = 13
-  )
-  
-  ggsave(
-    filename = paste0("proteomics/img_IndependentSets/indset.fig2_tx_",setnames[which_set],".png"),
-    plot = fig2.2,
-    width = 15,
-    height = 13,dpi=500
-  )
-} 
+        # Combine plots
+    layout <- "
+    ###AAAAA###
+    ###AAAAA###
+    BBBBB#CCCCC
+    BBBBB#CCCCC
+    "
+
+    fig2.1 <- wrap_plots(venn_sig, venn_up, venn_down) +
+      plot_layout(design = layout) +
+      plot_annotation(tag_levels = "A", tag_suffix = ".") &
+      theme(plot.tag.position = c(0, 1),
+            plot.tag = element_text(size = 15, hjust = 0, vjust = 0))
+
+    # Save plots
+    ggsave(
+      filename = paste0("proteomics/img_IndependentSets/indset.fig2_t0_", file_set[set], ".pdf"),
+      plot = fig2.1,
+      width = 15,
+      height = 13
+    )
+    
+  } else if (contr == "tx") {
+    # Similar logic for 'tx' comparisons (e.g., T2v0_sig, T4v0_sig, etc.)
+    t2v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T2v0.reg == "DOWN" | T2v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T4v0.reg == "DOWN" | T4v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T6v0.reg == "DOWN" | T6v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_sig <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T8v0.reg == "DOWN" | T8v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+
+    # List for 4D Venn Diagram (Significant proteins)
+    tx_sig <- list(
+      "T2 vs T0" = t2v0_sig,
+      "T4 vs T0" = t4v0_sig,
+      "T6 vs T0" = t6v0_sig,
+      "T8 vs T0" = t8v0_sig
+    )
+    
+    # Generate 4D Venn Diagram (Significant proteins)
+    venn_sig <- ggVennDiagram(tx_sig, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " significant proteins"))
+    
+    # Upregulated proteins for 'tx'
+    t2v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T2v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T4v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T6v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_up <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T8v0.reg == "UP") |>
+      select(name_anno) |>
+      pull()
+    
+    # List for Upregulated Venn Diagram
+    tx_up <- list(
+      "T2 vs T0" = t2v0_up,
+      "T4 vs T0" = t4v0_up,
+      "T6 vs T0" = t6v0_up,
+      "T8 vs T0" = t8v0_up
+    )
+    
+    # Generate Upregulated Venn Diagram
+    venn_up <- ggVennDiagram(tx_up, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " upregulated proteins"))
+    
+    # Downregulated proteins for 'tx'
+    t2v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T2v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t4v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T4v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t6v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T6v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    t8v0_down <- results_anno[[set]] |>
+      ungroup() |>
+      filter(T8v0.reg == "DOWN") |>
+      select(name_anno) |>
+      pull()
+    
+    # List for Downregulated Venn Diagram
+    tx_down <- list(
+      "T2 vs T0" = t2v0_down,
+      "T4 vs T0" = t4v0_down,
+      "T6 vs T0" = t6v0_down,
+      "T8 vs T0" = t8v0_down
+    )
+    
+    # Generate Downregulated Venn Diagram
+    venn_down <- ggVennDiagram(tx_down, lwd = 0.8, lty = 1) +
+      scale_fill_gradient(low = "#F4FAFE", high = "#4981BF") +
+      ggtitle(paste(file_set[set], " downregulated proteins"))
+
+    # Combine plots
+    layout <- "
+    ###AAAAA###
+    ###AAAAA###
+    BBBBB#CCCCC
+    BBBBB#CCCCC
+    "
+
+    fig2.1 <- wrap_plots(venn_sig, venn_up, venn_down) +
+      plot_layout(design = layout) +
+      plot_annotation(tag_levels = "A", tag_suffix = ".") &
+      theme(plot.tag.position = c(0, 1),
+            plot.tag = element_text(size = 15, hjust = 0, vjust = 0))
+
+    # Save plots
+    ggsave(
+      filename = paste0("proteomics/img_IndependentSets/indset.fig2_tx_", file_set[set], ".pdf"),
+      plot = fig2.1,
+      width = 15,
+      height = 13
+    )
+  }
+}
+
+
+
 
 #################################
 ## DEP plots:
