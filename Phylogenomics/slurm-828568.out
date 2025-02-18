@@ -1,0 +1,1141 @@
+
+OrthoFinder version 2.5.5 Copyright (C) 2014 David Emms
+
+2024-11-08 15:59:18 : Starting OrthoFinder 2.5.5
+96 thread(s) for highly parallel tasks (BLAST searches etc.)
+12 thread(s) for OrthoFinder algorithm
+
+Checking required programs are installed
+----------------------------------------
+Test can run "mcl -h" - ok
+Test can run "mafft" - ok
+Test can run "fasttree" - ok
+
+Dividing up work for BLAST for parallel processing
+--------------------------------------------------
+2024-11-08 15:59:40 : Creating diamond database 1 of 138
+2024-11-08 15:59:40 : Creating diamond database 2 of 138
+2024-11-08 15:59:40 : Creating diamond database 3 of 138
+2024-11-08 15:59:40 : Creating diamond database 4 of 138
+2024-11-08 15:59:40 : Creating diamond database 5 of 138
+2024-11-08 15:59:40 : Creating diamond database 6 of 138
+2024-11-08 15:59:40 : Creating diamond database 7 of 138
+2024-11-08 15:59:40 : Creating diamond database 8 of 138
+2024-11-08 15:59:41 : Creating diamond database 9 of 138
+2024-11-08 15:59:41 : Creating diamond database 10 of 138
+2024-11-08 15:59:41 : Creating diamond database 11 of 138
+2024-11-08 15:59:41 : Creating diamond database 12 of 138
+2024-11-08 15:59:41 : Creating diamond database 13 of 138
+2024-11-08 15:59:41 : Creating diamond database 14 of 138
+2024-11-08 15:59:41 : Creating diamond database 15 of 138
+2024-11-08 15:59:41 : Creating diamond database 16 of 138
+2024-11-08 15:59:42 : Creating diamond database 17 of 138
+2024-11-08 15:59:42 : Creating diamond database 18 of 138
+2024-11-08 15:59:42 : Creating diamond database 19 of 138
+2024-11-08 15:59:42 : Creating diamond database 20 of 138
+2024-11-08 15:59:42 : Creating diamond database 21 of 138
+2024-11-08 15:59:42 : Creating diamond database 22 of 138
+2024-11-08 15:59:42 : Creating diamond database 23 of 138
+2024-11-08 15:59:42 : Creating diamond database 24 of 138
+2024-11-08 15:59:42 : Creating diamond database 25 of 138
+2024-11-08 15:59:43 : Creating diamond database 26 of 138
+2024-11-08 15:59:43 : Creating diamond database 27 of 138
+2024-11-08 15:59:43 : Creating diamond database 28 of 138
+2024-11-08 15:59:43 : Creating diamond database 29 of 138
+2024-11-08 15:59:44 : Creating diamond database 30 of 138
+2024-11-08 15:59:44 : Creating diamond database 31 of 138
+2024-11-08 15:59:44 : Creating diamond database 32 of 138
+2024-11-08 15:59:44 : Creating diamond database 33 of 138
+2024-11-08 15:59:44 : Creating diamond database 34 of 138
+2024-11-08 15:59:44 : Creating diamond database 35 of 138
+2024-11-08 15:59:45 : Creating diamond database 36 of 138
+2024-11-08 15:59:45 : Creating diamond database 37 of 138
+2024-11-08 15:59:45 : Creating diamond database 38 of 138
+2024-11-08 15:59:45 : Creating diamond database 39 of 138
+2024-11-08 15:59:45 : Creating diamond database 40 of 138
+2024-11-08 15:59:45 : Creating diamond database 41 of 138
+2024-11-08 15:59:45 : Creating diamond database 42 of 138
+2024-11-08 15:59:45 : Creating diamond database 43 of 138
+2024-11-08 15:59:46 : Creating diamond database 44 of 138
+2024-11-08 15:59:46 : Creating diamond database 45 of 138
+2024-11-08 15:59:46 : Creating diamond database 46 of 138
+2024-11-08 15:59:46 : Creating diamond database 47 of 138
+2024-11-08 15:59:46 : Creating diamond database 48 of 138
+2024-11-08 15:59:46 : Creating diamond database 49 of 138
+2024-11-08 15:59:47 : Creating diamond database 50 of 138
+2024-11-08 15:59:47 : Creating diamond database 51 of 138
+2024-11-08 15:59:47 : Creating diamond database 52 of 138
+2024-11-08 15:59:47 : Creating diamond database 53 of 138
+2024-11-08 15:59:47 : Creating diamond database 54 of 138
+2024-11-08 15:59:47 : Creating diamond database 55 of 138
+2024-11-08 15:59:47 : Creating diamond database 56 of 138
+2024-11-08 15:59:47 : Creating diamond database 57 of 138
+2024-11-08 15:59:48 : Creating diamond database 58 of 138
+2024-11-08 15:59:48 : Creating diamond database 59 of 138
+2024-11-08 15:59:48 : Creating diamond database 60 of 138
+2024-11-08 15:59:48 : Creating diamond database 61 of 138
+2024-11-08 15:59:48 : Creating diamond database 62 of 138
+2024-11-08 15:59:48 : Creating diamond database 63 of 138
+2024-11-08 15:59:49 : Creating diamond database 64 of 138
+2024-11-08 15:59:49 : Creating diamond database 65 of 138
+2024-11-08 15:59:49 : Creating diamond database 66 of 138
+2024-11-08 15:59:50 : Creating diamond database 67 of 138
+2024-11-08 15:59:50 : Creating diamond database 68 of 138
+2024-11-08 15:59:50 : Creating diamond database 69 of 138
+2024-11-08 15:59:51 : Creating diamond database 70 of 138
+2024-11-08 15:59:51 : Creating diamond database 71 of 138
+2024-11-08 15:59:51 : Creating diamond database 72 of 138
+2024-11-08 15:59:51 : Creating diamond database 73 of 138
+2024-11-08 15:59:51 : Creating diamond database 74 of 138
+2024-11-08 15:59:52 : Creating diamond database 75 of 138
+2024-11-08 15:59:52 : Creating diamond database 76 of 138
+2024-11-08 15:59:52 : Creating diamond database 77 of 138
+2024-11-08 15:59:52 : Creating diamond database 78 of 138
+2024-11-08 15:59:52 : Creating diamond database 79 of 138
+2024-11-08 15:59:52 : Creating diamond database 80 of 138
+2024-11-08 15:59:52 : Creating diamond database 81 of 138
+2024-11-08 15:59:52 : Creating diamond database 82 of 138
+2024-11-08 15:59:53 : Creating diamond database 83 of 138
+2024-11-08 15:59:53 : Creating diamond database 84 of 138
+2024-11-08 15:59:53 : Creating diamond database 85 of 138
+2024-11-08 15:59:53 : Creating diamond database 86 of 138
+2024-11-08 15:59:53 : Creating diamond database 87 of 138
+2024-11-08 15:59:54 : Creating diamond database 88 of 138
+2024-11-08 15:59:54 : Creating diamond database 89 of 138
+2024-11-08 15:59:54 : Creating diamond database 90 of 138
+2024-11-08 15:59:54 : Creating diamond database 91 of 138
+2024-11-08 15:59:54 : Creating diamond database 92 of 138
+2024-11-08 15:59:55 : Creating diamond database 93 of 138
+2024-11-08 15:59:55 : Creating diamond database 94 of 138
+2024-11-08 15:59:55 : Creating diamond database 95 of 138
+2024-11-08 15:59:55 : Creating diamond database 96 of 138
+2024-11-08 15:59:55 : Creating diamond database 97 of 138
+2024-11-08 15:59:55 : Creating diamond database 98 of 138
+2024-11-08 15:59:55 : Creating diamond database 99 of 138
+2024-11-08 15:59:55 : Creating diamond database 100 of 138
+2024-11-08 15:59:56 : Creating diamond database 101 of 138
+2024-11-08 15:59:56 : Creating diamond database 102 of 138
+2024-11-08 15:59:56 : Creating diamond database 103 of 138
+2024-11-08 15:59:56 : Creating diamond database 104 of 138
+2024-11-08 15:59:56 : Creating diamond database 105 of 138
+2024-11-08 15:59:56 : Creating diamond database 106 of 138
+2024-11-08 15:59:56 : Creating diamond database 107 of 138
+2024-11-08 15:59:57 : Creating diamond database 108 of 138
+2024-11-08 15:59:57 : Creating diamond database 109 of 138
+2024-11-08 15:59:57 : Creating diamond database 110 of 138
+2024-11-08 15:59:57 : Creating diamond database 111 of 138
+2024-11-08 15:59:57 : Creating diamond database 112 of 138
+2024-11-08 15:59:57 : Creating diamond database 113 of 138
+2024-11-08 15:59:58 : Creating diamond database 114 of 138
+2024-11-08 15:59:58 : Creating diamond database 115 of 138
+2024-11-08 15:59:58 : Creating diamond database 116 of 138
+2024-11-08 15:59:58 : Creating diamond database 117 of 138
+2024-11-08 15:59:58 : Creating diamond database 118 of 138
+2024-11-08 15:59:59 : Creating diamond database 119 of 138
+2024-11-08 15:59:59 : Creating diamond database 120 of 138
+2024-11-08 15:59:59 : Creating diamond database 121 of 138
+2024-11-08 15:59:59 : Creating diamond database 122 of 138
+2024-11-08 15:59:59 : Creating diamond database 123 of 138
+2024-11-08 15:59:59 : Creating diamond database 124 of 138
+2024-11-08 15:59:59 : Creating diamond database 125 of 138
+2024-11-08 15:59:59 : Creating diamond database 126 of 138
+2024-11-08 16:00:00 : Creating diamond database 127 of 138
+2024-11-08 16:00:00 : Creating diamond database 128 of 138
+2024-11-08 16:00:00 : Creating diamond database 129 of 138
+2024-11-08 16:00:00 : Creating diamond database 130 of 138
+2024-11-08 16:00:00 : Creating diamond database 131 of 138
+2024-11-08 16:00:00 : Creating diamond database 132 of 138
+2024-11-08 16:00:00 : Creating diamond database 133 of 138
+2024-11-08 16:00:01 : Creating diamond database 134 of 138
+2024-11-08 16:00:01 : Creating diamond database 135 of 138
+2024-11-08 16:00:01 : Creating diamond database 136 of 138
+2024-11-08 16:00:01 : Creating diamond database 137 of 138
+2024-11-08 16:00:01 : Creating diamond database 138 of 138
+
+Running diamond all-versus-all
+------------------------------
+Using 96 thread(s)
+2024-11-08 16:00:02 : This may take some time....
+2024-11-08 16:00:03 : Done 0 of 19044
+2024-11-08 17:06:14 : Done 1000 of 19044
+2024-11-08 17:39:41 : Done 2000 of 19044
+2024-11-08 18:04:54 : Done 3000 of 19044
+2024-11-08 18:25:51 : Done 4000 of 19044
+2024-11-08 18:42:48 : Done 5000 of 19044
+2024-11-08 18:58:00 : Done 6000 of 19044
+2024-11-08 19:10:57 : Done 7000 of 19044
+2024-11-08 19:22:46 : Done 8000 of 19044
+2024-11-08 19:33:30 : Done 9000 of 19044
+2024-11-08 19:43:31 : Done 10000 of 19044
+2024-11-08 19:52:39 : Done 11000 of 19044
+2024-11-08 20:01:05 : Done 12000 of 19044
+2024-11-08 20:08:58 : Done 13000 of 19044
+2024-11-08 20:16:05 : Done 14000 of 19044
+2024-11-08 20:22:36 : Done 15000 of 19044
+2024-11-08 20:28:40 : Done 16000 of 19044
+2024-11-08 20:34:12 : Done 17000 of 19044
+2024-11-08 20:39:27 : Done 18000 of 19044
+2024-11-08 20:45:04 : Done all-versus-all sequence search
+
+Running OrthoFinder algorithm
+-----------------------------
+2024-11-08 20:45:19 : Initial processing of each species
+2024-11-08 20:46:41 : Initial processing of species 6 complete
+2024-11-08 20:46:51 : Initial processing of species 1 complete
+2024-11-08 20:46:52 : Initial processing of species 5 complete
+2024-11-08 20:47:03 : Initial processing of species 2 complete
+2024-11-08 20:47:04 : Initial processing of species 4 complete
+2024-11-08 20:47:12 : Initial processing of species 7 complete
+2024-11-08 20:47:17 : Initial processing of species 3 complete
+2024-11-08 20:47:30 : Initial processing of species 0 complete
+2024-11-08 20:48:09 : Initial processing of species 8 complete
+2024-11-08 20:48:09 : Initial processing of species 9 complete
+2024-11-08 20:48:18 : Initial processing of species 10 complete
+2024-11-08 20:48:24 : Initial processing of species 12 complete
+2024-11-08 20:48:37 : Initial processing of species 13 complete
+2024-11-08 20:49:11 : Initial processing of species 14 complete
+2024-11-08 20:49:12 : Initial processing of species 17 complete
+2024-11-08 20:49:13 : Initial processing of species 11 complete
+2024-11-08 20:49:35 : Initial processing of species 15 complete
+2024-11-08 20:49:39 : Initial processing of species 16 complete
+2024-11-08 20:49:42 : Initial processing of species 18 complete
+2024-11-08 20:50:20 : Initial processing of species 19 complete
+2024-11-08 20:50:26 : Initial processing of species 20 complete
+2024-11-08 20:51:09 : Initial processing of species 24 complete
+2024-11-08 20:51:44 : Initial processing of species 21 complete
+2024-11-08 20:52:05 : Initial processing of species 23 complete
+2024-11-08 20:52:16 : Initial processing of species 22 complete
+2024-11-08 20:52:31 : Initial processing of species 27 complete
+2024-11-08 20:52:41 : Initial processing of species 25 complete
+2024-11-08 20:53:22 : Initial processing of species 31 complete
+2024-11-08 20:54:18 : Initial processing of species 29 complete
+2024-11-08 20:54:53 : Initial processing of species 32 complete
+2024-11-08 20:55:00 : Initial processing of species 35 complete
+2024-11-08 20:55:59 : Initial processing of species 37 complete
+2024-11-08 20:56:14 : Initial processing of species 38 complete
+2024-11-08 20:56:49 : Initial processing of species 30 complete
+2024-11-08 20:57:10 : Initial processing of species 39 complete
+2024-11-08 20:57:19 : Initial processing of species 34 complete
+2024-11-08 20:58:04 : Initial processing of species 28 complete
+2024-11-08 20:58:05 : Initial processing of species 41 complete
+2024-11-08 20:58:28 : Initial processing of species 42 complete
+2024-11-08 20:59:53 : Initial processing of species 46 complete
+2024-11-08 20:59:58 : Initial processing of species 44 complete
+2024-11-08 21:00:08 : Initial processing of species 40 complete
+2024-11-08 21:00:51 : Initial processing of species 45 complete
+2024-11-08 21:01:12 : Initial processing of species 33 complete
+2024-11-08 21:01:27 : Initial processing of species 49 complete
+2024-11-08 21:01:40 : Initial processing of species 48 complete
+2024-11-08 21:02:03 : Initial processing of species 36 complete
+2024-11-08 21:02:13 : Initial processing of species 43 complete
+2024-11-08 21:02:33 : Initial processing of species 50 complete
+2024-11-08 21:03:24 : Initial processing of species 52 complete
+2024-11-08 21:03:51 : Initial processing of species 54 complete
+2024-11-08 21:04:03 : Initial processing of species 56 complete
+2024-11-08 21:04:39 : Initial processing of species 51 complete
+2024-11-08 21:05:33 : Initial processing of species 57 complete
+2024-11-08 21:05:54 : Initial processing of species 60 complete
+2024-11-08 21:06:25 : Initial processing of species 55 complete
+2024-11-08 21:06:58 : Initial processing of species 61 complete
+2024-11-08 21:07:10 : Initial processing of species 53 complete
+2024-11-08 21:07:17 : Initial processing of species 58 complete
+2024-11-08 21:07:58 : Initial processing of species 59 complete
+2024-11-08 21:08:28 : Initial processing of species 64 complete
+2024-11-08 21:09:01 : Initial processing of species 66 complete
+2024-11-08 21:09:07 : Initial processing of species 63 complete
+2024-11-08 21:09:55 : Initial processing of species 26 complete
+2024-11-08 21:10:25 : Initial processing of species 47 complete
+2024-11-08 21:11:20 : Initial processing of species 71 complete
+2024-11-08 21:12:28 : Initial processing of species 68 complete
+2024-11-08 21:12:33 : Initial processing of species 72 complete
+2024-11-08 21:14:54 : Initial processing of species 75 complete
+2024-11-08 21:15:37 : Initial processing of species 69 complete
+2024-11-08 21:15:57 : Initial processing of species 67 complete
+2024-11-08 21:16:43 : Initial processing of species 76 complete
+2024-11-08 21:17:02 : Initial processing of species 74 complete
+2024-11-08 21:17:24 : Initial processing of species 78 complete
+2024-11-08 21:18:14 : Initial processing of species 79 complete
+2024-11-08 21:18:40 : Initial processing of species 80 complete
+2024-11-08 21:19:01 : Initial processing of species 70 complete
+2024-11-08 21:19:17 : Initial processing of species 81 complete
+2024-11-08 21:20:32 : Initial processing of species 62 complete
+2024-11-08 21:20:37 : Initial processing of species 82 complete
+2024-11-08 21:20:56 : Initial processing of species 83 complete
+2024-11-08 21:22:40 : Initial processing of species 85 complete
+2024-11-08 21:22:47 : Initial processing of species 77 complete
+2024-11-08 21:22:53 : Initial processing of species 73 complete
+2024-11-08 21:22:55 : Initial processing of species 84 complete
+2024-11-08 21:23:42 : Initial processing of species 89 complete
+2024-11-08 21:24:23 : Initial processing of species 91 complete
+2024-11-08 21:24:27 : Initial processing of species 88 complete
+2024-11-08 21:24:40 : Initial processing of species 92 complete
+2024-11-08 21:24:57 : Initial processing of species 93 complete
+2024-11-08 21:25:33 : Initial processing of species 95 complete
+2024-11-08 21:25:36 : Initial processing of species 94 complete
+2024-11-08 21:25:39 : Initial processing of species 87 complete
+2024-11-08 21:26:05 : Initial processing of species 96 complete
+2024-11-08 21:26:58 : Initial processing of species 100 complete
+2024-11-08 21:28:48 : Initial processing of species 97 complete
+2024-11-08 21:29:03 : Initial processing of species 98 complete
+2024-11-08 21:29:42 : Initial processing of species 102 complete
+2024-11-08 21:30:31 : Initial processing of species 104 complete
+2024-11-08 21:31:01 : Initial processing of species 101 complete
+2024-11-08 21:31:30 : Initial processing of species 105 complete
+2024-11-08 21:32:40 : Initial processing of species 99 complete
+2024-11-08 21:32:59 : Initial processing of species 106 complete
+2024-11-08 21:33:08 : Initial processing of species 103 complete
+2024-11-08 21:34:00 : Initial processing of species 109 complete
+2024-11-08 21:34:32 : Initial processing of species 86 complete
+2024-11-08 21:34:32 : Initial processing of species 107 complete
+2024-11-08 21:35:15 : Initial processing of species 108 complete
+2024-11-08 21:35:44 : Initial processing of species 110 complete
+2024-11-08 21:36:03 : Initial processing of species 113 complete
+2024-11-08 21:36:35 : Initial processing of species 114 complete
+2024-11-08 21:37:23 : Initial processing of species 112 complete
+2024-11-08 21:37:44 : Initial processing of species 111 complete
+2024-11-08 21:38:39 : Initial processing of species 116 complete
+2024-11-08 21:38:54 : Initial processing of species 115 complete
+2024-11-08 21:39:20 : Initial processing of species 120 complete
+2024-11-08 21:39:53 : Initial processing of species 118 complete
+2024-11-08 21:39:56 : Initial processing of species 122 complete
+2024-11-08 21:39:57 : Initial processing of species 121 complete
+2024-11-08 21:40:27 : Initial processing of species 90 complete
+2024-11-08 21:40:55 : Initial processing of species 119 complete
+2024-11-08 21:40:58 : Initial processing of species 123 complete
+2024-11-08 21:41:22 : Initial processing of species 126 complete
+2024-11-08 21:41:36 : Initial processing of species 125 complete
+2024-11-08 21:42:01 : Initial processing of species 124 complete
+2024-11-08 21:42:27 : Initial processing of species 127 complete
+2024-11-08 21:42:32 : Initial processing of species 131 complete
+2024-11-08 21:42:35 : Initial processing of species 129 complete
+2024-11-08 21:42:47 : Initial processing of species 128 complete
+2024-11-08 21:42:49 : Initial processing of species 130 complete
+2024-11-08 21:43:23 : Initial processing of species 133 complete
+2024-11-08 21:43:38 : Initial processing of species 135 complete
+2024-11-08 21:43:54 : Initial processing of species 137 complete
+2024-11-08 21:49:17 : Initial processing of species 65 complete
+2024-11-08 21:50:29 : Initial processing of species 132 complete
+2024-11-08 21:50:51 : Initial processing of species 117 complete
+2024-11-08 21:50:53 : Initial processing of species 136 complete
+2024-11-08 22:05:14 : Initial processing of species 134 complete
+2024-11-08 22:14:09 : Connected putative homologues
+2024-11-08 22:14:47 : Written final scores for species 18 to graph file
+2024-11-08 22:14:47 : Written final scores for species 9 to graph file
+2024-11-08 22:14:49 : Written final scores for species 12 to graph file
+2024-11-08 22:14:52 : Written final scores for species 24 to graph file
+2024-11-08 22:14:55 : Written final scores for species 6 to graph file
+2024-11-08 22:14:58 : Written final scores for species 27 to graph file
+2024-11-08 22:15:01 : Written final scores for species 3 to graph file
+2024-11-08 22:15:02 : Written final scores for species 21 to graph file
+2024-11-08 22:15:09 : Written final scores for species 15 to graph file
+2024-11-08 22:15:22 : Written final scores for species 0 to graph file
+2024-11-08 22:15:27 : Written final scores for species 10 to graph file
+2024-11-08 22:15:29 : Written final scores for species 13 to graph file
+2024-11-08 22:15:39 : Written final scores for species 4 to graph file
+2024-11-08 22:15:40 : Written final scores for species 7 to graph file
+2024-11-08 22:15:46 : Written final scores for species 19 to graph file
+2024-11-08 22:15:52 : Written final scores for species 16 to graph file
+2024-11-08 22:15:59 : Written final scores for species 25 to graph file
+2024-11-08 22:16:01 : Written final scores for species 30 to graph file
+2024-11-08 22:16:03 : Written final scores for species 22 to graph file
+2024-11-08 22:16:05 : Written final scores for species 1 to graph file
+2024-11-08 22:16:21 : Written final scores for species 5 to graph file
+2024-11-08 22:16:23 : Written final scores for species 11 to graph file
+2024-11-08 22:16:26 : Written final scores for species 14 to graph file
+2024-11-08 22:16:28 : Written final scores for species 8 to graph file
+2024-11-08 22:16:30 : Written final scores for species 17 to graph file
+2024-11-08 22:16:34 : Written final scores for species 31 to graph file
+2024-11-08 22:16:46 : Written final scores for species 20 to graph file
+2024-11-08 22:16:47 : Written final scores for species 2 to graph file
+2024-11-08 22:16:48 : Written final scores for species 33 to graph file
+2024-11-08 22:16:57 : Written final scores for species 39 to graph file
+2024-11-08 22:17:00 : Written final scores for species 42 to graph file
+2024-11-08 22:17:00 : Written final scores for species 23 to graph file
+2024-11-08 22:17:11 : Written final scores for species 48 to graph file
+2024-11-08 22:17:27 : Written final scores for species 28 to graph file
+2024-11-08 22:17:29 : Written final scores for species 45 to graph file
+2024-11-08 22:17:31 : Written final scores for species 54 to graph file
+2024-11-08 22:17:36 : Written final scores for species 32 to graph file
+2024-11-08 22:17:47 : Written final scores for species 49 to graph file
+2024-11-08 22:17:50 : Written final scores for species 57 to graph file
+2024-11-08 22:18:09 : Written final scores for species 46 to graph file
+2024-11-08 22:18:11 : Written final scores for species 60 to graph file
+2024-11-08 22:18:12 : Written final scores for species 51 to graph file
+2024-11-08 22:18:16 : Written final scores for species 34 to graph file
+2024-11-08 22:18:19 : Written final scores for species 40 to graph file
+2024-11-08 22:18:28 : Written final scores for species 50 to graph file
+2024-11-08 22:18:35 : Written final scores for species 29 to graph file
+2024-11-08 22:18:42 : Written final scores for species 36 to graph file
+2024-11-08 22:18:46 : Written final scores for species 61 to graph file
+2024-11-08 22:18:51 : Written final scores for species 41 to graph file
+2024-11-08 22:18:52 : Written final scores for species 43 to graph file
+2024-11-08 22:19:00 : Written final scores for species 35 to graph file
+2024-11-08 22:19:04 : Written final scores for species 52 to graph file
+2024-11-08 22:19:07 : Written final scores for species 58 to graph file
+2024-11-08 22:19:12 : Written final scores for species 55 to graph file
+2024-11-08 22:19:15 : Written final scores for species 66 to graph file
+2024-11-08 22:19:16 : Written final scores for species 37 to graph file
+2024-11-08 22:19:34 : Written final scores for species 63 to graph file
+2024-11-08 22:19:38 : Written final scores for species 44 to graph file
+2024-11-08 22:19:46 : Written final scores for species 38 to graph file
+2024-11-08 22:19:53 : Written final scores for species 56 to graph file
+2024-11-08 22:19:59 : Written final scores for species 72 to graph file
+2024-11-08 22:20:12 : Written final scores for species 64 to graph file
+2024-11-08 22:20:23 : Written final scores for species 78 to graph file
+2024-11-08 22:20:31 : Written final scores for species 59 to graph file
+2024-11-08 22:20:33 : Written final scores for species 75 to graph file
+2024-11-08 22:20:46 : Written final scores for species 81 to graph file
+2024-11-08 22:20:54 : Written final scores for species 53 to graph file
+2024-11-08 22:21:03 : Written final scores for species 79 to graph file
+2024-11-08 22:21:17 : Written final scores for species 47 to graph file
+2024-11-08 22:21:20 : Written final scores for species 76 to graph file
+2024-11-08 22:21:21 : Written final scores for species 69 to graph file
+2024-11-08 22:21:47 : Written final scores for species 82 to graph file
+2024-11-08 22:21:47 : Written final scores for species 80 to graph file
+2024-11-08 22:21:57 : Written final scores for species 84 to graph file
+2024-11-08 22:21:59 : Written final scores for species 67 to graph file
+2024-11-08 22:22:26 : Written final scores for species 93 to graph file
+2024-11-08 22:22:39 : Written final scores for species 83 to graph file
+2024-11-08 22:22:41 : Written final scores for species 87 to graph file
+2024-11-08 22:22:54 : Written final scores for species 26 to graph file
+2024-11-08 22:23:05 : Written final scores for species 94 to graph file
+2024-11-08 22:23:09 : Written final scores for species 62 to graph file
+2024-11-08 22:23:11 : Written final scores for species 96 to graph file
+2024-11-08 22:23:12 : Written final scores for species 85 to graph file
+2024-11-08 22:23:28 : Written final scores for species 68 to graph file
+2024-11-08 22:23:30 : Written final scores for species 73 to graph file
+2024-11-08 22:23:40 : Written final scores for species 95 to graph file
+2024-11-08 22:23:45 : Written final scores for species 77 to graph file
+2024-11-08 22:24:01 : Written final scores for species 88 to graph file
+2024-11-08 22:24:07 : Written final scores for species 102 to graph file
+2024-11-08 22:24:15 : Written final scores for species 105 to graph file
+2024-11-08 22:24:30 : Written final scores for species 97 to graph file
+2024-11-08 22:24:30 : Written final scores for species 89 to graph file
+2024-11-08 22:24:40 : Written final scores for species 70 to graph file
+2024-11-08 22:25:05 : Written final scores for species 74 to graph file
+2024-11-08 22:25:07 : Written final scores for species 108 to graph file
+2024-11-08 22:25:12 : Written final scores for species 71 to graph file
+2024-11-08 22:25:13 : Written final scores for species 99 to graph file
+2024-11-08 22:25:20 : Written final scores for species 106 to graph file
+2024-11-08 22:25:26 : Written final scores for species 111 to graph file
+2024-11-08 22:25:29 : Written final scores for species 114 to graph file
+2024-11-08 22:25:36 : Written final scores for species 103 to graph file
+2024-11-08 22:25:45 : Written final scores for species 100 to graph file
+2024-11-08 22:25:45 : Written final scores for species 109 to graph file
+2024-11-08 22:25:45 : Written final scores for species 98 to graph file
+2024-11-08 22:25:57 : Written final scores for species 120 to graph file
+2024-11-08 22:26:19 : Written final scores for species 104 to graph file
+2024-11-08 22:26:26 : Written final scores for species 123 to graph file
+2024-11-08 22:26:28 : Written final scores for species 121 to graph file
+2024-11-08 22:26:30 : Written final scores for species 90 to graph file
+2024-11-08 22:26:45 : Written final scores for species 112 to graph file
+2024-11-08 22:26:48 : Written final scores for species 107 to graph file
+2024-11-08 22:26:50 : Written final scores for species 110 to graph file
+2024-11-08 22:26:55 : Written final scores for species 126 to graph file
+2024-11-08 22:26:57 : Written final scores for species 122 to graph file
+2024-11-08 22:27:15 : Written final scores for species 91 to graph file
+2024-11-08 22:27:16 : Written final scores for species 115 to graph file
+2024-11-08 22:27:19 : Written final scores for species 86 to graph file
+2024-11-08 22:27:21 : Written final scores for species 113 to graph file
+2024-11-08 22:27:26 : Written final scores for species 129 to graph file
+2024-11-08 22:27:27 : Written final scores for species 124 to graph file
+2024-11-08 22:27:29 : Written final scores for species 135 to graph file
+2024-11-08 22:27:35 : Written final scores for species 101 to graph file
+2024-11-08 22:27:40 : Written final scores for species 127 to graph file
+2024-11-08 22:27:59 : Written final scores for species 92 to graph file
+2024-11-08 22:28:04 : Written final scores for species 125 to graph file
+2024-11-08 22:28:08 : Written final scores for species 130 to graph file
+2024-11-08 22:28:23 : Written final scores for species 128 to graph file
+2024-11-08 22:28:36 : Written final scores for species 131 to graph file
+2024-11-08 22:28:44 : Written final scores for species 116 to graph file
+2024-11-08 22:29:28 : Written final scores for species 132 to graph file
+2024-11-08 22:29:56 : Written final scores for species 133 to graph file
+2024-11-08 22:30:40 : Written final scores for species 136 to graph file
+2024-11-08 22:30:49 : Written final scores for species 117 to graph file
+2024-11-08 22:31:10 : Written final scores for species 137 to graph file
+2024-11-08 22:32:29 : Written final scores for species 118 to graph file
+2024-11-08 22:32:37 : Written final scores for species 65 to graph file
+2024-11-08 22:33:56 : Written final scores for species 119 to graph file
+2024-11-08 22:37:44 : Written final scores for species 134 to graph file
+
+WARNING: program called by OrthoFinder produced output to stderr
+
+Command: mcl /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov08/WorkingDirectory/OrthoFinder_graph.txt -I 1.5 -o /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov08/WorkingDirectory/clusters_OrthoFinder_I1.5.txt -te 12 -V all
+
+stdout
+------
+b''
+stderr
+------
+b'[mcl] cut <7> instances of overlap\n'
+2024-11-09 01:02:30 : Ran MCL
+
+Writing orthogroups to file
+---------------------------
+OrthoFinder assigned 5092572 genes (91.6% of total) to 307424 orthogroups. Fifty percent of all genes were in orthogroups with 138 or more genes (G50 was 138) and were contained in the largest 7194 orthogroups (O50 was 7194). There were 112 orthogroups with all species present and 0 of these consisted entirely of single-copy genes.
+
+2024-11-09 01:14:24 : Done orthogroups
+
+Analysing Orthogroups
+=====================
+2024-11-09 01:14:36 : Starting MSA/Trees
+Species tree: Using 1327 orthogroups with minimum of 8.0% of species having single-copy genes in any orthogroup
+
+Inferring multiple sequence alignments for species tree
+-------------------------------------------------------
+2024-11-09 01:21:35 : Done 0 of 1327
+2024-11-09 01:21:58 : Done 100 of 1327
+2024-11-09 01:22:18 : Done 200 of 1327
+2024-11-09 01:22:37 : Done 300 of 1327
+2024-11-09 01:22:55 : Done 400 of 1327
+2024-11-09 01:23:10 : Done 500 of 1327
+2024-11-09 01:23:23 : Done 600 of 1327
+2024-11-09 01:23:34 : Done 700 of 1327
+2024-11-09 01:23:45 : Done 800 of 1327
+2024-11-09 01:23:56 : Done 900 of 1327
+2024-11-09 01:24:06 : Done 1000 of 1327
+2024-11-09 01:24:15 : Done 1100 of 1327
+2024-11-09 01:24:23 : Done 1200 of 1327
+
+Inferring remaining multiple sequence alignments and gene trees
+---------------------------------------------------------------
+2024-11-09 01:28:21 : Done 0 of 306098
+2024-11-09 02:02:36 : Done 1000 of 306098
+2024-11-09 07:07:44 : Done 2000 of 306098
+2024-11-09 10:02:01 : Done 3000 of 306098
+2024-11-09 11:55:32 : Done 4000 of 306098
+2024-11-09 12:57:22 : Done 5000 of 306098
+2024-11-09 13:35:46 : Done 6000 of 306098
+2024-11-09 14:01:52 : Done 7000 of 306098
+2024-11-09 14:21:20 : Done 8000 of 306098
+2024-11-09 14:34:29 : Done 9000 of 306098
+2024-11-09 14:43:30 : Done 10000 of 306098
+2024-11-09 14:49:37 : Done 11000 of 306098
+2024-11-09 14:54:12 : Done 12000 of 306098
+2024-11-09 14:57:44 : Done 13000 of 306098
+2024-11-09 15:00:37 : Done 14000 of 306098
+2024-11-09 15:03:07 : Done 15000 of 306098
+2024-11-09 15:05:14 : Done 16000 of 306098
+2024-11-09 15:07:03 : Done 17000 of 306098
+2024-11-09 15:08:45 : Done 18000 of 306098
+2024-11-09 15:10:15 : Done 19000 of 306098
+2024-11-09 15:11:36 : Done 20000 of 306098
+2024-11-09 15:12:56 : Done 21000 of 306098
+2024-11-09 15:14:08 : Done 22000 of 306098
+2024-11-09 15:15:24 : Done 23000 of 306098
+2024-11-09 15:16:38 : Done 24000 of 306098
+2024-11-09 15:17:50 : Done 25000 of 306098
+2024-11-09 15:19:01 : Done 26000 of 306098
+2024-11-09 15:20:10 : Done 27000 of 306098
+2024-11-09 15:21:23 : Done 28000 of 306098
+2024-11-09 15:22:34 : Done 29000 of 306098
+2024-11-09 15:23:45 : Done 30000 of 306098
+2024-11-09 15:24:55 : Done 31000 of 306098
+2024-11-09 15:26:05 : Done 32000 of 306098
+2024-11-09 15:27:12 : Done 33000 of 306098
+2024-11-09 15:28:21 : Done 34000 of 306098
+2024-11-09 15:29:28 : Done 35000 of 306098
+2024-11-09 15:30:35 : Done 36000 of 306098
+2024-11-09 15:31:43 : Done 37000 of 306098
+2024-11-09 15:32:49 : Done 38000 of 306098
+2024-11-09 15:33:55 : Done 39000 of 306098
+2024-11-09 15:35:00 : Done 40000 of 306098
+2024-11-09 15:36:06 : Done 41000 of 306098
+2024-11-09 15:37:11 : Done 42000 of 306098
+2024-11-09 15:38:14 : Done 43000 of 306098
+2024-11-09 15:39:17 : Done 44000 of 306098
+2024-11-09 15:40:21 : Done 45000 of 306098
+2024-11-09 15:41:26 : Done 46000 of 306098
+2024-11-09 15:42:28 : Done 47000 of 306098
+2024-11-09 15:43:30 : Done 48000 of 306098
+2024-11-09 15:44:34 : Done 49000 of 306098
+2024-11-09 15:45:37 : Done 50000 of 306098
+2024-11-09 15:46:40 : Done 51000 of 306098
+2024-11-09 15:47:41 : Done 52000 of 306098
+2024-11-09 15:48:44 : Done 53000 of 306098
+2024-11-09 15:49:46 : Done 54000 of 306098
+2024-11-09 15:50:48 : Done 55000 of 306098
+2024-11-09 15:51:52 : Done 56000 of 306098
+2024-11-09 15:52:54 : Done 57000 of 306098
+2024-11-09 15:53:54 : Done 58000 of 306098
+2024-11-09 15:54:56 : Done 59000 of 306098
+2024-11-09 15:55:58 : Done 60000 of 306098
+2024-11-09 15:57:00 : Done 61000 of 306098
+2024-11-09 15:58:03 : Done 62000 of 306098
+2024-11-09 15:59:03 : Done 63000 of 306098
+2024-11-09 16:00:04 : Done 64000 of 306098
+2024-11-09 16:01:04 : Done 65000 of 306098
+2024-11-09 16:02:05 : Done 66000 of 306098
+2024-11-09 16:03:05 : Done 67000 of 306098
+2024-11-09 16:04:07 : Done 68000 of 306098
+2024-11-09 16:05:08 : Done 69000 of 306098
+2024-11-09 16:06:09 : Done 70000 of 306098
+2024-11-09 16:07:10 : Done 71000 of 306098
+2024-11-09 16:08:09 : Done 72000 of 306098
+2024-11-09 16:09:10 : Done 73000 of 306098
+2024-11-09 16:10:09 : Done 74000 of 306098
+2024-11-09 16:11:09 : Done 75000 of 306098
+2024-11-09 16:12:09 : Done 76000 of 306098
+2024-11-09 16:13:10 : Done 77000 of 306098
+2024-11-09 16:14:10 : Done 78000 of 306098
+2024-11-09 16:15:10 : Done 79000 of 306098
+2024-11-09 16:16:11 : Done 80000 of 306098
+2024-11-09 16:17:11 : Done 81000 of 306098
+2024-11-09 16:18:09 : Done 82000 of 306098
+2024-11-09 16:19:09 : Done 83000 of 306098
+2024-11-09 16:20:08 : Done 84000 of 306098
+2024-11-09 16:21:06 : Done 85000 of 306098
+2024-11-09 16:22:06 : Done 86000 of 306098
+2024-11-09 16:23:06 : Done 87000 of 306098
+2024-11-09 16:24:06 : Done 88000 of 306098
+2024-11-09 16:25:07 : Done 89000 of 306098
+2024-11-09 16:26:07 : Done 90000 of 306098
+2024-11-09 16:27:05 : Done 91000 of 306098
+2024-11-09 16:28:05 : Done 92000 of 306098
+2024-11-09 16:29:05 : Done 93000 of 306098
+2024-11-09 16:30:03 : Done 94000 of 306098
+2024-11-09 16:31:02 : Done 95000 of 306098
+2024-11-09 16:32:01 : Done 96000 of 306098
+2024-11-09 16:32:59 : Done 97000 of 306098
+2024-11-09 16:33:58 : Done 98000 of 306098
+2024-11-09 16:34:56 : Done 99000 of 306098
+2024-11-09 16:35:55 : Done 100000 of 306098
+2024-11-09 16:36:54 : Done 101000 of 306098
+2024-11-09 16:37:54 : Done 102000 of 306098
+2024-11-09 16:38:53 : Done 103000 of 306098
+2024-11-09 16:39:52 : Done 104000 of 306098
+2024-11-09 16:40:51 : Done 105000 of 306098
+2024-11-09 16:41:50 : Done 106000 of 306098
+2024-11-09 16:42:48 : Done 107000 of 306098
+2024-11-09 16:43:46 : Done 108000 of 306098
+2024-11-09 16:44:46 : Done 109000 of 306098
+2024-11-09 16:45:45 : Done 110000 of 306098
+2024-11-09 16:46:43 : Done 111000 of 306098
+2024-11-09 16:47:40 : Done 112000 of 306098
+2024-11-09 16:48:38 : Done 113000 of 306098
+2024-11-09 16:49:36 : Done 114000 of 306098
+2024-11-09 16:50:35 : Done 115000 of 306098
+2024-11-09 16:51:34 : Done 116000 of 306098
+2024-11-09 16:52:32 : Done 117000 of 306098
+2024-11-09 16:53:30 : Done 118000 of 306098
+2024-11-09 16:54:28 : Done 119000 of 306098
+2024-11-09 16:55:27 : Done 120000 of 306098
+2024-11-09 16:56:25 : Done 121000 of 306098
+2024-11-09 16:57:24 : Done 122000 of 306098
+2024-11-09 16:58:23 : Done 123000 of 306098
+2024-11-09 16:59:22 : Done 124000 of 306098
+2024-11-09 17:00:20 : Done 125000 of 306098
+2024-11-09 17:01:19 : Done 126000 of 306098
+2024-11-09 17:02:17 : Done 127000 of 306098
+2024-11-09 17:03:16 : Done 128000 of 306098
+2024-11-09 17:04:14 : Done 129000 of 306098
+2024-11-09 17:05:11 : Done 130000 of 306098
+2024-11-09 17:06:10 : Done 131000 of 306098
+2024-11-09 17:07:08 : Done 132000 of 306098
+2024-11-09 17:08:06 : Done 133000 of 306098
+2024-11-09 17:09:03 : Done 134000 of 306098
+2024-11-09 17:10:02 : Done 135000 of 306098
+2024-11-09 17:10:59 : Done 136000 of 306098
+2024-11-09 17:11:56 : Done 137000 of 306098
+2024-11-09 17:12:54 : Done 138000 of 306098
+2024-11-09 17:13:52 : Done 139000 of 306098
+2024-11-09 17:14:50 : Done 140000 of 306098
+2024-11-09 17:15:48 : Done 141000 of 306098
+2024-11-09 17:16:46 : Done 142000 of 306098
+2024-11-09 17:17:43 : Done 143000 of 306098
+2024-11-09 17:18:41 : Done 144000 of 306098
+2024-11-09 17:19:37 : Done 145000 of 306098
+2024-11-09 17:20:35 : Done 146000 of 306098
+2024-11-09 17:21:32 : Done 147000 of 306098
+2024-11-09 17:22:30 : Done 148000 of 306098
+2024-11-09 17:23:27 : Done 149000 of 306098
+2024-11-09 17:24:25 : Done 150000 of 306098
+2024-11-09 17:25:22 : Done 151000 of 306098
+2024-11-09 17:26:20 : Done 152000 of 306098
+2024-11-09 17:27:18 : Done 153000 of 306098
+2024-11-09 17:28:17 : Done 154000 of 306098
+2024-11-09 17:29:15 : Done 155000 of 306098
+2024-11-09 17:30:13 : Done 156000 of 306098
+2024-11-09 17:31:11 : Done 157000 of 306098
+2024-11-09 17:32:08 : Done 158000 of 306098
+2024-11-09 17:33:05 : Done 159000 of 306098
+2024-11-09 17:34:04 : Done 160000 of 306098
+2024-11-09 17:35:01 : Done 161000 of 306098
+2024-11-09 17:35:57 : Done 162000 of 306098
+2024-11-09 17:36:56 : Done 163000 of 306098
+2024-11-09 17:37:52 : Done 164000 of 306098
+2024-11-09 17:38:49 : Done 165000 of 306098
+2024-11-09 17:39:46 : Done 166000 of 306098
+2024-11-09 17:40:43 : Done 167000 of 306098
+2024-11-09 17:41:41 : Done 168000 of 306098
+2024-11-09 17:42:38 : Done 169000 of 306098
+2024-11-09 17:43:35 : Done 170000 of 306098
+2024-11-09 17:44:32 : Done 171000 of 306098
+2024-11-09 17:45:28 : Done 172000 of 306098
+2024-11-09 17:46:26 : Done 173000 of 306098
+2024-11-09 17:47:23 : Done 174000 of 306098
+2024-11-09 17:48:20 : Done 175000 of 306098
+2024-11-09 17:49:18 : Done 176000 of 306098
+2024-11-09 17:50:15 : Done 177000 of 306098
+2024-11-09 17:51:12 : Done 178000 of 306098
+2024-11-09 17:52:09 : Done 179000 of 306098
+2024-11-09 17:53:06 : Done 180000 of 306098
+2024-11-09 17:54:03 : Done 181000 of 306098
+2024-11-09 17:55:00 : Done 182000 of 306098
+2024-11-09 17:55:57 : Done 183000 of 306098
+2024-11-09 17:56:54 : Done 184000 of 306098
+2024-11-09 17:57:51 : Done 185000 of 306098
+2024-11-09 17:58:48 : Done 186000 of 306098
+2024-11-09 17:59:45 : Done 187000 of 306098
+2024-11-09 18:00:43 : Done 188000 of 306098
+2024-11-09 18:01:39 : Done 189000 of 306098
+2024-11-09 18:02:36 : Done 190000 of 306098
+2024-11-09 18:03:33 : Done 191000 of 306098
+2024-11-09 18:04:30 : Done 192000 of 306098
+2024-11-09 18:05:27 : Done 193000 of 306098
+2024-11-09 18:06:24 : Done 194000 of 306098
+2024-11-09 18:07:22 : Done 195000 of 306098
+2024-11-09 18:08:19 : Done 196000 of 306098
+2024-11-09 18:09:16 : Done 197000 of 306098
+2024-11-09 18:10:14 : Done 198000 of 306098
+2024-11-09 18:11:11 : Done 199000 of 306098
+2024-11-09 18:12:10 : Done 200000 of 306098
+2024-11-09 18:13:07 : Done 201000 of 306098
+2024-11-09 18:14:04 : Done 202000 of 306098
+2024-11-09 18:15:01 : Done 203000 of 306098
+2024-11-09 18:15:59 : Done 204000 of 306098
+2024-11-09 18:16:56 : Done 205000 of 306098
+2024-11-09 18:17:53 : Done 206000 of 306098
+2024-11-09 18:18:51 : Done 207000 of 306098
+2024-11-09 18:19:48 : Done 208000 of 306098
+2024-11-09 18:20:45 : Done 209000 of 306098
+2024-11-09 18:21:41 : Done 210000 of 306098
+2024-11-09 18:22:38 : Done 211000 of 306098
+2024-11-09 18:23:36 : Done 212000 of 306098
+2024-11-09 18:24:25 : Done 213000 of 306098
+2024-11-09 18:25:14 : Done 214000 of 306098
+2024-11-09 18:26:01 : Done 215000 of 306098
+2024-11-09 18:26:49 : Done 216000 of 306098
+2024-11-09 18:27:37 : Done 217000 of 306098
+2024-11-09 18:28:24 : Done 218000 of 306098
+2024-11-09 18:29:13 : Done 219000 of 306098
+2024-11-09 18:30:00 : Done 220000 of 306098
+2024-11-09 18:30:48 : Done 221000 of 306098
+2024-11-09 18:31:37 : Done 222000 of 306098
+2024-11-09 18:32:25 : Done 223000 of 306098
+2024-11-09 18:33:13 : Done 224000 of 306098
+2024-11-09 18:34:01 : Done 225000 of 306098
+2024-11-09 18:34:49 : Done 226000 of 306098
+2024-11-09 18:35:36 : Done 227000 of 306098
+2024-11-09 18:36:24 : Done 228000 of 306098
+2024-11-09 18:37:12 : Done 229000 of 306098
+2024-11-09 18:38:00 : Done 230000 of 306098
+2024-11-09 18:38:47 : Done 231000 of 306098
+2024-11-09 18:39:36 : Done 232000 of 306098
+2024-11-09 18:40:25 : Done 233000 of 306098
+2024-11-09 18:41:12 : Done 234000 of 306098
+2024-11-09 18:42:01 : Done 235000 of 306098
+2024-11-09 18:42:49 : Done 236000 of 306098
+2024-11-09 18:43:36 : Done 237000 of 306098
+2024-11-09 18:44:25 : Done 238000 of 306098
+2024-11-09 18:45:13 : Done 239000 of 306098
+2024-11-09 18:46:00 : Done 240000 of 306098
+2024-11-09 18:46:48 : Done 241000 of 306098
+2024-11-09 18:47:36 : Done 242000 of 306098
+2024-11-09 18:48:25 : Done 243000 of 306098
+2024-11-09 18:49:12 : Done 244000 of 306098
+2024-11-09 18:50:00 : Done 245000 of 306098
+2024-11-09 18:50:48 : Done 246000 of 306098
+2024-11-09 18:51:36 : Done 247000 of 306098
+2024-11-09 18:52:24 : Done 248000 of 306098
+2024-11-09 18:53:12 : Done 249000 of 306098
+2024-11-09 18:54:00 : Done 250000 of 306098
+2024-11-09 18:54:48 : Done 251000 of 306098
+2024-11-09 18:55:35 : Done 252000 of 306098
+2024-11-09 18:56:24 : Done 253000 of 306098
+2024-11-09 18:57:11 : Done 254000 of 306098
+2024-11-09 18:57:59 : Done 255000 of 306098
+2024-11-09 18:58:47 : Done 256000 of 306098
+2024-11-09 18:59:35 : Done 257000 of 306098
+2024-11-09 19:00:23 : Done 258000 of 306098
+2024-11-09 19:01:10 : Done 259000 of 306098
+2024-11-09 19:01:59 : Done 260000 of 306098
+2024-11-09 19:02:47 : Done 261000 of 306098
+2024-11-09 19:03:35 : Done 262000 of 306098
+2024-11-09 19:04:22 : Done 263000 of 306098
+2024-11-09 19:05:10 : Done 264000 of 306098
+2024-11-09 19:05:58 : Done 265000 of 306098
+2024-11-09 19:06:47 : Done 266000 of 306098
+2024-11-09 19:07:34 : Done 267000 of 306098
+2024-11-09 19:08:22 : Done 268000 of 306098
+2024-11-09 19:09:10 : Done 269000 of 306098
+2024-11-09 19:09:58 : Done 270000 of 306098
+2024-11-09 19:10:46 : Done 271000 of 306098
+2024-11-09 19:11:34 : Done 272000 of 306098
+2024-11-09 19:12:21 : Done 273000 of 306098
+2024-11-09 19:13:10 : Done 274000 of 306098
+2024-11-09 19:13:57 : Done 275000 of 306098
+2024-11-09 19:14:45 : Done 276000 of 306098
+2024-11-09 19:15:33 : Done 277000 of 306098
+2024-11-09 19:16:21 : Done 278000 of 306098
+2024-11-09 19:17:09 : Done 279000 of 306098
+2024-11-09 19:17:57 : Done 280000 of 306098
+2024-11-09 19:18:44 : Done 281000 of 306098
+2024-11-09 19:19:33 : Done 282000 of 306098
+2024-11-09 19:20:21 : Done 283000 of 306098
+2024-11-09 19:21:09 : Done 284000 of 306098
+2024-11-09 19:21:56 : Done 285000 of 306098
+2024-11-09 19:22:45 : Done 286000 of 306098
+2024-11-09 19:23:32 : Done 287000 of 306098
+2024-11-09 19:24:20 : Done 288000 of 306098
+2024-11-09 19:25:08 : Done 289000 of 306098
+2024-11-09 19:25:56 : Done 290000 of 306098
+2024-11-09 19:26:44 : Done 291000 of 306098
+2024-11-09 19:27:32 : Done 292000 of 306098
+2024-11-09 19:28:20 : Done 293000 of 306098
+2024-11-09 19:29:08 : Done 294000 of 306098
+2024-11-09 19:29:56 : Done 295000 of 306098
+2024-11-09 19:30:43 : Done 296000 of 306098
+2024-11-09 19:31:31 : Done 297000 of 306098
+2024-11-09 19:32:19 : Done 298000 of 306098
+2024-11-09 19:33:07 : Done 299000 of 306098
+2024-11-09 19:33:55 : Done 300000 of 306098
+2024-11-09 19:34:43 : Done 301000 of 306098
+2024-11-09 19:35:30 : Done 302000 of 306098
+2024-11-09 19:36:18 : Done 303000 of 306098
+2024-11-09 19:37:07 : Done 304000 of 306098
+2024-11-09 19:37:55 : Done 305000 of 306098
+2024-11-09 19:38:43 : Done 306000 of 306098
+2024-11-09 22:12:19 : Done MSA/Trees
+
+Best outgroup(s) for species tree
+---------------------------------
+2024-11-09 22:12:19 : Starting STRIDE
+2024-11-09 22:14:01 : Done STRIDE
+Observed 2975 well-supported, non-terminal duplications. 2975 support the best roots and 0 contradict them.
+Best outgroups for species tree:
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.nst.Eukaryota.Chromeraceae.Chromera.velia, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.nitzschioides, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Synedropsis.cf..recta, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassiothrix.antarctica, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.frauenfeldii
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Rhabdonematales.Grammatophoraceae.Grammatophora.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.nitzschioides, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Rhabdonematales.Grammatophoraceae.Grammatophora.oceanica, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Synedropsis.cf..recta, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.frauenfeldii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Tryblionella.compressa, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassiothrix.antarctica, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Licmophorales.Licmophoraceae.Licmophora.paradoxa
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Staurosiraceae, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae
+  prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae
+  prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Cylindrotheca.closterium
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.hystrix
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX
+  prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Lamiales.Bignoniaceae.Handroanthus.impetiginosus, prot.nst.Eukaryota.Chlorophyta.Chlorophyceae.Chlamydomonadales.Chlamydomonadaceae.Chlamydomonas.chlamydogama, prot.nst.Eukaryota.Streptophyta.Bryopsida.Funariales.Funariaceae.Physcomitrella.patens, prot.nst.Eukaryota.Cryptophyta.Cryptomonadales.Hemiselmidaceae.Hemiselmis.rufescens, prot.nst.Eukaryota.Cryptophyta.Pyrenomonadales.Pyrenomonadaceae.Rhodomonas.salina, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Vitales.Vitaceae.Vitis.vinifera
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Staurosiraceae, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae, prot.nst.Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.nitzschioides, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Synedropsis.cf..recta, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.frauenfeldii, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassiothrix.antarctica, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata
+  prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298
+  prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Dictyochophyceae.Florenciellales
+  prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus
+  prot.nst.Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica
+  prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Staurosiraceae
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum
+  prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Cylindrotheca.closterium, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.inermis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Naviculaceae.Craspedostauros.australis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.alata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Stauroneidaceae.Stauroneis.constricta
+  prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Thalassiophysales.Catenulaceae.Amphora.coffeiformis
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis
+  prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Tryblionella.compressa, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Rhabdonematales.Grammatophoraceae.Grammatophora.oceanica
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.nst.Eukaryota.Chlorophyta.Chlorophyceae.Chlamydomonadales.Chlamydomonadaceae.Chlamydomonas.chlamydogama, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.nst.Eukaryota.Cryptophyta.Pyrenomonadales.Pyrenomonadaceae.Rhodomonas.salina, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Vitales.Vitaceae.Vitis.vinifera, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Lamiales.Bignoniaceae.Handroanthus.impetiginosus, prot.nst.Eukaryota.Streptophyta.Bryopsida.Funariales.Funariaceae.Physcomitrella.patens, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.nst.Eukaryota.Cryptophyta.Cryptomonadales.Hemiselmidaceae.Hemiselmis.rufescens, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.nst.Eukaryota.Cryptophyta.Cryptomonadales.Hemiselmidaceae.Hemiselmis.rufescens, prot.nst.Eukaryota.Cryptophyta.Pyrenomonadales.Pyrenomonadaceae.Rhodomonas.salina
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Naviculaceae.Craspedostauros.australis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Stauroneidaceae.Stauroneis.constricta
+  prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus
+  prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum
+  prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Asterionellopsis.glacialis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae
+  prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis
+  prot.str.Eukaryota.Bigyra.Bicosoecida
+  prot.nst.Eukaryota.Chordata.Mammalia.Rodentia.Muridae.Mus.musculus, prot.str.Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, prot.nst.Eukaryota.Arthropoda.Insecta.Diptera.Drosophilidae.Drosophila.melanogaster, prot.nst.Eukaryota.Rotifera.Monogononta.Ploima.Brachionidae.Brachionus.plicatilis, prot.nst.Eukaryota.Annelida.Polychaeta.Capitellida.Capitellidae.Capitella.teleta, prot.nst.Eukaryota.Arthropoda.Arachnida.Araneae.Eresidae.Stegodyphus.mimosarum, prot.nst.Eukaryota.Arthropoda.Malacostraca.Decapoda.Penaeidae.Penaeus.vannamei
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.nst.Eukaryota.Tardigrada.Eutardigrada.Parachela.Ramazzottiidae.Ramazzottius.varieornatus
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Thalassiophysales.Catenulaceae.Amphora.coffeiformis, prot.nst.Eukaryota.Tardigrada.Eutardigrada.Parachela.Ramazzottiidae.Ramazzottius.varieornatus
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.nitzschioides, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Synedropsis.cf..recta, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.frauenfeldii, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassiothrix.antarctica, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Licmophorales.Licmophoraceae.Licmophora.paradoxa
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica
+  prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Dictyochophyceae.Florenciellales
+  prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.hystrix, prot.nst.Eukaryota.Chlorophyta.Chlorophyceae.Chlamydomonadales.Chlamydomonadaceae.Chlamydomonas.chlamydogama, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.nst.Eukaryota.Cryptophyta.Pyrenomonadales.Pyrenomonadaceae.Rhodomonas.salina, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.nst.Eukaryota.Arthropoda.Arachnida.Araneae.Eresidae.Stegodyphus.mimosarum, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.nst.Eukaryota.Arthropoda.Malacostraca.Decapoda.Penaeidae.Penaeus.vannamei, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Vitales.Vitaceae.Vitis.vinifera, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.nst.Eukaryota.Tardigrada.Eutardigrada.Parachela.Ramazzottiidae.Ramazzottius.varieornatus, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.nst.Eukaryota.Annelida.Polychaeta.Capitellida.Capitellidae.Capitella.teleta, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Thalassiophysales.Catenulaceae.Amphora.coffeiformis, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Lamiales.Bignoniaceae.Handroanthus.impetiginosus, prot.nst.Eukaryota.Chordata.Mammalia.Rodentia.Muridae.Mus.musculus, prot.nst.Eukaryota.Streptophyta.Bryopsida.Funariales.Funariaceae.Physcomitrella.patens, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.nst.Eukaryota.Arthropoda.Insecta.Diptera.Drosophilidae.Drosophila.melanogaster, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.nst.Eukaryota.Rotifera.Monogononta.Ploima.Brachionidae.Brachionus.plicatilis, prot.nst.Eukaryota.Cryptophyta.Cryptomonadales.Hemiselmidaceae.Hemiselmis.rufescens, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum
+  prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis
+  prot.nst.Eukaryota.Chlorophyta.Chlorophyceae.Chlamydomonadales.Chlamydomonadaceae.Chlamydomonas.chlamydogama, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Lamiales.Bignoniaceae.Handroanthus.impetiginosus, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Vitales.Vitaceae.Vitis.vinifera, prot.nst.Eukaryota.Streptophyta.Bryopsida.Funariales.Funariaceae.Physcomitrella.patens
+  prot.str.Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Phaeodactylaceae.Phaeodactylum.tricornutum, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.nst.Eukaryota.Chlorophyta.Chlorophyceae.Chlamydomonadales.Chlamydomonadaceae.Chlamydomonas.chlamydogama, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, prot.nst.Eukaryota.Cryptophyta.Pyrenomonadales.Pyrenomonadaceae.Rhodomonas.salina, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae, prot.str.Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, prot.nst.Eukaryota.Arthropoda.Arachnida.Araneae.Eresidae.Stegodyphus.mimosarum, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.nst.Eukaryota.Arthropoda.Malacostraca.Decapoda.Penaeidae.Penaeus.vannamei, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, prot.str.Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Vitales.Vitaceae.Vitis.vinifera, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, prot.str.Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, prot.str.Eukaryota.Dictyochophyceae.Florenciellales, prot.nst.Eukaryota.Tardigrada.Eutardigrada.Parachela.Ramazzottiidae.Ramazzottius.varieornatus, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, prot.str.Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.nst.Eukaryota.Annelida.Polychaeta.Capitellida.Capitellidae.Capitella.teleta, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Thalassiophysales.Catenulaceae.Amphora.coffeiformis, prot.nst.Eukaryota.Streptophyta.Magnoliopsida.Lamiales.Bignoniaceae.Handroanthus.impetiginosus, prot.nst.Eukaryota.Chordata.Mammalia.Rodentia.Muridae.Mus.musculus, prot.nst.Eukaryota.Streptophyta.Bryopsida.Funariales.Funariaceae.Physcomitrella.patens, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Striatellales.Striatellaceae.Striatella.unipunctata, prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.nst.Eukaryota.Arthropoda.Insecta.Diptera.Drosophilidae.Drosophila.melanogaster, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, prot.nst.Eukaryota.Rotifera.Monogononta.Ploima.Brachionidae.Brachionus.plicatilis, prot.nst.Eukaryota.Cryptophyta.Cryptomonadales.Hemiselmidaceae.Hemiselmis.rufescens, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, prot.str.Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, prot.str.Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, prot.str.Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, prot.str.Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Tryblionella.compressa
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum, prot.nst.Eukaryota.Chromeraceae.Chromera.velia
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Licmophorales.Licmophoraceae.Licmophora.paradoxa
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum, prot.nst.Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.nst.Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, prot.str.Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum
+  prot.nst.Eukaryota.Rhodophyta.Rhodellophyceae.Rhodellales.Rhodellaceae.Rhodella.violacea, prot.str.Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae.Amphiprora.paludosa, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Amphipleuraceae
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.nitzschioides, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Rhabdonematales.Grammatophoraceae.Grammatophora.oceanica, prot.nst.Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica, prot.str.Eukaryota.Bigyra.Bicosoecida, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Synedropsis.cf..recta, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassionema.frauenfeldii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Tryblionella.compressa, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Cyclophora.tenuis, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Thalassionemales.Thalassionemataceae.Thalassiothrix.antarctica, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Licmophorales.Licmophoraceae.Licmophora.paradoxa, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Staurosiraceae, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae
+  prot.nst.Eukaryota.Chromeraceae.Chromera.velia
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.alata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.inermis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica
+  prot.str.Eukaryota.Bigyra.Bicosoecida, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Staurosiraceae, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae, prot.nst.Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Asterionellopsis.glacialis
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.inermis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Cylindrotheca.closterium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Stauroneidaceae.Stauroneis.constricta, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.nst.Eukaryota.Chromeraceae.Chromera.velia, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.alata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Asterionellopsis.glacialis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Naviculales.Naviculaceae.Craspedostauros.australis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Cylindrotheca.closterium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.nst.Eukaryota.Chromeraceae.Chromera.velia, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Asterionellopsis.glacialis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Cyclophorales.Cyclophoraceae.Astrosyne.radiata, prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Stephanodiscaceae.Cyclotella.meneghiniana, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Cylindrotheca.closterium, prot.nst.Eukaryota.Ciliophora.Spirotrichea.Euplotida.Euplotidae.Euplotes.focardii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.menzelii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Detonula.confervacea, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.gravida, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.pseudonana, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.grethae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.rotula, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.costatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.punctigera, prot.str.Eukaryota.Bacillariophyta.Fragilariophyceae.Fragilariales.Fragilariaceae.Asterionellopsis.glacialis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.dohrnii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.aff..antarctica, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.marinoi, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.minuscula, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Skeletonemataceae.Skeletonema.japonicum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Thalassiosira.oceanica
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.alata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Proboscia.inermis
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus
+  prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus
+  prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Hemiaulales.Hemiaulaceae.Eucampia.antarctica, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, prot.str.Eukaryota.Synurophyceae.Synurales.Mallomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, prot.str.Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae, prot.str.Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.arenysensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Fragilariopsis.kerguelensis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.pungens, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.heimii, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.fraudulenta, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.australis, prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Bacillariales.Bacillariaceae.Pseudo-nitzschia.delicatissima
+  prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris
+  prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Minutocellus.polymorphus
+  prot.str.Eukaryota.Synchromophyceae.Synchroma.pusillum
+  prot.str.Eukaryota.Bacillariophyta.Bacillariophyceae.Thalassiophysales.Catenulaceae.Amphora.coffeiformis, prot.nst.Eukaryota.Chordata.Mammalia.Rodentia.Muridae.Mus.musculus, prot.str.Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, prot.nst.Eukaryota.Arthropoda.Insecta.Diptera.Drosophilidae.Drosophila.melanogaster, prot.nst.Eukaryota.Rotifera.Monogononta.Ploima.Brachionidae.Brachionus.plicatilis, prot.nst.Eukaryota.Annelida.Polychaeta.Capitellida.Capitellidae.Capitella.teleta, prot.nst.Eukaryota.Arthropoda.Arachnida.Araneae.Eresidae.Stegodyphus.mimosarum, prot.nst.Eukaryota.Arthropoda.Malacostraca.Decapoda.Penaeidae.Penaeus.vannamei, prot.nst.Eukaryota.Tardigrada.Eutardigrada.Parachela.Ramazzottiidae.Ramazzottius.varieornatus
+  prot.str.Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae
+  prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae, prot.str.Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica
+  prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, prot.str.Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum
+
+WARNING: Multiple potential species tree roots were identified, only one will be analyed.
+
+Reconciling gene trees and species tree
+---------------------------------------
+Outgroup: prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Triceratium.dubium, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Eupodiscales.Eupodiscaceae, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Melosirales.Stephanopyxidaceae.Stephanopyxis.turris, prot.nst.Eukaryota.Basidiomycota.Pucciniomycetes.Pucciniales.Pucciniaceae.Puccinia.coronata, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.dichaeta, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Thalassiosirales.Thalassiosiraceae.Conticribra.weissflogii, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Cymatosirales.Cymatosiraceae.Extubocellulus.spinifer, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Lithodesmiales.Lithodesmiaceae.Ditylum.brightwellii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.debilis, prot.str.Eukaryota.Bacillariophyta.Mediophyceae.Triceratiales.Triceratiaceae.Trieres.chinensis, prot.nst.Eukaryota.Chromeraceae.Chromera.velia, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.sp..GSL56, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Coscinodiscales.Coscinodiscaceae.Coscinodiscus.wailesii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Corethrales.Corethraceae.Corethron.pennatum, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.affinis, prot.nst.Eukaryota.Ascomycota.Leotiomycetes.Helotiales.Hyaloscyphaceae.Hyaloscypha.variabilis, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Agaricales.Psathyrellaceae.Coprinellus.micaceus, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Attheyaceae.Attheya.septentrionalis, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae, prot.nst.Eukaryota.Ascomycota.Dothideomycetes.Capnodiales.Teratosphaeriaceae.Hortaea.werneckii, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Rhizosoleniales.Rhizosoleniaceae.Rhizosolenia.setigera, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.curvisetus, prot.nst.Eukaryota.Discosea.Flabellinia.Dactylopodida.Paramoebidae.Paramoeba.aestuarina, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Leptocylindrales.Leptocylindraceae.Leptocylindrus.danicus, prot.nst.Eukaryota.Basidiomycota.Agaricomycetes.Cantharellales.Ceratobasidiaceae.Rhizoctonia.solani, prot.str.Eukaryota.Bacillariophyta.Coscinodiscophyceae.Chaetocerotales.Chaetocerotaceae.Chaetoceros.neogracilis
+2024-11-09 22:14:01 : Starting Recon and orthologues
+2024-11-09 22:14:01 : Starting OF Orthologues
+2024-11-09 22:14:23 : Done 0 of 165376
+2024-11-09 22:15:24 : Done 1000 of 165376
+2024-11-09 22:15:47 : Done 2000 of 165376
+2024-11-09 22:16:05 : Done 3000 of 165376
+2024-11-09 22:16:21 : Done 4000 of 165376
+2024-11-09 22:16:32 : Done 5000 of 165376
+2024-11-09 22:16:42 : Done 6000 of 165376
+2024-11-09 22:16:50 : Done 7000 of 165376
+2024-11-09 22:16:57 : Done 8000 of 165376
+2024-11-09 22:17:01 : Done 9000 of 165376
+2024-11-09 22:17:05 : Done 10000 of 165376
+2024-11-09 22:17:08 : Done 11000 of 165376
+2024-11-09 22:17:11 : Done 12000 of 165376
+2024-11-09 22:17:13 : Done 13000 of 165376
+2024-11-09 22:17:15 : Done 14000 of 165376
+2024-11-09 22:17:17 : Done 15000 of 165376
+2024-11-09 22:17:19 : Done 16000 of 165376
+2024-11-09 22:17:20 : Done 17000 of 165376
+2024-11-09 22:17:22 : Done 18000 of 165376
+2024-11-09 22:17:23 : Done 19000 of 165376
+2024-11-09 22:17:24 : Done 20000 of 165376
+2024-11-09 22:17:26 : Done 21000 of 165376
+2024-11-09 22:17:27 : Done 22000 of 165376
+2024-11-09 22:17:29 : Done 23000 of 165376
+2024-11-09 22:17:30 : Done 24000 of 165376
+2024-11-09 22:17:32 : Done 25000 of 165376
+2024-11-09 22:17:33 : Done 26000 of 165376
+2024-11-09 22:17:35 : Done 27000 of 165376
+2024-11-09 22:17:36 : Done 28000 of 165376
+2024-11-09 22:17:38 : Done 29000 of 165376
+2024-11-09 22:17:39 : Done 30000 of 165376
+2024-11-09 22:17:40 : Done 31000 of 165376
+2024-11-09 22:17:41 : Done 32000 of 165376
+2024-11-09 22:17:43 : Done 33000 of 165376
+2024-11-09 22:17:44 : Done 34000 of 165376
+2024-11-09 22:17:45 : Done 35000 of 165376
+2024-11-09 22:17:46 : Done 36000 of 165376
+2024-11-09 22:17:47 : Done 37000 of 165376
+2024-11-09 22:17:48 : Done 38000 of 165376
+2024-11-09 22:17:49 : Done 39000 of 165376
+2024-11-09 22:17:50 : Done 40000 of 165376
+2024-11-09 22:17:50 : Done 41000 of 165376
+2024-11-09 22:17:51 : Done 42000 of 165376
+2024-11-09 22:17:52 : Done 43000 of 165376
+2024-11-09 22:17:53 : Done 44000 of 165376
+2024-11-09 22:17:54 : Done 45000 of 165376
+2024-11-09 22:17:54 : Done 46000 of 165376
+2024-11-09 22:17:55 : Done 47000 of 165376
+2024-11-09 22:17:56 : Done 48000 of 165376
+2024-11-09 22:17:57 : Done 49000 of 165376
+2024-11-09 22:17:58 : Done 50000 of 165376
+2024-11-09 22:17:58 : Done 51000 of 165376
+2024-11-09 22:17:59 : Done 52000 of 165376
+2024-11-09 22:18:00 : Done 53000 of 165376
+2024-11-09 22:18:01 : Done 54000 of 165376
+2024-11-09 22:18:01 : Done 55000 of 165376
+2024-11-09 22:18:02 : Done 56000 of 165376
+2024-11-09 22:18:03 : Done 57000 of 165376
+2024-11-09 22:18:04 : Done 58000 of 165376
+2024-11-09 22:18:04 : Done 59000 of 165376
+2024-11-09 22:18:05 : Done 60000 of 165376
+2024-11-09 22:18:06 : Done 61000 of 165376
+2024-11-09 22:18:06 : Done 62000 of 165376
+2024-11-09 22:18:07 : Done 63000 of 165376
+2024-11-09 22:18:08 : Done 64000 of 165376
+2024-11-09 22:18:08 : Done 65000 of 165376
+2024-11-09 22:18:09 : Done 66000 of 165376
+2024-11-09 22:18:10 : Done 67000 of 165376
+2024-11-09 22:18:11 : Done 68000 of 165376
+2024-11-09 22:18:11 : Done 69000 of 165376
+2024-11-09 22:18:12 : Done 70000 of 165376
+2024-11-09 22:18:13 : Done 71000 of 165376
+2024-11-09 22:18:14 : Done 72000 of 165376
+2024-11-09 22:18:14 : Done 73000 of 165376
+2024-11-09 22:18:15 : Done 74000 of 165376
+2024-11-09 22:18:16 : Done 75000 of 165376
+2024-11-09 22:18:16 : Done 76000 of 165376
+2024-11-09 22:18:17 : Done 77000 of 165376
+2024-11-09 22:18:18 : Done 78000 of 165376
+2024-11-09 22:18:19 : Done 79000 of 165376
+2024-11-09 22:18:20 : Done 80000 of 165376
+2024-11-09 22:18:20 : Done 81000 of 165376
+2024-11-09 22:18:21 : Done 82000 of 165376
+2024-11-09 22:18:21 : Done 83000 of 165376
+2024-11-09 22:18:22 : Done 84000 of 165376
+2024-11-09 22:18:23 : Done 85000 of 165376
+2024-11-09 22:18:24 : Done 86000 of 165376
+2024-11-09 22:18:24 : Done 87000 of 165376
+2024-11-09 22:18:25 : Done 88000 of 165376
+2024-11-09 22:18:26 : Done 89000 of 165376
+2024-11-09 22:18:26 : Done 90000 of 165376
+2024-11-09 22:18:27 : Done 91000 of 165376
+2024-11-09 22:18:28 : Done 92000 of 165376
+2024-11-09 22:18:28 : Done 93000 of 165376
+2024-11-09 22:18:29 : Done 94000 of 165376
+2024-11-09 22:18:30 : Done 95000 of 165376
+2024-11-09 22:18:30 : Done 96000 of 165376
+2024-11-09 22:18:31 : Done 97000 of 165376
+2024-11-09 22:18:32 : Done 98000 of 165376
+2024-11-09 22:18:32 : Done 99000 of 165376
+2024-11-09 22:18:33 : Done 100000 of 165376
+2024-11-09 22:18:34 : Done 101000 of 165376
+2024-11-09 22:18:34 : Done 102000 of 165376
+2024-11-09 22:18:35 : Done 103000 of 165376
+2024-11-09 22:18:36 : Done 104000 of 165376
+2024-11-09 22:18:37 : Done 105000 of 165376
+2024-11-09 22:18:37 : Done 106000 of 165376
+2024-11-09 22:18:38 : Done 107000 of 165376
+2024-11-09 22:18:39 : Done 108000 of 165376
+2024-11-09 22:18:39 : Done 109000 of 165376
+2024-11-09 22:18:40 : Done 110000 of 165376
+2024-11-09 22:18:41 : Done 111000 of 165376
+2024-11-09 22:18:41 : Done 112000 of 165376
+2024-11-09 22:18:42 : Done 113000 of 165376
+2024-11-09 22:18:42 : Done 114000 of 165376
+2024-11-09 22:18:43 : Done 115000 of 165376
+2024-11-09 22:18:43 : Done 116000 of 165376
+2024-11-09 22:18:44 : Done 117000 of 165376
+2024-11-09 22:18:45 : Done 118000 of 165376
+2024-11-09 22:18:45 : Done 119000 of 165376
+2024-11-09 22:18:46 : Done 120000 of 165376
+2024-11-09 22:18:47 : Done 121000 of 165376
+2024-11-09 22:18:47 : Done 122000 of 165376
+2024-11-09 22:18:48 : Done 123000 of 165376
+2024-11-09 22:18:48 : Done 124000 of 165376
+2024-11-09 22:18:49 : Done 125000 of 165376
+2024-11-09 22:18:50 : Done 126000 of 165376
+2024-11-09 22:18:50 : Done 127000 of 165376
+2024-11-09 22:18:51 : Done 128000 of 165376
+2024-11-09 22:18:51 : Done 129000 of 165376
+2024-11-09 22:18:52 : Done 130000 of 165376
+2024-11-09 22:18:53 : Done 131000 of 165376
+2024-11-09 22:18:54 : Done 132000 of 165376
+2024-11-09 22:18:54 : Done 133000 of 165376
+2024-11-09 22:18:55 : Done 134000 of 165376
+2024-11-09 22:18:55 : Done 135000 of 165376
+2024-11-09 22:18:56 : Done 136000 of 165376
+2024-11-09 22:18:57 : Done 137000 of 165376
+2024-11-09 22:18:57 : Done 138000 of 165376
+2024-11-09 22:18:58 : Done 139000 of 165376
+2024-11-09 22:18:58 : Done 140000 of 165376
+2024-11-09 22:18:59 : Done 141000 of 165376
+2024-11-09 22:18:59 : Done 142000 of 165376
+2024-11-09 22:19:00 : Done 143000 of 165376
+2024-11-09 22:19:00 : Done 144000 of 165376
+2024-11-09 22:19:01 : Done 145000 of 165376
+2024-11-09 22:19:02 : Done 146000 of 165376
+2024-11-09 22:19:02 : Done 147000 of 165376
+2024-11-09 22:19:03 : Done 148000 of 165376
+2024-11-09 22:19:03 : Done 149000 of 165376
+2024-11-09 22:19:04 : Done 150000 of 165376
+2024-11-09 22:19:04 : Done 151000 of 165376
+2024-11-09 22:19:05 : Done 152000 of 165376
+2024-11-09 22:19:06 : Done 153000 of 165376
+2024-11-09 22:19:06 : Done 154000 of 165376
+2024-11-09 22:19:07 : Done 155000 of 165376
+2024-11-09 22:19:08 : Done 156000 of 165376
+2024-11-09 22:19:08 : Done 157000 of 165376
+2024-11-09 22:19:09 : Done 158000 of 165376
+2024-11-09 22:19:10 : Done 159000 of 165376
+2024-11-09 22:19:10 : Done 160000 of 165376
+2024-11-09 22:19:11 : Done 161000 of 165376
+2024-11-09 22:19:12 : Done 162000 of 165376
+2024-11-09 22:19:12 : Done 163000 of 165376
+2024-11-09 22:19:13 : Done 164000 of 165376
+2024-11-09 22:19:13 : Done 165000 of 165376
+2024-11-09 22:19:15 : Done OF Orthologues
+
+Writing results files
+=====================
+2024-11-09 22:21:45 : Done orthologues
+
+Results:
+    /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov08/
+
+CITATION:
+ When publishing work that uses OrthoFinder please cite:
+ Emms D.M. & Kelly S. (2019), Genome Biology 20:238
+
+ If you use the species tree in your work then please also cite:
+ Emms D.M. & Kelly S. (2017), MBE 34(12): 3267-3278
+ Emms D.M. & Kelly S. (2018), bioRxiv https://doi.org/10.1101/267914

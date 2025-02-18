@@ -1,0 +1,135 @@
+
+OrthoFinder version 2.5.5 Copyright (C) 2014 David Emms
+
+2024-11-11 10:27:22 : Starting OrthoFinder 2.5.5
+96 thread(s) for highly parallel tasks (BLAST searches etc.)
+12 thread(s) for OrthoFinder algorithm
+
+Checking required programs are installed
+----------------------------------------
+Test can run "mcl -h" - ok
+Test can run "mafft" - ok
+Test can run "fasttree" - ok
+
+Dividing up work for BLAST for parallel processing
+--------------------------------------------------
+2024-11-11 10:27:44 : Creating diamond database 1 of 113
+2024-11-11 10:27:44 : Creating diamond database 2 of 113
+2024-11-11 10:27:45 : Creating diamond database 3 of 113
+2024-11-11 10:27:45 : Creating diamond database 4 of 113
+2024-11-11 10:27:45 : Creating diamond database 5 of 113
+2024-11-11 10:27:46 : Creating diamond database 6 of 113
+2024-11-11 10:27:46 : Creating diamond database 7 of 113
+2024-11-11 10:27:46 : Creating diamond database 8 of 113
+2024-11-11 10:27:46 : Creating diamond database 9 of 113
+2024-11-11 10:27:46 : Creating diamond database 10 of 113
+2024-11-11 10:27:46 : Creating diamond database 11 of 113
+2024-11-11 10:27:47 : Creating diamond database 12 of 113
+2024-11-11 10:27:47 : Creating diamond database 13 of 113
+2024-11-11 10:27:47 : Creating diamond database 14 of 113
+2024-11-11 10:27:47 : Creating diamond database 15 of 113
+2024-11-11 10:27:47 : Creating diamond database 16 of 113
+2024-11-11 10:27:47 : Creating diamond database 17 of 113
+2024-11-11 10:27:47 : Creating diamond database 18 of 113
+2024-11-11 10:27:47 : Creating diamond database 19 of 113
+2024-11-11 10:27:48 : Creating diamond database 20 of 113
+2024-11-11 10:27:48 : Creating diamond database 21 of 113
+2024-11-11 10:27:48 : Creating diamond database 22 of 113
+2024-11-11 10:27:48 : Creating diamond database 23 of 113
+2024-11-11 10:27:48 : Creating diamond database 24 of 113
+2024-11-11 10:27:48 : Creating diamond database 25 of 113
+2024-11-11 10:27:48 : Creating diamond database 26 of 113
+2024-11-11 10:27:49 : Creating diamond database 27 of 113
+2024-11-11 10:27:49 : Creating diamond database 28 of 113
+2024-11-11 10:27:49 : Creating diamond database 29 of 113
+2024-11-11 10:27:49 : Creating diamond database 30 of 113
+2024-11-11 10:27:49 : Creating diamond database 31 of 113
+2024-11-11 10:27:49 : Creating diamond database 32 of 113
+2024-11-11 10:27:49 : Creating diamond database 33 of 113
+2024-11-11 10:27:49 : Creating diamond database 34 of 113
+2024-11-11 10:27:50 : Creating diamond database 35 of 113
+2024-11-11 10:27:50 : Creating diamond database 36 of 113
+2024-11-11 10:27:50 : Creating diamond database 37 of 113
+2024-11-11 10:27:50 : Creating diamond database 38 of 113
+2024-11-11 10:27:50 : Creating diamond database 39 of 113
+2024-11-11 10:27:50 : Creating diamond database 40 of 113
+2024-11-11 10:27:51 : Creating diamond database 41 of 113
+2024-11-11 10:27:52 : Creating diamond database 42 of 113
+2024-11-11 10:27:52 : Creating diamond database 43 of 113
+2024-11-11 10:27:52 : Creating diamond database 44 of 113
+2024-11-11 10:27:52 : Creating diamond database 45 of 113
+2024-11-11 10:27:52 : Creating diamond database 46 of 113
+2024-11-11 10:27:53 : Creating diamond database 47 of 113
+2024-11-11 10:27:53 : Creating diamond database 48 of 113
+2024-11-11 10:27:53 : Creating diamond database 49 of 113
+2024-11-11 10:27:53 : Creating diamond database 50 of 113
+2024-11-11 10:27:53 : Creating diamond database 51 of 113
+2024-11-11 10:27:53 : Creating diamond database 52 of 113
+2024-11-11 10:27:53 : Creating diamond database 53 of 113
+2024-11-11 10:27:54 : Creating diamond database 54 of 113
+2024-11-11 10:27:54 : Creating diamond database 55 of 113
+2024-11-11 10:27:54 : Creating diamond database 56 of 113
+2024-11-11 10:27:54 : Creating diamond database 57 of 113
+2024-11-11 10:27:54 : Creating diamond database 58 of 113
+2024-11-11 10:27:54 : Creating diamond database 59 of 113
+2024-11-11 10:27:54 : Creating diamond database 60 of 113
+2024-11-11 10:27:55 : Creating diamond database 61 of 113
+2024-11-11 10:27:55 : Creating diamond database 62 of 113
+2024-11-11 10:27:55 : Creating diamond database 63 of 113
+2024-11-11 10:27:55 : Creating diamond database 64 of 113
+2024-11-11 10:27:55 : Creating diamond database 65 of 113
+2024-11-11 10:27:56 : Creating diamond database 66 of 113
+2024-11-11 10:27:56 : Creating diamond database 67 of 113
+2024-11-11 10:27:56 : Creating diamond database 68 of 113
+2024-11-11 10:27:56 : Creating diamond database 69 of 113
+2024-11-11 10:27:56 : Creating diamond database 70 of 113
+2024-11-11 10:27:56 : Creating diamond database 71 of 113
+2024-11-11 10:27:56 : Creating diamond database 72 of 113
+2024-11-11 10:27:57 : Creating diamond database 73 of 113
+2024-11-11 10:27:57 : Creating diamond database 74 of 113
+2024-11-11 10:27:57 : Creating diamond database 75 of 113
+2024-11-11 10:27:57 : Creating diamond database 76 of 113
+2024-11-11 10:27:57 : Creating diamond database 77 of 113
+2024-11-11 10:27:57 : Creating diamond database 78 of 113
+2024-11-11 10:27:58 : Creating diamond database 79 of 113
+2024-11-11 10:27:58 : Creating diamond database 80 of 113
+2024-11-11 10:27:58 : Creating diamond database 81 of 113
+2024-11-11 10:27:58 : Creating diamond database 82 of 113
+2024-11-11 10:27:58 : Creating diamond database 83 of 113
+2024-11-11 10:27:58 : Creating diamond database 84 of 113
+2024-11-11 10:27:58 : Creating diamond database 85 of 113
+2024-11-11 10:27:59 : Creating diamond database 86 of 113
+2024-11-11 10:27:59 : Creating diamond database 87 of 113
+2024-11-11 10:27:59 : Creating diamond database 88 of 113
+2024-11-11 10:27:59 : Creating diamond database 89 of 113
+2024-11-11 10:27:59 : Creating diamond database 90 of 113
+2024-11-11 10:27:59 : Creating diamond database 91 of 113
+2024-11-11 10:28:00 : Creating diamond database 92 of 113
+2024-11-11 10:28:00 : Creating diamond database 93 of 113
+2024-11-11 10:28:00 : Creating diamond database 94 of 113
+2024-11-11 10:28:00 : Creating diamond database 95 of 113
+2024-11-11 10:28:00 : Creating diamond database 96 of 113
+2024-11-11 10:28:01 : Creating diamond database 97 of 113
+2024-11-11 10:28:01 : Creating diamond database 98 of 113
+2024-11-11 10:28:01 : Creating diamond database 99 of 113
+2024-11-11 10:28:01 : Creating diamond database 100 of 113
+2024-11-11 10:28:01 : Creating diamond database 101 of 113
+2024-11-11 10:28:01 : Creating diamond database 102 of 113
+2024-11-11 10:28:01 : Creating diamond database 103 of 113
+2024-11-11 10:28:01 : Creating diamond database 104 of 113
+2024-11-11 10:28:01 : Creating diamond database 105 of 113
+2024-11-11 10:28:02 : Creating diamond database 106 of 113
+2024-11-11 10:28:02 : Creating diamond database 107 of 113
+2024-11-11 10:28:02 : Creating diamond database 108 of 113
+2024-11-11 10:28:02 : Creating diamond database 109 of 113
+2024-11-11 10:28:02 : Creating diamond database 110 of 113
+2024-11-11 10:28:03 : Creating diamond database 111 of 113
+2024-11-11 10:28:03 : Creating diamond database 112 of 113
+2024-11-11 10:28:03 : Creating diamond database 113 of 113
+
+Running diamond all-versus-all
+------------------------------
+Using 96 thread(s)
+2024-11-11 10:28:03 : This may take some time....
+2024-11-11 10:28:04 : Done 0 of 12769
+slurmstepd: error: *** JOB 838039 ON dg026 CANCELLED AT 2024-11-11T10:36:02 ***

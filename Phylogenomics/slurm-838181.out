@@ -1,0 +1,1045 @@
+
+OrthoFinder version 2.5.5 Copyright (C) 2014 David Emms
+
+2024-11-11 13:05:48 : Starting OrthoFinder 2.5.5
+96 thread(s) for highly parallel tasks (BLAST searches etc.)
+12 thread(s) for OrthoFinder algorithm
+
+Checking required programs are installed
+----------------------------------------
+Test can run "mcl -h" - ok
+Test can run "mafft" - ok
+Test can run "fasttree" - ok
+
+Dividing up work for BLAST for parallel processing
+--------------------------------------------------
+2024-11-11 13:06:07 : Creating diamond database 1 of 141
+2024-11-11 13:06:07 : Creating diamond database 2 of 141
+2024-11-11 13:06:08 : Creating diamond database 3 of 141
+2024-11-11 13:06:08 : Creating diamond database 4 of 141
+2024-11-11 13:06:08 : Creating diamond database 5 of 141
+2024-11-11 13:06:08 : Creating diamond database 6 of 141
+2024-11-11 13:06:09 : Creating diamond database 7 of 141
+2024-11-11 13:06:09 : Creating diamond database 8 of 141
+2024-11-11 13:06:09 : Creating diamond database 9 of 141
+2024-11-11 13:06:09 : Creating diamond database 10 of 141
+2024-11-11 13:06:09 : Creating diamond database 11 of 141
+2024-11-11 13:06:09 : Creating diamond database 12 of 141
+2024-11-11 13:06:09 : Creating diamond database 13 of 141
+2024-11-11 13:06:09 : Creating diamond database 14 of 141
+2024-11-11 13:06:10 : Creating diamond database 15 of 141
+2024-11-11 13:06:10 : Creating diamond database 16 of 141
+2024-11-11 13:06:10 : Creating diamond database 17 of 141
+2024-11-11 13:06:10 : Creating diamond database 18 of 141
+2024-11-11 13:06:10 : Creating diamond database 19 of 141
+2024-11-11 13:06:10 : Creating diamond database 20 of 141
+2024-11-11 13:06:10 : Creating diamond database 21 of 141
+2024-11-11 13:06:10 : Creating diamond database 22 of 141
+2024-11-11 13:06:11 : Creating diamond database 23 of 141
+2024-11-11 13:06:11 : Creating diamond database 24 of 141
+2024-11-11 13:06:11 : Creating diamond database 25 of 141
+2024-11-11 13:06:11 : Creating diamond database 26 of 141
+2024-11-11 13:06:11 : Creating diamond database 27 of 141
+2024-11-11 13:06:11 : Creating diamond database 28 of 141
+2024-11-11 13:06:11 : Creating diamond database 29 of 141
+2024-11-11 13:06:12 : Creating diamond database 30 of 141
+2024-11-11 13:06:12 : Creating diamond database 31 of 141
+2024-11-11 13:06:12 : Creating diamond database 32 of 141
+2024-11-11 13:06:12 : Creating diamond database 33 of 141
+2024-11-11 13:06:12 : Creating diamond database 34 of 141
+2024-11-11 13:06:12 : Creating diamond database 35 of 141
+2024-11-11 13:06:12 : Creating diamond database 36 of 141
+2024-11-11 13:06:13 : Creating diamond database 37 of 141
+2024-11-11 13:06:13 : Creating diamond database 38 of 141
+2024-11-11 13:06:13 : Creating diamond database 39 of 141
+2024-11-11 13:06:14 : Creating diamond database 40 of 141
+2024-11-11 13:06:14 : Creating diamond database 41 of 141
+2024-11-11 13:06:14 : Creating diamond database 42 of 141
+2024-11-11 13:06:15 : Creating diamond database 43 of 141
+2024-11-11 13:06:15 : Creating diamond database 44 of 141
+2024-11-11 13:06:15 : Creating diamond database 45 of 141
+2024-11-11 13:06:15 : Creating diamond database 46 of 141
+2024-11-11 13:06:15 : Creating diamond database 47 of 141
+2024-11-11 13:06:16 : Creating diamond database 48 of 141
+2024-11-11 13:06:16 : Creating diamond database 49 of 141
+2024-11-11 13:06:16 : Creating diamond database 50 of 141
+2024-11-11 13:06:16 : Creating diamond database 51 of 141
+2024-11-11 13:06:16 : Creating diamond database 52 of 141
+2024-11-11 13:06:16 : Creating diamond database 53 of 141
+2024-11-11 13:06:16 : Creating diamond database 54 of 141
+2024-11-11 13:06:16 : Creating diamond database 55 of 141
+2024-11-11 13:06:17 : Creating diamond database 56 of 141
+2024-11-11 13:06:17 : Creating diamond database 57 of 141
+2024-11-11 13:06:17 : Creating diamond database 58 of 141
+2024-11-11 13:06:17 : Creating diamond database 59 of 141
+2024-11-11 13:06:17 : Creating diamond database 60 of 141
+2024-11-11 13:06:18 : Creating diamond database 61 of 141
+2024-11-11 13:06:18 : Creating diamond database 62 of 141
+2024-11-11 13:06:18 : Creating diamond database 63 of 141
+2024-11-11 13:06:18 : Creating diamond database 64 of 141
+2024-11-11 13:06:18 : Creating diamond database 65 of 141
+2024-11-11 13:06:18 : Creating diamond database 66 of 141
+2024-11-11 13:06:19 : Creating diamond database 67 of 141
+2024-11-11 13:06:19 : Creating diamond database 68 of 141
+2024-11-11 13:06:19 : Creating diamond database 69 of 141
+2024-11-11 13:06:19 : Creating diamond database 70 of 141
+2024-11-11 13:06:19 : Creating diamond database 71 of 141
+2024-11-11 13:06:19 : Creating diamond database 72 of 141
+2024-11-11 13:06:20 : Creating diamond database 73 of 141
+2024-11-11 13:06:20 : Creating diamond database 74 of 141
+2024-11-11 13:06:20 : Creating diamond database 75 of 141
+2024-11-11 13:06:20 : Creating diamond database 76 of 141
+2024-11-11 13:06:20 : Creating diamond database 77 of 141
+2024-11-11 13:06:20 : Creating diamond database 78 of 141
+2024-11-11 13:06:20 : Creating diamond database 79 of 141
+2024-11-11 13:06:20 : Creating diamond database 80 of 141
+2024-11-11 13:06:21 : Creating diamond database 81 of 141
+2024-11-11 13:06:21 : Creating diamond database 82 of 141
+2024-11-11 13:06:21 : Creating diamond database 83 of 141
+2024-11-11 13:06:21 : Creating diamond database 84 of 141
+2024-11-11 13:06:21 : Creating diamond database 85 of 141
+2024-11-11 13:06:21 : Creating diamond database 86 of 141
+2024-11-11 13:06:21 : Creating diamond database 87 of 141
+2024-11-11 13:06:21 : Creating diamond database 88 of 141
+2024-11-11 13:06:22 : Creating diamond database 89 of 141
+2024-11-11 13:06:22 : Creating diamond database 90 of 141
+2024-11-11 13:06:22 : Creating diamond database 91 of 141
+2024-11-11 13:06:22 : Creating diamond database 92 of 141
+2024-11-11 13:06:22 : Creating diamond database 93 of 141
+2024-11-11 13:06:22 : Creating diamond database 94 of 141
+2024-11-11 13:06:22 : Creating diamond database 95 of 141
+2024-11-11 13:06:22 : Creating diamond database 96 of 141
+2024-11-11 13:06:23 : Creating diamond database 97 of 141
+2024-11-11 13:06:23 : Creating diamond database 98 of 141
+2024-11-11 13:06:23 : Creating diamond database 99 of 141
+2024-11-11 13:06:23 : Creating diamond database 100 of 141
+2024-11-11 13:06:23 : Creating diamond database 101 of 141
+2024-11-11 13:06:23 : Creating diamond database 102 of 141
+2024-11-11 13:06:23 : Creating diamond database 103 of 141
+2024-11-11 13:06:23 : Creating diamond database 104 of 141
+2024-11-11 13:06:23 : Creating diamond database 105 of 141
+2024-11-11 13:06:23 : Creating diamond database 106 of 141
+2024-11-11 13:06:23 : Creating diamond database 107 of 141
+2024-11-11 13:06:24 : Creating diamond database 108 of 141
+2024-11-11 13:06:24 : Creating diamond database 109 of 141
+2024-11-11 13:06:24 : Creating diamond database 110 of 141
+2024-11-11 13:06:24 : Creating diamond database 111 of 141
+2024-11-11 13:06:24 : Creating diamond database 112 of 141
+2024-11-11 13:06:24 : Creating diamond database 113 of 141
+2024-11-11 13:06:24 : Creating diamond database 114 of 141
+2024-11-11 13:06:25 : Creating diamond database 115 of 141
+2024-11-11 13:06:25 : Creating diamond database 116 of 141
+2024-11-11 13:06:25 : Creating diamond database 117 of 141
+2024-11-11 13:06:25 : Creating diamond database 118 of 141
+2024-11-11 13:06:25 : Creating diamond database 119 of 141
+2024-11-11 13:06:25 : Creating diamond database 120 of 141
+2024-11-11 13:06:25 : Creating diamond database 121 of 141
+2024-11-11 13:06:25 : Creating diamond database 122 of 141
+2024-11-11 13:06:25 : Creating diamond database 123 of 141
+2024-11-11 13:06:25 : Creating diamond database 124 of 141
+2024-11-11 13:06:26 : Creating diamond database 125 of 141
+2024-11-11 13:06:26 : Creating diamond database 126 of 141
+2024-11-11 13:06:26 : Creating diamond database 127 of 141
+2024-11-11 13:06:26 : Creating diamond database 128 of 141
+2024-11-11 13:06:26 : Creating diamond database 129 of 141
+2024-11-11 13:06:26 : Creating diamond database 130 of 141
+2024-11-11 13:06:26 : Creating diamond database 131 of 141
+2024-11-11 13:06:26 : Creating diamond database 132 of 141
+2024-11-11 13:06:26 : Creating diamond database 133 of 141
+2024-11-11 13:06:27 : Creating diamond database 134 of 141
+2024-11-11 13:06:27 : Creating diamond database 135 of 141
+2024-11-11 13:06:27 : Creating diamond database 136 of 141
+2024-11-11 13:06:27 : Creating diamond database 137 of 141
+2024-11-11 13:06:27 : Creating diamond database 138 of 141
+2024-11-11 13:06:27 : Creating diamond database 139 of 141
+2024-11-11 13:06:28 : Creating diamond database 140 of 141
+2024-11-11 13:06:28 : Creating diamond database 141 of 141
+
+Running diamond all-versus-all
+------------------------------
+Using 96 thread(s)
+2024-11-11 13:06:29 : This may take some time....
+2024-11-11 13:06:29 : Done 0 of 19881
+2024-11-11 14:10:42 : Done 1000 of 19881
+2024-11-11 14:41:36 : Done 2000 of 19881
+2024-11-11 15:05:10 : Done 3000 of 19881
+2024-11-11 15:24:36 : Done 4000 of 19881
+2024-11-11 15:40:05 : Done 5000 of 19881
+2024-11-11 15:53:24 : Done 6000 of 19881
+2024-11-11 16:04:39 : Done 7000 of 19881
+2024-11-11 16:14:40 : Done 8000 of 19881
+2024-11-11 16:23:57 : Done 9000 of 19881
+2024-11-11 16:32:18 : Done 10000 of 19881
+2024-11-11 16:39:51 : Done 11000 of 19881
+2024-11-11 16:47:00 : Done 12000 of 19881
+2024-11-11 16:53:19 : Done 13000 of 19881
+2024-11-11 16:58:55 : Done 14000 of 19881
+2024-11-11 17:04:14 : Done 15000 of 19881
+2024-11-11 17:09:03 : Done 16000 of 19881
+2024-11-11 17:13:32 : Done 17000 of 19881
+2024-11-11 17:17:45 : Done 18000 of 19881
+2024-11-11 17:21:30 : Done 19000 of 19881
+2024-11-11 17:25:03 : Done all-versus-all sequence search
+
+Running OrthoFinder algorithm
+-----------------------------
+2024-11-11 17:25:15 : Initial processing of each species
+2024-11-11 17:25:59 : Initial processing of species 0 complete
+2024-11-11 17:26:32 : Initial processing of species 7 complete
+2024-11-11 17:27:26 : Initial processing of species 3 complete
+2024-11-11 17:27:35 : Initial processing of species 10 complete
+2024-11-11 17:27:36 : Initial processing of species 11 complete
+2024-11-11 17:27:54 : Initial processing of species 8 complete
+2024-11-11 17:28:14 : Initial processing of species 1 complete
+2024-11-11 17:28:36 : Initial processing of species 12 complete
+2024-11-11 17:28:46 : Initial processing of species 13 complete
+2024-11-11 17:28:53 : Initial processing of species 5 complete
+2024-11-11 17:29:06 : Initial processing of species 15 complete
+2024-11-11 17:29:33 : Initial processing of species 16 complete
+2024-11-11 17:29:53 : Initial processing of species 6 complete
+2024-11-11 17:30:30 : Initial processing of species 20 complete
+2024-11-11 17:30:33 : Initial processing of species 18 complete
+2024-11-11 17:31:27 : Initial processing of species 14 complete
+2024-11-11 17:31:33 : Initial processing of species 22 complete
+2024-11-11 17:31:53 : Initial processing of species 19 complete
+2024-11-11 17:32:07 : Initial processing of species 23 complete
+2024-11-11 17:32:36 : Initial processing of species 4 complete
+2024-11-11 17:33:23 : Initial processing of species 25 complete
+2024-11-11 17:33:25 : Initial processing of species 17 complete
+2024-11-11 17:33:34 : Initial processing of species 9 complete
+2024-11-11 17:33:55 : Initial processing of species 27 complete
+2024-11-11 17:33:58 : Initial processing of species 24 complete
+2024-11-11 17:34:04 : Initial processing of species 29 complete
+2024-11-11 17:35:18 : Initial processing of species 33 complete
+2024-11-11 17:35:20 : Initial processing of species 34 complete
+2024-11-11 17:35:29 : Initial processing of species 30 complete
+2024-11-11 17:36:12 : Initial processing of species 28 complete
+2024-11-11 17:36:43 : Initial processing of species 26 complete
+2024-11-11 17:36:46 : Initial processing of species 31 complete
+2024-11-11 17:36:49 : Initial processing of species 37 complete
+2024-11-11 17:37:19 : Initial processing of species 32 complete
+2024-11-11 17:37:54 : Initial processing of species 39 complete
+2024-11-11 17:38:14 : Initial processing of species 36 complete
+2024-11-11 17:39:12 : Initial processing of species 44 complete
+2024-11-11 17:39:48 : Initial processing of species 21 complete
+2024-11-11 17:40:39 : Initial processing of species 45 complete
+2024-11-11 17:40:45 : Initial processing of species 41 complete
+2024-11-11 17:42:06 : Initial processing of species 47 complete
+2024-11-11 17:42:40 : Initial processing of species 48 complete
+2024-11-11 17:43:21 : Initial processing of species 42 complete
+2024-11-11 17:43:28 : Initial processing of species 50 complete
+2024-11-11 17:43:56 : Initial processing of species 2 complete
+2024-11-11 17:44:19 : Initial processing of species 40 complete
+2024-11-11 17:44:29 : Initial processing of species 51 complete
+2024-11-11 17:45:06 : Initial processing of species 52 complete
+2024-11-11 17:45:48 : Initial processing of species 53 complete
+2024-11-11 17:46:12 : Initial processing of species 54 complete
+2024-11-11 17:46:58 : Initial processing of species 43 complete
+2024-11-11 17:47:12 : Initial processing of species 59 complete
+2024-11-11 17:47:47 : Initial processing of species 56 complete
+2024-11-11 17:47:50 : Initial processing of species 49 complete
+2024-11-11 17:48:07 : Initial processing of species 55 complete
+2024-11-11 17:48:09 : Initial processing of species 35 complete
+2024-11-11 17:48:42 : Initial processing of species 61 complete
+2024-11-11 17:49:06 : Initial processing of species 63 complete
+2024-11-11 17:49:23 : Initial processing of species 64 complete
+2024-11-11 17:49:27 : Initial processing of species 62 complete
+2024-11-11 17:49:41 : Initial processing of species 46 complete
+2024-11-11 17:50:40 : Initial processing of species 68 complete
+2024-11-11 17:50:49 : Initial processing of species 58 complete
+2024-11-11 17:51:54 : Initial processing of species 65 complete
+2024-11-11 17:52:08 : Initial processing of species 66 complete
+2024-11-11 17:52:19 : Initial processing of species 72 complete
+2024-11-11 17:52:20 : Initial processing of species 70 complete
+2024-11-11 17:53:35 : Initial processing of species 76 complete
+2024-11-11 17:53:40 : Initial processing of species 73 complete
+2024-11-11 17:54:03 : Initial processing of species 69 complete
+2024-11-11 17:54:23 : Initial processing of species 75 complete
+2024-11-11 17:54:48 : Initial processing of species 71 complete
+2024-11-11 17:54:58 : Initial processing of species 78 complete
+2024-11-11 17:55:13 : Initial processing of species 74 complete
+2024-11-11 17:55:36 : Initial processing of species 79 complete
+2024-11-11 17:55:42 : Initial processing of species 80 complete
+2024-11-11 17:55:49 : Initial processing of species 77 complete
+2024-11-11 17:56:01 : Initial processing of species 67 complete
+2024-11-11 17:56:05 : Initial processing of species 81 complete
+2024-11-11 17:56:21 : Initial processing of species 82 complete
+2024-11-11 17:56:55 : Initial processing of species 84 complete
+2024-11-11 17:57:29 : Initial processing of species 88 complete
+2024-11-11 17:57:31 : Initial processing of species 89 complete
+2024-11-11 17:57:59 : Initial processing of species 90 complete
+2024-11-11 17:58:22 : Initial processing of species 57 complete
+2024-11-11 17:58:25 : Initial processing of species 85 complete
+2024-11-11 17:58:31 : Initial processing of species 91 complete
+2024-11-11 17:58:37 : Initial processing of species 92 complete
+2024-11-11 17:58:56 : Initial processing of species 83 complete
+2024-11-11 17:59:13 : Initial processing of species 95 complete
+2024-11-11 17:59:20 : Initial processing of species 87 complete
+2024-11-11 17:59:54 : Initial processing of species 96 complete
+2024-11-11 17:59:56 : Initial processing of species 98 complete
+2024-11-11 18:00:05 : Initial processing of species 93 complete
+2024-11-11 18:00:06 : Initial processing of species 97 complete
+2024-11-11 18:00:13 : Initial processing of species 86 complete
+2024-11-11 18:00:20 : Initial processing of species 99 complete
+2024-11-11 18:00:50 : Initial processing of species 101 complete
+2024-11-11 18:00:56 : Initial processing of species 102 complete
+2024-11-11 18:01:01 : Initial processing of species 103 complete
+2024-11-11 18:01:08 : Initial processing of species 94 complete
+2024-11-11 18:01:14 : Initial processing of species 100 complete
+2024-11-11 18:01:46 : Initial processing of species 110 complete
+2024-11-11 18:02:01 : Initial processing of species 111 complete
+2024-11-11 18:02:06 : Initial processing of species 104 complete
+2024-11-11 18:02:25 : Initial processing of species 112 complete
+2024-11-11 18:02:33 : Initial processing of species 109 complete
+2024-11-11 18:02:55 : Initial processing of species 113 complete
+2024-11-11 18:03:27 : Initial processing of species 115 complete
+2024-11-11 18:03:42 : Initial processing of species 114 complete
+2024-11-11 18:03:47 : Initial processing of species 105 complete
+2024-11-11 18:04:06 : Initial processing of species 107 complete
+2024-11-11 18:04:09 : Initial processing of species 60 complete
+2024-11-11 18:04:17 : Initial processing of species 116 complete
+2024-11-11 18:04:26 : Initial processing of species 108 complete
+2024-11-11 18:04:38 : Initial processing of species 117 complete
+2024-11-11 18:04:57 : Initial processing of species 119 complete
+2024-11-11 18:04:58 : Initial processing of species 120 complete
+2024-11-11 18:05:04 : Initial processing of species 122 complete
+2024-11-11 18:05:14 : Initial processing of species 121 complete
+2024-11-11 18:05:19 : Initial processing of species 118 complete
+2024-11-11 18:05:37 : Initial processing of species 123 complete
+2024-11-11 18:05:38 : Initial processing of species 125 complete
+2024-11-11 18:05:45 : Initial processing of species 124 complete
+2024-11-11 18:06:32 : Initial processing of species 126 complete
+2024-11-11 18:06:37 : Initial processing of species 128 complete
+2024-11-11 18:06:38 : Initial processing of species 129 complete
+2024-11-11 18:06:50 : Initial processing of species 132 complete
+2024-11-11 18:07:00 : Initial processing of species 127 complete
+2024-11-11 18:07:17 : Initial processing of species 133 complete
+2024-11-11 18:07:18 : Initial processing of species 130 complete
+2024-11-11 18:07:29 : Initial processing of species 131 complete
+2024-11-11 18:07:32 : Initial processing of species 135 complete
+2024-11-11 18:07:44 : Initial processing of species 137 complete
+2024-11-11 18:07:54 : Initial processing of species 134 complete
+2024-11-11 18:08:23 : Initial processing of species 139 complete
+2024-11-11 18:14:15 : Initial processing of species 106 complete
+2024-11-11 18:14:56 : Initial processing of species 136 complete
+2024-11-11 18:15:19 : Initial processing of species 140 complete
+2024-11-11 18:16:02 : Initial processing of species 38 complete
+2024-11-11 18:29:25 : Initial processing of species 138 complete
+2024-11-11 18:38:23 : Connected putative homologues
+2024-11-11 18:38:50 : Written final scores for species 0 to graph file
+2024-11-11 18:38:53 : Written final scores for species 12 to graph file
+2024-11-11 18:38:58 : Written final scores for species 15 to graph file
+2024-11-11 18:38:58 : Written final scores for species 33 to graph file
+2024-11-11 18:39:08 : Written final scores for species 27 to graph file
+2024-11-11 18:39:13 : Written final scores for species 30 to graph file
+2024-11-11 18:39:13 : Written final scores for species 3 to graph file
+2024-11-11 18:39:17 : Written final scores for species 18 to graph file
+2024-11-11 18:39:27 : Written final scores for species 13 to graph file
+2024-11-11 18:39:32 : Written final scores for species 16 to graph file
+2024-11-11 18:39:35 : Written final scores for species 34 to graph file
+2024-11-11 18:39:55 : Written final scores for species 24 to graph file
+2024-11-11 18:39:56 : Written final scores for species 1 to graph file
+2024-11-11 18:40:14 : Written final scores for species 6 to graph file
+2024-11-11 18:40:21 : Written final scores for species 19 to graph file
+2024-11-11 18:40:30 : Written final scores for species 31 to graph file
+2024-11-11 18:40:46 : Written final scores for species 14 to graph file
+2024-11-11 18:40:47 : Written final scores for species 7 to graph file
+2024-11-11 18:40:48 : Written final scores for species 25 to graph file
+2024-11-11 18:40:49 : Written final scores for species 28 to graph file
+2024-11-11 18:40:58 : Written final scores for species 20 to graph file
+2024-11-11 18:41:17 : Written final scores for species 9 to graph file
+2024-11-11 18:41:28 : Written final scores for species 29 to graph file
+2024-11-11 18:41:32 : Written final scores for species 17 to graph file
+2024-11-11 18:41:36 : Written final scores for species 21 to graph file
+2024-11-11 18:41:39 : Written final scores for species 39 to graph file
+2024-11-11 18:41:44 : Written final scores for species 4 to graph file
+2024-11-11 18:41:46 : Written final scores for species 36 to graph file
+2024-11-11 18:41:53 : Written final scores for species 8 to graph file
+2024-11-11 18:41:55 : Written final scores for species 32 to graph file
+2024-11-11 18:42:03 : Written final scores for species 10 to graph file
+2024-11-11 18:42:12 : Written final scores for species 22 to graph file
+2024-11-11 18:42:25 : Written final scores for species 37 to graph file
+2024-11-11 18:42:32 : Written final scores for species 45 to graph file
+2024-11-11 18:42:36 : Written final scores for species 26 to graph file
+2024-11-11 18:42:36 : Written final scores for species 11 to graph file
+2024-11-11 18:42:38 : Written final scores for species 48 to graph file
+2024-11-11 18:42:38 : Written final scores for species 51 to graph file
+2024-11-11 18:42:52 : Written final scores for species 5 to graph file
+2024-11-11 18:42:54 : Written final scores for species 23 to graph file
+2024-11-11 18:43:30 : Written final scores for species 52 to graph file
+2024-11-11 18:43:30 : Written final scores for species 54 to graph file
+2024-11-11 18:43:33 : Written final scores for species 63 to graph file
+2024-11-11 18:44:01 : Written final scores for species 42 to graph file
+2024-11-11 18:44:04 : Written final scores for species 64 to graph file
+2024-11-11 18:44:06 : Written final scores for species 35 to graph file
+2024-11-11 18:44:23 : Written final scores for species 40 to graph file
+2024-11-11 18:44:29 : Written final scores for species 53 to graph file
+2024-11-11 18:45:03 : Written final scores for species 55 to graph file
+2024-11-11 18:45:05 : Written final scores for species 49 to graph file
+2024-11-11 18:45:22 : Written final scores for species 65 to graph file
+2024-11-11 18:45:23 : Written final scores for species 66 to graph file
+2024-11-11 18:45:43 : Written final scores for species 50 to graph file
+2024-11-11 18:45:56 : Written final scores for species 41 to graph file
+2024-11-11 18:46:04 : Written final scores for species 72 to graph file
+2024-11-11 18:46:11 : Written final scores for species 46 to graph file
+2024-11-11 18:46:15 : Written final scores for species 69 to graph file
+2024-11-11 18:46:22 : Written final scores for species 56 to graph file
+2024-11-11 18:46:33 : Written final scores for species 78 to graph file
+2024-11-11 18:46:36 : Written final scores for species 75 to graph file
+2024-11-11 18:46:46 : Written final scores for species 57 to graph file
+2024-11-11 18:46:51 : Written final scores for species 73 to graph file
+2024-11-11 18:46:59 : Written final scores for species 2 to graph file
+2024-11-11 18:46:59 : Written final scores for species 81 to graph file
+2024-11-11 18:47:10 : Written final scores for species 47 to graph file
+2024-11-11 18:47:12 : Written final scores for species 79 to graph file
+2024-11-11 18:47:14 : Written final scores for species 76 to graph file
+2024-11-11 18:47:17 : Written final scores for species 70 to graph file
+2024-11-11 18:47:30 : Written final scores for species 43 to graph file
+2024-11-11 18:47:37 : Written final scores for species 84 to graph file
+2024-11-11 18:47:43 : Written final scores for species 67 to graph file
+2024-11-11 18:47:44 : Written final scores for species 82 to graph file
+2024-11-11 18:47:52 : Written final scores for species 80 to graph file
+2024-11-11 18:48:04 : Written final scores for species 44 to graph file
+2024-11-11 18:48:05 : Written final scores for species 74 to graph file
+2024-11-11 18:48:12 : Written final scores for species 77 to graph file
+2024-11-11 18:48:14 : Written final scores for species 68 to graph file
+2024-11-11 18:48:18 : Written final scores for species 60 to graph file
+2024-11-11 18:48:32 : Written final scores for species 87 to graph file
+2024-11-11 18:48:32 : Written final scores for species 90 to graph file
+2024-11-11 18:48:33 : Written final scores for species 58 to graph file
+2024-11-11 18:48:41 : Written final scores for species 85 to graph file
+2024-11-11 18:48:45 : Written final scores for species 96 to graph file
+2024-11-11 18:48:46 : Written final scores for species 102 to graph file
+2024-11-11 18:48:47 : Written final scores for species 71 to graph file
+2024-11-11 18:48:49 : Written final scores for species 99 to graph file
+2024-11-11 18:48:59 : Written final scores for species 93 to graph file
+2024-11-11 18:49:00 : Written final scores for species 59 to graph file
+2024-11-11 18:49:01 : Written final scores for species 61 to graph file
+2024-11-11 18:49:04 : Written final scores for species 91 to graph file
+2024-11-11 18:49:08 : Written final scores for species 88 to graph file
+2024-11-11 18:49:11 : Written final scores for species 83 to graph file
+2024-11-11 18:49:18 : Written final scores for species 103 to graph file
+2024-11-11 18:49:27 : Written final scores for species 97 to graph file
+2024-11-11 18:49:37 : Written final scores for species 92 to graph file
+2024-11-11 18:49:39 : Written final scores for species 89 to graph file
+2024-11-11 18:49:40 : Written final scores for species 111 to graph file
+2024-11-11 18:49:47 : Written final scores for species 62 to graph file
+2024-11-11 18:49:48 : Written final scores for species 100 to graph file
+2024-11-11 18:49:58 : Written final scores for species 98 to graph file
+2024-11-11 18:50:00 : Written final scores for species 94 to graph file
+2024-11-11 18:50:07 : Written final scores for species 112 to graph file
+2024-11-11 18:50:18 : Written final scores for species 101 to graph file
+2024-11-11 18:50:20 : Written final scores for species 104 to graph file
+2024-11-11 18:50:22 : Written final scores for species 86 to graph file
+2024-11-11 18:50:25 : Written final scores for species 108 to graph file
+2024-11-11 18:50:25 : Written final scores for species 120 to graph file
+2024-11-11 18:50:28 : Written final scores for species 95 to graph file
+2024-11-11 18:50:30 : Written final scores for species 114 to graph file
+2024-11-11 18:50:33 : Written final scores for species 123 to graph file
+2024-11-11 18:50:35 : Written final scores for species 117 to graph file
+2024-11-11 18:50:36 : Written final scores for species 105 to graph file
+2024-11-11 18:50:41 : Written final scores for species 113 to graph file
+2024-11-11 18:50:55 : Written final scores for species 135 to graph file
+2024-11-11 18:50:55 : Written final scores for species 129 to graph file
+2024-11-11 18:51:00 : Written final scores for species 132 to graph file
+2024-11-11 18:51:00 : Written final scores for species 126 to graph file
+2024-11-11 18:51:03 : Written final scores for species 121 to graph file
+2024-11-11 18:51:04 : Written final scores for species 124 to graph file
+2024-11-11 18:51:04 : Written final scores for species 115 to graph file
+2024-11-11 18:51:09 : Written final scores for species 109 to graph file
+2024-11-11 18:51:31 : Written final scores for species 118 to graph file
+2024-11-11 18:51:31 : Written final scores for species 125 to graph file
+2024-11-11 18:51:32 : Written final scores for species 122 to graph file
+2024-11-11 18:51:34 : Written final scores for species 110 to graph file
+2024-11-11 18:51:36 : Written final scores for species 133 to graph file
+2024-11-11 18:51:40 : Written final scores for species 130 to graph file
+2024-11-11 18:52:00 : Written final scores for species 116 to graph file
+2024-11-11 18:52:01 : Written final scores for species 127 to graph file
+2024-11-11 18:52:12 : Written final scores for species 119 to graph file
+2024-11-11 18:52:19 : Written final scores for species 134 to graph file
+2024-11-11 18:52:23 : Written final scores for species 131 to graph file
+2024-11-11 18:52:40 : Written final scores for species 128 to graph file
+2024-11-11 18:53:37 : Written final scores for species 136 to graph file
+2024-11-11 18:54:05 : Written final scores for species 137 to graph file
+2024-11-11 18:54:43 : Written final scores for species 38 to graph file
+2024-11-11 18:56:32 : Written final scores for species 106 to graph file
+2024-11-11 18:58:11 : Written final scores for species 107 to graph file
+2024-11-11 18:58:46 : Written final scores for species 138 to graph file
+2024-11-11 18:59:18 : Written final scores for species 139 to graph file
+2024-11-11 19:02:34 : Written final scores for species 140 to graph file
+
+WARNING: program called by OrthoFinder produced output to stderr
+
+Command: mcl /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov11/WorkingDirectory/OrthoFinder_graph.txt -I 1.5 -o /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov11/WorkingDirectory/clusters_OrthoFinder_I1.5.txt -te 12 -V all
+
+stdout
+------
+b''
+stderr
+------
+b'[mcl] cut <4> instances of overlap\n'
+2024-11-11 21:33:36 : Ran MCL
+
+Writing orthogroups to file
+---------------------------
+OrthoFinder assigned 4849469 genes (90.8% of total) to 302461 orthogroups. Fifty percent of all genes were in orthogroups with 121 or more genes (G50 was 121) and were contained in the largest 7318 orthogroups (O50 was 7318). There were 33 orthogroups with all species present and 0 of these consisted entirely of single-copy genes.
+
+2024-11-11 21:45:44 : Done orthogroups
+
+Analysing Orthogroups
+=====================
+2024-11-11 21:45:55 : Starting MSA/Trees
+Species tree: Using 1057 orthogroups with minimum of 8.5% of species having single-copy genes in any orthogroup
+
+Inferring multiple sequence alignments for species tree
+-------------------------------------------------------
+2024-11-11 21:53:02 : Done 0 of 1057
+2024-11-11 21:53:21 : Done 100 of 1057
+2024-11-11 21:53:41 : Done 200 of 1057
+2024-11-11 21:53:56 : Done 300 of 1057
+2024-11-11 21:54:08 : Done 400 of 1057
+2024-11-11 21:54:19 : Done 500 of 1057
+2024-11-11 21:54:29 : Done 600 of 1057
+2024-11-11 21:54:40 : Done 700 of 1057
+2024-11-11 21:54:48 : Done 800 of 1057
+2024-11-11 21:54:55 : Done 900 of 1057
+
+Inferring remaining multiple sequence alignments and gene trees
+---------------------------------------------------------------
+2024-11-11 21:56:56 : Done 0 of 301405
+2024-11-11 22:32:19 : Done 1000 of 301405
+2024-11-12 03:40:28 : Done 2000 of 301405
+2024-11-12 06:11:23 : Done 3000 of 301405
+2024-11-12 07:37:31 : Done 4000 of 301405
+2024-11-12 08:28:18 : Done 5000 of 301405
+2024-11-12 08:58:31 : Done 6000 of 301405
+2024-11-12 09:18:50 : Done 7000 of 301405
+2024-11-12 09:31:38 : Done 8000 of 301405
+2024-11-12 09:40:29 : Done 9000 of 301405
+2024-11-12 09:46:50 : Done 10000 of 301405
+2024-11-12 09:51:39 : Done 11000 of 301405
+2024-11-12 09:55:18 : Done 12000 of 301405
+2024-11-12 09:58:00 : Done 13000 of 301405
+2024-11-12 10:00:09 : Done 14000 of 301405
+2024-11-12 10:02:06 : Done 15000 of 301405
+2024-11-12 10:03:54 : Done 16000 of 301405
+2024-11-12 10:05:27 : Done 17000 of 301405
+2024-11-12 10:06:51 : Done 18000 of 301405
+2024-11-12 10:08:09 : Done 19000 of 301405
+2024-11-12 10:09:26 : Done 20000 of 301405
+2024-11-12 10:10:33 : Done 21000 of 301405
+2024-11-12 10:11:42 : Done 22000 of 301405
+2024-11-12 10:12:50 : Done 23000 of 301405
+2024-11-12 10:13:57 : Done 24000 of 301405
+2024-11-12 10:15:04 : Done 25000 of 301405
+2024-11-12 10:16:10 : Done 26000 of 301405
+2024-11-12 10:17:16 : Done 27000 of 301405
+2024-11-12 10:18:21 : Done 28000 of 301405
+2024-11-12 10:19:27 : Done 29000 of 301405
+2024-11-12 10:20:31 : Done 30000 of 301405
+2024-11-12 10:21:33 : Done 31000 of 301405
+2024-11-12 10:22:36 : Done 32000 of 301405
+2024-11-12 10:23:38 : Done 33000 of 301405
+2024-11-12 10:24:42 : Done 34000 of 301405
+2024-11-12 10:25:44 : Done 35000 of 301405
+2024-11-12 10:26:44 : Done 36000 of 301405
+2024-11-12 10:27:46 : Done 37000 of 301405
+2024-11-12 10:28:46 : Done 38000 of 301405
+2024-11-12 10:29:47 : Done 39000 of 301405
+2024-11-12 10:30:49 : Done 40000 of 301405
+2024-11-12 10:31:47 : Done 41000 of 301405
+2024-11-12 10:32:47 : Done 42000 of 301405
+2024-11-12 10:33:50 : Done 43000 of 301405
+2024-11-12 10:34:50 : Done 44000 of 301405
+2024-11-12 10:35:48 : Done 45000 of 301405
+2024-11-12 10:36:48 : Done 46000 of 301405
+2024-11-12 10:37:50 : Done 47000 of 301405
+2024-11-12 10:38:48 : Done 48000 of 301405
+2024-11-12 10:39:46 : Done 49000 of 301405
+2024-11-12 10:40:44 : Done 50000 of 301405
+2024-11-12 10:41:42 : Done 51000 of 301405
+2024-11-12 10:42:43 : Done 52000 of 301405
+2024-11-12 10:43:42 : Done 53000 of 301405
+2024-11-12 10:44:40 : Done 54000 of 301405
+2024-11-12 10:45:38 : Done 55000 of 301405
+2024-11-12 10:46:36 : Done 56000 of 301405
+2024-11-12 10:47:35 : Done 57000 of 301405
+2024-11-12 10:48:34 : Done 58000 of 301405
+2024-11-12 10:49:33 : Done 59000 of 301405
+2024-11-12 10:50:30 : Done 60000 of 301405
+2024-11-12 10:51:28 : Done 61000 of 301405
+2024-11-12 10:52:26 : Done 62000 of 301405
+2024-11-12 10:53:23 : Done 63000 of 301405
+2024-11-12 10:54:22 : Done 64000 of 301405
+2024-11-12 10:55:21 : Done 65000 of 301405
+2024-11-12 10:56:20 : Done 66000 of 301405
+2024-11-12 10:57:17 : Done 67000 of 301405
+2024-11-12 10:58:14 : Done 68000 of 301405
+2024-11-12 10:59:11 : Done 69000 of 301405
+2024-11-12 11:00:08 : Done 70000 of 301405
+2024-11-12 11:01:05 : Done 71000 of 301405
+2024-11-12 11:02:03 : Done 72000 of 301405
+2024-11-12 11:03:01 : Done 73000 of 301405
+2024-11-12 11:04:00 : Done 74000 of 301405
+2024-11-12 11:04:57 : Done 75000 of 301405
+2024-11-12 11:05:55 : Done 76000 of 301405
+2024-11-12 11:06:51 : Done 77000 of 301405
+2024-11-12 11:07:47 : Done 78000 of 301405
+2024-11-12 11:08:44 : Done 79000 of 301405
+2024-11-12 11:09:40 : Done 80000 of 301405
+2024-11-12 11:10:37 : Done 81000 of 301405
+2024-11-12 11:11:34 : Done 82000 of 301405
+2024-11-12 11:12:31 : Done 83000 of 301405
+2024-11-12 11:13:29 : Done 84000 of 301405
+2024-11-12 11:14:27 : Done 85000 of 301405
+2024-11-12 11:15:24 : Done 86000 of 301405
+2024-11-12 11:16:21 : Done 87000 of 301405
+2024-11-12 11:17:18 : Done 88000 of 301405
+2024-11-12 11:18:14 : Done 89000 of 301405
+2024-11-12 11:19:10 : Done 90000 of 301405
+2024-11-12 11:20:06 : Done 91000 of 301405
+2024-11-12 11:21:02 : Done 92000 of 301405
+2024-11-12 11:21:59 : Done 93000 of 301405
+2024-11-12 11:22:55 : Done 94000 of 301405
+2024-11-12 11:23:51 : Done 95000 of 301405
+2024-11-12 11:24:47 : Done 96000 of 301405
+2024-11-12 11:25:45 : Done 97000 of 301405
+2024-11-12 11:26:42 : Done 98000 of 301405
+2024-11-12 11:27:38 : Done 99000 of 301405
+2024-11-12 11:28:36 : Done 100000 of 301405
+2024-11-12 11:29:32 : Done 101000 of 301405
+2024-11-12 11:30:29 : Done 102000 of 301405
+2024-11-12 11:31:26 : Done 103000 of 301405
+2024-11-12 11:32:22 : Done 104000 of 301405
+2024-11-12 11:33:19 : Done 105000 of 301405
+2024-11-12 11:34:13 : Done 106000 of 301405
+2024-11-12 11:35:09 : Done 107000 of 301405
+2024-11-12 11:36:05 : Done 108000 of 301405
+2024-11-12 11:37:01 : Done 109000 of 301405
+2024-11-12 11:37:57 : Done 110000 of 301405
+2024-11-12 11:38:52 : Done 111000 of 301405
+2024-11-12 11:39:47 : Done 112000 of 301405
+2024-11-12 11:40:43 : Done 113000 of 301405
+2024-11-12 11:41:39 : Done 114000 of 301405
+2024-11-12 11:42:35 : Done 115000 of 301405
+2024-11-12 11:43:31 : Done 116000 of 301405
+2024-11-12 11:44:27 : Done 117000 of 301405
+2024-11-12 11:45:24 : Done 118000 of 301405
+2024-11-12 11:46:19 : Done 119000 of 301405
+2024-11-12 11:47:16 : Done 120000 of 301405
+2024-11-12 11:48:11 : Done 121000 of 301405
+2024-11-12 11:49:07 : Done 122000 of 301405
+2024-11-12 11:50:02 : Done 123000 of 301405
+2024-11-12 11:50:59 : Done 124000 of 301405
+2024-11-12 11:51:55 : Done 125000 of 301405
+2024-11-12 11:52:50 : Done 126000 of 301405
+2024-11-12 11:53:45 : Done 127000 of 301405
+2024-11-12 11:54:40 : Done 128000 of 301405
+2024-11-12 11:55:35 : Done 129000 of 301405
+2024-11-12 11:56:31 : Done 130000 of 301405
+2024-11-12 11:57:26 : Done 131000 of 301405
+2024-11-12 11:58:21 : Done 132000 of 301405
+2024-11-12 11:59:16 : Done 133000 of 301405
+2024-11-12 12:00:12 : Done 134000 of 301405
+2024-11-12 12:01:07 : Done 135000 of 301405
+2024-11-12 12:02:02 : Done 136000 of 301405
+2024-11-12 12:02:56 : Done 137000 of 301405
+2024-11-12 12:03:52 : Done 138000 of 301405
+2024-11-12 12:04:47 : Done 139000 of 301405
+2024-11-12 12:05:42 : Done 140000 of 301405
+2024-11-12 12:06:38 : Done 141000 of 301405
+2024-11-12 12:07:33 : Done 142000 of 301405
+2024-11-12 12:08:29 : Done 143000 of 301405
+2024-11-12 12:09:25 : Done 144000 of 301405
+2024-11-12 12:10:21 : Done 145000 of 301405
+2024-11-12 12:11:17 : Done 146000 of 301405
+2024-11-12 12:12:12 : Done 147000 of 301405
+2024-11-12 12:13:08 : Done 148000 of 301405
+2024-11-12 12:14:03 : Done 149000 of 301405
+2024-11-12 12:14:59 : Done 150000 of 301405
+2024-11-12 12:15:54 : Done 151000 of 301405
+2024-11-12 12:16:50 : Done 152000 of 301405
+2024-11-12 12:17:44 : Done 153000 of 301405
+2024-11-12 12:18:39 : Done 154000 of 301405
+2024-11-12 12:19:35 : Done 155000 of 301405
+2024-11-12 12:20:31 : Done 156000 of 301405
+2024-11-12 12:21:26 : Done 157000 of 301405
+2024-11-12 12:22:21 : Done 158000 of 301405
+2024-11-12 12:23:17 : Done 159000 of 301405
+2024-11-12 12:24:12 : Done 160000 of 301405
+2024-11-12 12:25:06 : Done 161000 of 301405
+2024-11-12 12:26:01 : Done 162000 of 301405
+2024-11-12 12:26:56 : Done 163000 of 301405
+2024-11-12 12:27:51 : Done 164000 of 301405
+2024-11-12 12:28:46 : Done 165000 of 301405
+2024-11-12 12:29:41 : Done 166000 of 301405
+2024-11-12 12:30:35 : Done 167000 of 301405
+2024-11-12 12:31:31 : Done 168000 of 301405
+2024-11-12 12:32:25 : Done 169000 of 301405
+2024-11-12 12:33:20 : Done 170000 of 301405
+2024-11-12 12:34:15 : Done 171000 of 301405
+2024-11-12 12:35:09 : Done 172000 of 301405
+2024-11-12 12:36:04 : Done 173000 of 301405
+2024-11-12 12:36:59 : Done 174000 of 301405
+2024-11-12 12:37:55 : Done 175000 of 301405
+2024-11-12 12:38:50 : Done 176000 of 301405
+2024-11-12 12:39:45 : Done 177000 of 301405
+2024-11-12 12:40:41 : Done 178000 of 301405
+2024-11-12 12:41:36 : Done 179000 of 301405
+2024-11-12 12:42:31 : Done 180000 of 301405
+2024-11-12 12:43:26 : Done 181000 of 301405
+2024-11-12 12:44:21 : Done 182000 of 301405
+2024-11-12 12:45:16 : Done 183000 of 301405
+2024-11-12 12:46:11 : Done 184000 of 301405
+2024-11-12 12:47:05 : Done 185000 of 301405
+2024-11-12 12:48:01 : Done 186000 of 301405
+2024-11-12 12:48:56 : Done 187000 of 301405
+2024-11-12 12:49:51 : Done 188000 of 301405
+2024-11-12 12:50:45 : Done 189000 of 301405
+2024-11-12 12:51:40 : Done 190000 of 301405
+2024-11-12 12:52:35 : Done 191000 of 301405
+2024-11-12 12:53:30 : Done 192000 of 301405
+2024-11-12 12:54:25 : Done 193000 of 301405
+2024-11-12 12:55:20 : Done 194000 of 301405
+2024-11-12 12:56:15 : Done 195000 of 301405
+2024-11-12 12:57:10 : Done 196000 of 301405
+2024-11-12 12:58:04 : Done 197000 of 301405
+2024-11-12 12:58:59 : Done 198000 of 301405
+2024-11-12 12:59:54 : Done 199000 of 301405
+2024-11-12 13:00:49 : Done 200000 of 301405
+2024-11-12 13:01:44 : Done 201000 of 301405
+2024-11-12 13:02:40 : Done 202000 of 301405
+2024-11-12 13:03:35 : Done 203000 of 301405
+2024-11-12 13:04:30 : Done 204000 of 301405
+2024-11-12 13:05:25 : Done 205000 of 301405
+2024-11-12 13:06:20 : Done 206000 of 301405
+2024-11-12 13:07:15 : Done 207000 of 301405
+2024-11-12 13:08:10 : Done 208000 of 301405
+2024-11-12 13:09:05 : Done 209000 of 301405
+2024-11-12 13:09:51 : Done 210000 of 301405
+2024-11-12 13:10:40 : Done 211000 of 301405
+2024-11-12 13:11:29 : Done 212000 of 301405
+2024-11-12 13:12:18 : Done 213000 of 301405
+2024-11-12 13:13:07 : Done 214000 of 301405
+2024-11-12 13:13:56 : Done 215000 of 301405
+2024-11-12 13:14:45 : Done 216000 of 301405
+2024-11-12 13:15:34 : Done 217000 of 301405
+2024-11-12 13:16:23 : Done 218000 of 301405
+2024-11-12 13:17:12 : Done 219000 of 301405
+2024-11-12 13:18:01 : Done 220000 of 301405
+2024-11-12 13:18:50 : Done 221000 of 301405
+2024-11-12 13:19:38 : Done 222000 of 301405
+2024-11-12 13:20:28 : Done 223000 of 301405
+2024-11-12 13:21:16 : Done 224000 of 301405
+2024-11-12 13:22:06 : Done 225000 of 301405
+2024-11-12 13:22:55 : Done 226000 of 301405
+2024-11-12 13:23:44 : Done 227000 of 301405
+2024-11-12 13:24:33 : Done 228000 of 301405
+2024-11-12 13:25:22 : Done 229000 of 301405
+2024-11-12 13:26:11 : Done 230000 of 301405
+2024-11-12 13:27:00 : Done 231000 of 301405
+2024-11-12 13:27:49 : Done 232000 of 301405
+2024-11-12 13:28:38 : Done 233000 of 301405
+2024-11-12 13:29:27 : Done 234000 of 301405
+2024-11-12 13:30:16 : Done 235000 of 301405
+2024-11-12 13:31:04 : Done 236000 of 301405
+2024-11-12 13:31:53 : Done 237000 of 301405
+2024-11-12 13:32:42 : Done 238000 of 301405
+2024-11-12 13:33:31 : Done 239000 of 301405
+2024-11-12 13:34:20 : Done 240000 of 301405
+2024-11-12 13:35:09 : Done 241000 of 301405
+2024-11-12 13:35:58 : Done 242000 of 301405
+2024-11-12 13:36:47 : Done 243000 of 301405
+2024-11-12 13:37:36 : Done 244000 of 301405
+2024-11-12 13:38:25 : Done 245000 of 301405
+2024-11-12 13:39:14 : Done 246000 of 301405
+2024-11-12 13:40:03 : Done 247000 of 301405
+2024-11-12 13:40:51 : Done 248000 of 301405
+2024-11-12 13:41:40 : Done 249000 of 301405
+2024-11-12 13:42:29 : Done 250000 of 301405
+2024-11-12 13:43:18 : Done 251000 of 301405
+2024-11-12 13:44:07 : Done 252000 of 301405
+2024-11-12 13:44:56 : Done 253000 of 301405
+2024-11-12 13:45:45 : Done 254000 of 301405
+2024-11-12 13:46:33 : Done 255000 of 301405
+2024-11-12 13:47:22 : Done 256000 of 301405
+2024-11-12 13:48:11 : Done 257000 of 301405
+2024-11-12 13:49:01 : Done 258000 of 301405
+2024-11-12 13:49:49 : Done 259000 of 301405
+2024-11-12 13:50:39 : Done 260000 of 301405
+2024-11-12 13:51:27 : Done 261000 of 301405
+2024-11-12 13:52:16 : Done 262000 of 301405
+2024-11-12 13:53:05 : Done 263000 of 301405
+2024-11-12 13:53:54 : Done 264000 of 301405
+2024-11-12 13:54:43 : Done 265000 of 301405
+2024-11-12 13:55:32 : Done 266000 of 301405
+2024-11-12 13:56:21 : Done 267000 of 301405
+2024-11-12 13:57:10 : Done 268000 of 301405
+2024-11-12 13:57:59 : Done 269000 of 301405
+2024-11-12 13:58:48 : Done 270000 of 301405
+2024-11-12 13:59:37 : Done 271000 of 301405
+2024-11-12 14:00:26 : Done 272000 of 301405
+2024-11-12 14:01:15 : Done 273000 of 301405
+2024-11-12 14:02:04 : Done 274000 of 301405
+2024-11-12 14:02:53 : Done 275000 of 301405
+2024-11-12 14:03:42 : Done 276000 of 301405
+2024-11-12 14:04:31 : Done 277000 of 301405
+2024-11-12 14:05:21 : Done 278000 of 301405
+2024-11-12 14:06:09 : Done 279000 of 301405
+2024-11-12 14:06:59 : Done 280000 of 301405
+2024-11-12 14:07:48 : Done 281000 of 301405
+2024-11-12 14:08:36 : Done 282000 of 301405
+2024-11-12 14:09:25 : Done 283000 of 301405
+2024-11-12 14:10:15 : Done 284000 of 301405
+2024-11-12 14:11:03 : Done 285000 of 301405
+2024-11-12 14:11:52 : Done 286000 of 301405
+2024-11-12 14:12:41 : Done 287000 of 301405
+2024-11-12 14:13:30 : Done 288000 of 301405
+2024-11-12 14:14:19 : Done 289000 of 301405
+2024-11-12 14:15:08 : Done 290000 of 301405
+2024-11-12 14:15:56 : Done 291000 of 301405
+2024-11-12 14:16:46 : Done 292000 of 301405
+2024-11-12 14:17:34 : Done 293000 of 301405
+2024-11-12 14:18:23 : Done 294000 of 301405
+2024-11-12 14:19:12 : Done 295000 of 301405
+2024-11-12 14:20:02 : Done 296000 of 301405
+2024-11-12 14:20:50 : Done 297000 of 301405
+2024-11-12 14:21:40 : Done 298000 of 301405
+2024-11-12 14:22:29 : Done 299000 of 301405
+2024-11-12 14:23:18 : Done 300000 of 301405
+2024-11-12 14:24:07 : Done 301000 of 301405
+2024-11-12 14:39:31 : Done MSA/Trees
+
+Best outgroup(s) for species tree
+---------------------------------
+2024-11-12 14:39:31 : Starting STRIDE
+2024-11-12 14:41:04 : Done STRIDE
+Observed 1727 well-supported, non-terminal duplications. 1727 support the best roots and 0 contradict them.
+Best outgroups for species tree:
+  Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.gyrans, Eukaryota.Foraminifera.Rotaliida.Elphidiidae.Elphidium.margaritaceum, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, Eukaryota.Cercozoa.Chlorarachniophyceae.Bigelowiella.longifila, Eukaryota.Cercozoa.Chlorarachniophyceae.Partenskyella.glossopodia, Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica, Eukaryota.Haptista.Haptophyta.Prymnesiales.Prymnesiaceae.Imantonia.rotunda, Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, Eukaryota.Cercozoa.Chlorarachniophyceae.Amorphochlora.amoebiformis, Eukaryota.Cercozoa.Chlorarachniophyceae.Gymnochlora.sp..CCMP2014, Eukaryota.Haptista.Haptophyta.Coccolithales.Coccolithaceae.Coccolithus.braarudii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.lutheri, Eukaryota.Haptista.Haptophyta.Coccolithales.Calcidiscaceae.Calcidiscus.leptoporus, Eukaryota.Haptista.Haptophyta.Phaeocystales.Phaeocystaceae.Phaeocystis.cordata, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachniophyceae.sp..BC52, Eukaryota.Ciliophora.Prostomatea.Prorodontida.Colepidae.Tiarina.fusa, Eukaryota.Haptista.Haptophyta.Coccosphaerales.Pontosphaeraceae.Scyphosphaera.apsteinii, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachnion.reptans
+  Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica
+  Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Pelagophyceae.Pelagophyceae.sp..CCMP2135, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Pelagophyceae.Pelagophyceae.sp..CCMP2135
+  Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica
+  Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica
+  Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica
+  Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.fundyense, Eukaryota.Dinophyceae.Suessiales.Symbiodiniaceae.Symbiodinium.kawagutii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.gyrans, Eukaryota.Foraminifera.Rotaliida.Elphidiidae.Elphidium.margaritaceum, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, Eukaryota.Cercozoa.Chlorarachniophyceae.Bigelowiella.longifila, Eukaryota.Cercozoa.Chlorarachniophyceae.Partenskyella.glossopodia, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.minutum, Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica, Eukaryota.Haptista.Haptophyta.Prymnesiales.Prymnesiaceae.Imantonia.rotunda, Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, Eukaryota.Dinophyceae.Syndiniales.Amoebophryaceae.Amoebophrya.sp.$, Eukaryota.Cercozoa.Chlorarachniophyceae.Amorphochlora.amoebiformis, Eukaryota.Chromerida.sp..RM11, Eukaryota.Cercozoa.Chlorarachniophyceae.Gymnochlora.sp..CCMP2014, Eukaryota.Haptista.Haptophyta.Coccolithales.Coccolithaceae.Coccolithus.braarudii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.lutheri, Eukaryota.Haptista.Haptophyta.Coccolithales.Calcidiscaceae.Calcidiscus.leptoporus, Eukaryota.Haptista.Haptophyta.Phaeocystales.Phaeocystaceae.Phaeocystis.cordata, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachniophyceae.sp..BC52, Eukaryota.Ciliophora.Prostomatea.Prorodontida.Colepidae.Tiarina.fusa, Eukaryota.Haptista.Haptophyta.Coccosphaerales.Pontosphaeraceae.Scyphosphaera.apsteinii, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachnion.reptans
+  Eukaryota.Dinophyceae.Syndiniales.Amoebophryaceae.Amoebophrya.sp.$, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.fundyense, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.minutum, Eukaryota.Chromerida.sp..RM11, Eukaryota.Dinophyceae.Suessiales.Symbiodiniaceae.Symbiodinium.kawagutii
+  Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis
+  Eukaryota.Chromerida.sp..RM11
+  Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.fundyense, Eukaryota.Dinophyceae.Suessiales.Symbiodiniaceae.Symbiodinium.kawagutii, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.minutum
+  Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Pelagophyceae.Pelagophyceae.sp..CCMP2135, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo
+  Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo
+  Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida
+  Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum
+  Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo
+  Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Dinophyceae.Syndiniales.Amoebophryaceae.Amoebophrya.sp.$, Eukaryota.Chromerida.sp..RM11
+  Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida
+  Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus
+  Eukaryota.Synchromophyceae.Synchroma.pusillum
+  Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Pelagophyceae.Pelagophyceae.sp..CCMP2135, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.fundyense, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, Eukaryota.Dinophyceae.Suessiales.Symbiodiniaceae.Symbiodinium.kawagutii, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.gyrans, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, Eukaryota.Foraminifera.Rotaliida.Elphidiidae.Elphidium.margaritaceum, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Cercozoa.Chlorarachniophyceae.Bigelowiella.longifila, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Cercozoa.Chlorarachniophyceae.Partenskyella.glossopodia, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.minutum, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Haptista.Haptophyta.Prymnesiales.Prymnesiaceae.Imantonia.rotunda, Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, Eukaryota.Dinophyceae.Syndiniales.Amoebophryaceae.Amoebophrya.sp.$, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Cercozoa.Chlorarachniophyceae.Amorphochlora.amoebiformis, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chromerida.sp..RM11, Eukaryota.Cercozoa.Chlorarachniophyceae.Gymnochlora.sp..CCMP2014, Eukaryota.Haptista.Haptophyta.Coccolithales.Coccolithaceae.Coccolithus.braarudii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.lutheri, Eukaryota.Haptista.Haptophyta.Coccolithales.Calcidiscaceae.Calcidiscus.leptoporus, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida, Eukaryota.Haptista.Haptophyta.Phaeocystales.Phaeocystaceae.Phaeocystis.cordata, Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachniophyceae.sp..BC52, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, Eukaryota.Ciliophora.Prostomatea.Prorodontida.Colepidae.Tiarina.fusa, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Bigyra.Bicosoecida.Cafeteriaceae.Cafeteria.roenbergensis, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachnion.reptans, Eukaryota.Haptista.Haptophyta.Coccosphaerales.Pontosphaeraceae.Scyphosphaera.apsteinii, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Haptista.Haptophyta.Phaeocystales.Phaeocystaceae.Phaeocystis.cordata, Eukaryota.Brachiopoda.Lingulata.Lingulida.Lingulidae.Lingula.anatina, Eukaryota.Haptista.Haptophyta.Chrysoculter.rhomboideus, Eukaryota.Ciliophora.Prostomatea.Prorodontida.Colepidae.Tiarina.fusa, Eukaryota.Haptista.Haptophyta.Prymnesiales.Prymnesiaceae.Imantonia.rotunda, Eukaryota.Haptista.Haptophyta.Coccosphaerales.Pontosphaeraceae.Scyphosphaera.apsteinii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.gyrans, Eukaryota.Haptista.Haptophyta.Coccolithales.Coccolithaceae.Coccolithus.braarudii, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Pavlova.lutheri, Eukaryota.Haptista.Haptophyta.Coccolithales.Calcidiscaceae.Calcidiscus.leptoporus, Eukaryota.Haptista.Haptophyta.Pavlovales.Pavlovaceae.Exanthemachrysis.gayraliae
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica
+  Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus
+  Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Pelagophyceae.Pelagophyceae.sp..CCMP2135, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Phaeophyceae.Ectocarpales.Ectocarpaceae.Ectocarpus.siliculosus, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Fibrocapsa.japonica, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Heterosigma.akashiwo, Eukaryota.Raphidophyceae.Chattonellales.Chattonellaceae.Chattonella.subsalsa, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Dinophyceae.Syndiniales.Amoebophryaceae.Amoebophrya.sp.$
+  Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+  Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.fundyense, Eukaryota.Dinophyceae.Gonyaulacales.Gonyaulacaceae.Alexandrium.minutum
+  Eukaryota.Cercozoa.Chlorarachniophyceae.Bigelowiella.longifila, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachniophyceae.sp..BC52, Eukaryota.Cercozoa.Chlorarachniophyceae.Partenskyella.glossopodia, Eukaryota.Cercozoa.Chlorarachniophyceae.Amorphochlora.amoebiformis, Eukaryota.Cercozoa.Chlorarachniophyceae.Lotharella.oceanica, Eukaryota.Cercozoa.Chlorarachniophyceae.Gymnochlora.sp..CCMP2014, Eukaryota.Cercozoa.Chlorarachniophyceae.Chlorarachnion.reptans, Eukaryota.Foraminifera.Rotaliida.Elphidiidae.Elphidium.margaritaceum
+  Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aurantiochytrium.limacinum, Eukaryota.Bacillariophyta.Coscinodiscophyceae.Aulacoseiraceae.Aulacoseira.subarctica, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Hondaea.fermentalgiana, Eukaryota.Oomycetes.Pythiales.Pythiaceae.Globisporangium.ultimum, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Hyaloperonospora.arabidopsidis, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.infestans, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.ramorum, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.stocchinoi, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Thraustochytrium.sp..LLF1b, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.kerguelense, Eukaryota.Bigyra.Labyrinthulomycetes.labyrinthulid.quahog.parasite.QPX, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Saprolegnia.diclina, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Aplanochytrium.sp..PBS07, Eukaryota.Oomycetes.Saprolegniales.Saprolegniaceae.Aphanomyces.invadans, Eukaryota.Bigyra.Labyrinthulomycetes.Thraustochytriaceae.Schizochytrium.aggregatum, Eukaryota.Oomycetes.Peronosporales.Peronosporaceae.Phytophthora.megakarya, Eukaryota.Oomycetes.Albuginales.Albuginaceae.Albugo.candida
+  Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula
+  Eukaryota.Dinophyceae.Suessiales.Symbiodiniaceae.Symbiodinium.kawagutii
+
+WARNING: Multiple potential species tree roots were identified, only one will be analyed.
+
+Reconciling gene trees and species tree
+---------------------------------------
+Outgroup: Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae, Eukaryota.Chrysophyceae.Chromulinales.Dinobryaceae, Eukaryota.Dictyochophyceae.Florenciellales.Florenciella.parvula, Eukaryota.Dictyochophyceae.Dictyochales.Dictyocha.speculum, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Spumella.elongata, Eukaryota.Synchromophyceae.Synchroma.pusillum, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.pacifica, Eukaryota.Dictyochophyceae.Rhizochromulinales.Rhizochromulina.marina, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae.Paraphysomonas.imperforata, Eukaryota.Chrysophyceae.Chromulinales.Chromulinaceae.Ochromonas.sp..CCMP1393, Eukaryota.Dictyochophyceae.Pedinellales.Pedinellales.sp..CCMP2098, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Phaeomonas.parva, Eukaryota.Bolidophyceae.Parmales.Triparmaceae.Triparma.eleuthera, Eukaryota.Dictyochophyceae.Pedinellales.Pteridomonas.danica, Eukaryota.Synurophyceae.Ochromonadales.Ochromonadaceae.Ochromonadaceae.sp..CCMP2298, Eukaryota.Pinguiophyceae.Pinguiochrysidales.Pinguiochrysidaceae.Pinguiococcus.pyrenoidosus, Eukaryota.Dictyochophyceae.Pedinellales.Pseudopedinella.elastica, Eukaryota.Chrysophyceae.Chromulinales.Paraphysomonadaceae
+2024-11-12 14:41:04 : Starting Recon and orthologues
+2024-11-12 14:41:04 : Starting OF Orthologues
+2024-11-12 14:41:24 : Done 0 of 161399
+2024-11-12 14:42:24 : Done 1000 of 161399
+2024-11-12 14:42:47 : Done 2000 of 161399
+2024-11-12 14:43:05 : Done 3000 of 161399
+2024-11-12 14:43:19 : Done 4000 of 161399
+2024-11-12 14:43:31 : Done 5000 of 161399
+2024-11-12 14:43:41 : Done 6000 of 161399
+2024-11-12 14:43:49 : Done 7000 of 161399
+2024-11-12 14:43:55 : Done 8000 of 161399
+2024-11-12 14:44:00 : Done 9000 of 161399
+2024-11-12 14:44:04 : Done 10000 of 161399
+2024-11-12 14:44:07 : Done 11000 of 161399
+2024-11-12 14:44:10 : Done 12000 of 161399
+2024-11-12 14:44:12 : Done 13000 of 161399
+2024-11-12 14:44:15 : Done 14000 of 161399
+2024-11-12 14:44:17 : Done 15000 of 161399
+2024-11-12 14:44:18 : Done 16000 of 161399
+2024-11-12 14:44:20 : Done 17000 of 161399
+2024-11-12 14:44:22 : Done 18000 of 161399
+2024-11-12 14:44:23 : Done 19000 of 161399
+2024-11-12 14:44:25 : Done 20000 of 161399
+2024-11-12 14:44:27 : Done 21000 of 161399
+2024-11-12 14:44:29 : Done 22000 of 161399
+2024-11-12 14:44:30 : Done 23000 of 161399
+2024-11-12 14:44:32 : Done 24000 of 161399
+2024-11-12 14:44:33 : Done 25000 of 161399
+2024-11-12 14:44:34 : Done 26000 of 161399
+2024-11-12 14:44:36 : Done 27000 of 161399
+2024-11-12 14:44:38 : Done 28000 of 161399
+2024-11-12 14:44:40 : Done 29000 of 161399
+2024-11-12 14:44:42 : Done 30000 of 161399
+2024-11-12 14:44:43 : Done 31000 of 161399
+2024-11-12 14:44:45 : Done 32000 of 161399
+2024-11-12 14:44:46 : Done 33000 of 161399
+2024-11-12 14:44:47 : Done 34000 of 161399
+2024-11-12 14:44:48 : Done 35000 of 161399
+2024-11-12 14:44:49 : Done 36000 of 161399
+2024-11-12 14:44:50 : Done 37000 of 161399
+2024-11-12 14:44:51 : Done 38000 of 161399
+2024-11-12 14:44:52 : Done 39000 of 161399
+2024-11-12 14:44:53 : Done 40000 of 161399
+2024-11-12 14:44:54 : Done 41000 of 161399
+2024-11-12 14:44:55 : Done 42000 of 161399
+2024-11-12 14:44:56 : Done 43000 of 161399
+2024-11-12 14:44:57 : Done 44000 of 161399
+2024-11-12 14:44:58 : Done 45000 of 161399
+2024-11-12 14:44:59 : Done 46000 of 161399
+2024-11-12 14:44:59 : Done 47000 of 161399
+2024-11-12 14:45:00 : Done 48000 of 161399
+2024-11-12 14:45:01 : Done 49000 of 161399
+2024-11-12 14:45:02 : Done 50000 of 161399
+2024-11-12 14:45:02 : Done 51000 of 161399
+2024-11-12 14:45:03 : Done 52000 of 161399
+2024-11-12 14:45:04 : Done 53000 of 161399
+2024-11-12 14:45:04 : Done 54000 of 161399
+2024-11-12 14:45:05 : Done 55000 of 161399
+2024-11-12 14:45:06 : Done 56000 of 161399
+2024-11-12 14:45:07 : Done 57000 of 161399
+2024-11-12 14:45:08 : Done 58000 of 161399
+2024-11-12 14:45:08 : Done 59000 of 161399
+2024-11-12 14:45:09 : Done 60000 of 161399
+2024-11-12 14:45:09 : Done 61000 of 161399
+2024-11-12 14:45:10 : Done 62000 of 161399
+2024-11-12 14:45:11 : Done 63000 of 161399
+2024-11-12 14:45:12 : Done 64000 of 161399
+2024-11-12 14:45:13 : Done 65000 of 161399
+2024-11-12 14:45:14 : Done 66000 of 161399
+2024-11-12 14:45:14 : Done 67000 of 161399
+2024-11-12 14:45:15 : Done 68000 of 161399
+2024-11-12 14:45:16 : Done 69000 of 161399
+2024-11-12 14:45:17 : Done 70000 of 161399
+2024-11-12 14:45:17 : Done 71000 of 161399
+2024-11-12 14:45:18 : Done 72000 of 161399
+2024-11-12 14:45:19 : Done 73000 of 161399
+2024-11-12 14:45:20 : Done 74000 of 161399
+2024-11-12 14:45:20 : Done 75000 of 161399
+2024-11-12 14:45:21 : Done 76000 of 161399
+2024-11-12 14:45:21 : Done 77000 of 161399
+2024-11-12 14:45:22 : Done 78000 of 161399
+2024-11-12 14:45:23 : Done 79000 of 161399
+2024-11-12 14:45:23 : Done 80000 of 161399
+2024-11-12 14:45:24 : Done 81000 of 161399
+2024-11-12 14:45:25 : Done 82000 of 161399
+2024-11-12 14:45:26 : Done 83000 of 161399
+2024-11-12 14:45:27 : Done 84000 of 161399
+2024-11-12 14:45:27 : Done 85000 of 161399
+2024-11-12 14:45:28 : Done 86000 of 161399
+2024-11-12 14:45:29 : Done 87000 of 161399
+2024-11-12 14:45:29 : Done 88000 of 161399
+2024-11-12 14:45:30 : Done 89000 of 161399
+2024-11-12 14:45:30 : Done 90000 of 161399
+2024-11-12 14:45:31 : Done 91000 of 161399
+2024-11-12 14:45:32 : Done 92000 of 161399
+2024-11-12 14:45:33 : Done 93000 of 161399
+2024-11-12 14:45:33 : Done 94000 of 161399
+2024-11-12 14:45:34 : Done 95000 of 161399
+2024-11-12 14:45:35 : Done 96000 of 161399
+2024-11-12 14:45:35 : Done 97000 of 161399
+2024-11-12 14:45:36 : Done 98000 of 161399
+2024-11-12 14:45:37 : Done 99000 of 161399
+2024-11-12 14:45:38 : Done 100000 of 161399
+2024-11-12 14:45:38 : Done 101000 of 161399
+2024-11-12 14:45:39 : Done 102000 of 161399
+2024-11-12 14:45:40 : Done 103000 of 161399
+2024-11-12 14:45:40 : Done 104000 of 161399
+2024-11-12 14:45:41 : Done 105000 of 161399
+2024-11-12 14:45:41 : Done 106000 of 161399
+2024-11-12 14:45:42 : Done 107000 of 161399
+2024-11-12 14:45:43 : Done 108000 of 161399
+2024-11-12 14:45:44 : Done 109000 of 161399
+2024-11-12 14:45:44 : Done 110000 of 161399
+2024-11-12 14:45:45 : Done 111000 of 161399
+2024-11-12 14:45:46 : Done 112000 of 161399
+2024-11-12 14:45:47 : Done 113000 of 161399
+2024-11-12 14:45:48 : Done 114000 of 161399
+2024-11-12 14:45:48 : Done 115000 of 161399
+2024-11-12 14:45:49 : Done 116000 of 161399
+2024-11-12 14:45:50 : Done 117000 of 161399
+2024-11-12 14:45:50 : Done 118000 of 161399
+2024-11-12 14:45:51 : Done 119000 of 161399
+2024-11-12 14:45:52 : Done 120000 of 161399
+2024-11-12 14:45:52 : Done 121000 of 161399
+2024-11-12 14:45:53 : Done 122000 of 161399
+2024-11-12 14:45:54 : Done 123000 of 161399
+2024-11-12 14:45:54 : Done 124000 of 161399
+2024-11-12 14:45:55 : Done 125000 of 161399
+2024-11-12 14:45:55 : Done 126000 of 161399
+2024-11-12 14:45:56 : Done 127000 of 161399
+2024-11-12 14:45:57 : Done 128000 of 161399
+2024-11-12 14:45:57 : Done 129000 of 161399
+2024-11-12 14:45:58 : Done 130000 of 161399
+2024-11-12 14:45:59 : Done 131000 of 161399
+2024-11-12 14:45:59 : Done 132000 of 161399
+2024-11-12 14:46:00 : Done 133000 of 161399
+2024-11-12 14:46:01 : Done 134000 of 161399
+2024-11-12 14:46:02 : Done 135000 of 161399
+2024-11-12 14:46:02 : Done 136000 of 161399
+2024-11-12 14:46:03 : Done 137000 of 161399
+2024-11-12 14:46:04 : Done 138000 of 161399
+2024-11-12 14:46:04 : Done 139000 of 161399
+2024-11-12 14:46:05 : Done 140000 of 161399
+2024-11-12 14:46:06 : Done 141000 of 161399
+2024-11-12 14:46:07 : Done 142000 of 161399
+2024-11-12 14:46:07 : Done 143000 of 161399
+2024-11-12 14:46:08 : Done 144000 of 161399
+2024-11-12 14:46:08 : Done 145000 of 161399
+2024-11-12 14:46:09 : Done 146000 of 161399
+2024-11-12 14:46:10 : Done 147000 of 161399
+2024-11-12 14:46:10 : Done 148000 of 161399
+2024-11-12 14:46:11 : Done 149000 of 161399
+2024-11-12 14:46:11 : Done 150000 of 161399
+2024-11-12 14:46:12 : Done 151000 of 161399
+2024-11-12 14:46:13 : Done 152000 of 161399
+2024-11-12 14:46:13 : Done 153000 of 161399
+2024-11-12 14:46:14 : Done 154000 of 161399
+2024-11-12 14:46:15 : Done 155000 of 161399
+2024-11-12 14:46:15 : Done 156000 of 161399
+2024-11-12 14:46:16 : Done 157000 of 161399
+2024-11-12 14:46:16 : Done 158000 of 161399
+2024-11-12 14:46:17 : Done 159000 of 161399
+2024-11-12 14:46:18 : Done 160000 of 161399
+2024-11-12 14:46:18 : Done 161000 of 161399
+2024-11-12 14:46:20 : Done OF Orthologues
+
+Writing results files
+=====================
+2024-11-12 14:48:43 : Done orthologues
+
+Results:
+    /gpfs/projects/CollierGroup/agilgomez/projects/laby_proteomics/phylogenomics/data/proteomes/OrthoFinder/Results_Nov11/
+
+CITATION:
+ When publishing work that uses OrthoFinder please cite:
+ Emms D.M. & Kelly S. (2019), Genome Biology 20:238
+
+ If you use the species tree in your work then please also cite:
+ Emms D.M. & Kelly S. (2017), MBE 34(12): 3267-3278
+ Emms D.M. & Kelly S. (2018), bioRxiv https://doi.org/10.1101/267914
