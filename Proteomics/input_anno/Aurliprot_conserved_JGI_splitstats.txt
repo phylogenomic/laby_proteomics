@@ -1,0 +1,5 @@
+"gr" "gr_p"
+"Aurli_only" 2676 18.062
+"Eukaryote" 9821 66.286
+"Laby_only" 2069 13.965
+"Str_only" 250 1.687

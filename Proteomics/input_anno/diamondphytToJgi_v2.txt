@@ -1,0 +1,231 @@
+query	subject	pident	Aln_length	mismatch	gapopen	evalue	bitscore	query_PITG	name	category	function	NSM	20H	SPO	ZOO	induced	Harab	OnlyFlag	FullName	bestByPITG	bestByAurli1	PROT	BEST
+XP_002908314.1_PITG_01693	jgi|Aurli1|101851|estExt_Genewise1Plus.C_2_t10495	29.2	935	547	26	4.98E-114	372	1693	POC16	Centriole	Centriolar protein	ns	ns	ns	ns	ns	no	yes	FM144 (POC16)	yes	yes		yes
+XP_002899012.1_PITG_14807	jgi|Aurli1|10250|gm1.10250_g	74.9	458	105	3	2.4E-249	687	14807	TUBG	Tubulin-related	Tubulin gamma	0.96	1.37	1.05	0.62	no	yes	no	TUG	yes	yes		yes
+XP_002897021.1_PITG_17124	jgi|Aurli1|10342|gm1.10342_g	24.3	1364	806	46	9.72E-62	234	17124	FAP46	Central pair	Central pair projection protein	0.3	0.7	2.7	0.3	yes	no	yes	FAP46		yes		yes
+XP_002906151.1_PITG_03050	jgi|Aurli1|10482|gm1.10482_g	21.9	1227	745	43	1.33E-33	139	3050	MOT9	Uncharacterized	Uncharacterized flagella-associated protein	0.1	0.63	1.41	1.87	yes	no	yes	MOT9		yes		yes
+XP_002996932.1_PITG_19609	jgi|Aurli1|10610|gm1.10610_g	54.4	570	213	8	1.28E-205	586	19609	DIC2	Outer dynein arm	Outer dynein arm intermediate chain protein	0.08	1.72	1.89	0.31	yes	no	yes	"DIC2 (ODA6, ODA-IC2)"	yes	yes		yes
+XP_002907894.1_PITG_01219	jgi|Aurli1|107122|estExt_Genewise1Plus.C_10_t20288	82.9	497	85	0	8.06E-123	368	1219	PF16	Central pair	Central pair protein	0.17	0.55	1.62	1.66	yes	no	yes	PF16 (ACA)	yes	yes		yes
+XP_002908337.1_PITG_01717	jgi|Aurli1|108739|estExt_Genewise1Plus.C_14_t10191	59.6	4564	1732	26	0	5345	1717	PF9	Inner dynein arm	Inner arm dynein 1 heavy chain alpha	0.24	0.75	1.74	1.27	yes	no	no	PF9		yes		yes
+XP_002900392.1_PITG_12513	jgi|Aurli1|1103|gm1.1103_g	25	228	125	6	3.73E-11	60.8	12513	SSA12	Uncharacterized	Uncharacterized flagella-associated protein	0.43	0.5	0.26	2.81	no	yes	no	SSA12		yes		yes
+XP_002909360.1_PITG_00797	jgi|Aurli1|113948|fgenesh1_pm.1_#_469	85.5	193	28	0	4.31E-87	273	797	DAW1	Outer dynein arm	"Outer dynein arm protein, IFT adapter"	0.14	1.77	1.52	0.58	yes	no	yes	DAW1 (ODA16)	yes	yes		yes
+XP_002902627.1_PITG_10096	jgi|Aurli1|113989|fgenesh1_pm.1_#_510	38.6	1386	775	19	2.65e-318	930	10096	IFT139	Intraflagellar transport	Intraflagellar transport protein	0.15	0.46	3.23	0.15	yes	no	yes	FAP60 (IFT139)	yes	yes		yes
+XP_002896618.1_PITG_17768	jgi|Aurli1|114429|fgenesh1_pm.2_#_252	38.2	280	161	2	4.65E-62	197	17768	TT9264	Basal body	Basal body oxidoreductase protein	0.9	1.2	1.62	0.27	no	yes	no	TT9264		yes		yes
+XP_002996881.1_PITG_21961	jgi|Aurli1|114818|fgenesh1_pm.3_#_171	59.1	530	202	4	2.36E-229	642	21961	DYF13	Uncharacterized	C. elegans ortholog required for ciliogenesis	0.01	0.65	2.68	0.65	yes	no	yes	DYF13	yes	yes		yes
+XP_002908467.1_PITG_01868	jgi|Aurli1|114818|fgenesh1_pm.3_#_171	59.1	530	202	4	1.67E-229	643	1868	DYF17	Intraflagellar transport	Intraflagella transport protein	0.35	0.78	2.78	0.09	yes	no	yes	DYF17	yes	yes		yes
+XP_002902608.1_PITG_10077	jgi|Aurli1|114891|fgenesh1_pm.3_#_244	32.8	134	86	2	1.79E-13	68.6	10077	RSP23	Radial spoke	Radial spoke protein	0.25	0.46	2.75	0.54	yes	no	no	RSP23 (FAP106)		yes		yes
+XP_002906556.1_PITG_03488	jgi|Aurli1|114903|fgenesh1_pm.3_#_256	47.9	4336	1938	48	0	3800	3488	DHC6	Inner dynein arm	Dynein heavy chain protein	0.31	1.01	2.52	0.16	yes	no	yes	DHC6		yes		yes
+XP_002899324.1_PITG_14226	jgi|Aurli1|114949|fgenesh1_pm.3_#_302	63.2	212	77	1	8.42E-93	282	14226	IFT46	Intraflagellar transport	Intraflagellar transport protein	0.06	1.13	2.67	0.14	yes	no	no	IFT46 (FAP32)	yes	yes		yes
+XP_002908697.1_PITG_00063	jgi|Aurli1|115042|fgenesh1_pm.4_#_38	68.8	327	95	1	1.25E-163	472	63	LF4	Regulatory	"Long flagella protein, MAP kinase"	0.11	0.82	1.52	1.55	yes	no	no	LF4	yes	yes		yes
+XP_002895569.1_PITG_20745	jgi|Aurli1|115089|fgenesh1_pm.4_#_85	54.5	448	193	4	7.22E-170	488	20745	IFT52	Intraflagellar transport	Intraflagellar transport protein	0.28	1.26	2.37	0.09	yes	no	no	IFT52 (BLD1)	yes	yes		yes
+XP_002907406.1_PITG_02482	jgi|Aurli1|115433|fgenesh1_pm.5_#_131	67.6	808	258	3	0	1110	2482	SSA9	Uncharacterized	Protein with helicase-associated region	1.04	0.79	0.76	1.42	no	yes	no	SSA9	yes	yes		yes
+XP_002907986.1_PITG_01312	jgi|Aurli1|115560|fgenesh1_pm.5_#_258	49.5	214	103	2	2.65E-61	203	1312	FAP155	Protein interaction	Leucine rich repeat protein	0.48	1.45	1.59	0.48	yes	no	yes	FAP155	yes	yes		yes
+XP_002895846.1_PITG_20212	jgi|Aurli1|115687|fgenesh1_pm.6_#_59	47.6	1869	784	30	0	1555	20212	IFT172	Intraflagellar transport	Intraflagellar transport protein	0.12	1.73	1.68	0.47	yes	no	yes	IFT172	yes	yes		yes
+XP_002903837.1_PITG_08458	jgi|Aurli1|116240|fgenesh1_pm.7_#_293	55.2	699	294	7	1.05E-231	668	8458	FLA10	Intraflagellar transport	Kinesin	1.18	0.75	1.39	0.68	no	no	no	FLA10	yes	yes		yes
+XP_002897393.1_PITG_16331	jgi|Aurli1|116376|fgenesh1_pm.8_#_98	49.3	69	31	2	5.53E-13	70.1	16331	MOT13	Uncharacterized	"Zinc finger, CW-type"	0.85	0.94	1.02	1.19	no	no	no	MOT13		yes		yes
+XP_002897884.1_PITG_16112	jgi|Aurli1|116605|fgenesh1_pm.9_#_25	37.6	372	208	6	1.4E-65	214	16112	IFT57	Intraflagellar transport	Intraflagellar transport protein	0.05	0.95	2.68	0.32	yes	no	no	IFT57	yes	yes		yes
+XP_002998957.1_PITG_05288	jgi|Aurli1|116894|fgenesh1_pm.9_#_314	33.9	369	240	2	1.46E-54	192	5288	FAP134	Protein interaction	Leucine rich repeat protein	0.18	0.5	3.1	0.23	yes	no	yes	FAP134	yes	yes		yes
+XP_002900247.1_PITG_12878	jgi|Aurli1|117061|fgenesh1_pm.10_#_159	40.5	220	121	2	1.25E-63	196	12878	MAS4	Mastigoneme	Mastigoneme protein	0.04	1.55	2.31	0.1	yes	no	yes	MAS4		yes		yes
+XP_002998115.1_PITG_05883	jgi|Aurli1|117659|fgenesh1_pm.12_#_143	51.1	356	149	5	3.33E-115	338	5883	BBS5	Basal body	Transport to flagellar base	0.28	0.56	2.79	0.37	yes	no	yes	BBS5	yes	yes		yes
+XP_002908563.1_PITG_01977	jgi|Aurli1|117791|fgenesh1_pm.13_#_49	56.4	312	128	2	3.43E-92	279	1977	FAP73	Uncharacterized	Uncharacterized flagella-associated protein	0.27	0.59	2.72	0.42	yes	no	yes	FAP73	yes	yes		yes
+XP_002999126.1_PITG_05487	jgi|Aurli1|118038|fgenesh1_pm.14_#_46	67.9	296	89	3	2.7E-145	422	5487	SSA1	Regulatory	Protein kinase	0.2	0.8	2.57	0.43	yes	no	no	SSA1	yes	yes		yes
+XP_002909353.1_PITG_00790	jgi|Aurli1|118329|fgenesh1_pm.15_#_144	37.3	711	360	13	1.38E-160	476	790	FAP52	Basal body	WD40-containing protein	ns	ns	ns	ns	ns	no	yes	"FAP52 (BUG14, WDR16)"	yes	yes		yes
+XP_002905321.1_PITG_04560	jgi|Aurli1|118494|fgenesh1_pm.16_#_71	42.5	287	152	5	9.7E-72	221	4560	FBB18	Uncharacterized	Uncharacterized flagella-associated protein	0.42	1.79	1.11	0.68	yes	yes	yes	FBB18	yes	yes		yes
+XP_002903806.1_PITG_08423	jgi|Aurli1|118707|fgenesh1_pm.17_#_77	64.1	384	112	6	7.31E-154	462	8423	FLA8	Intraflagellar transport	Kinesin	0.37	1.1	1.87	0.66	yes	no	yes	FLA8		yes		yes
+XP_002899461.1_PITG_13766	jgi|Aurli1|118959|fgenesh1_pm.18_#_113	56	791	342	3	6.08E-303	893	13766	IFT121	Intraflagellar transport	Intraflagellar transport protein	0.36	0.8	2.6	0.24	yes	no	yes	IFT121 (FAP118)		yes	yes	yes
+XP_002898048.1_PITG_15793	jgi|Aurli1|119658|fgenesh1_pm.22_#_48	54.5	235	92	2	1.02E-77	257	15793	FAP44	Protein interaction	WD domain protein	1.11	0.89	1.33	0.67	no	no	no	FAP44	yes	yes		yes
+XP_002906556.1_PITG_03488	jgi|Aurli1|119754|fgenesh1_pm.22_#_144	52.8	3316	1386	31	0	3350	3488	DHC6	Inner dynein arm	Dynein heavy chain protein	0.31	1.01	2.52	0.16	yes	no	yes	DHC6		yes		yes
+XP_002909237.1_PITG_00660	jgi|Aurli1|12049|gm1.12049_g	30	1684	947	33	5.67E-233	736	660	FAP65	Uncharacterized	Uncharacterized flagella-associated protein	ns	ns	ns	ns	ns	no	yes	FAP65	yes	yes		yes
+XP_002899461.1_PITG_13766	jgi|Aurli1|12050|gm1.12050_g	46.2	1328	548	22	0	1110	13766	IFT121	Intraflagellar transport	Intraflagellar transport protein	0.36	0.8	2.6	0.24	yes	no	yes	IFT121 (FAP118)		yes	no	yes
+XP_002898491.1_PITG_14588	jgi|Aurli1|120517|fgenesh1_pm.32_#_22	47.4	173	90	1	6.14E-57	178	14588	MKS1	Basal body	"Ortholog of Meckel Syndrome 1 gene, also centriolar"	0.02	0.32	2	1.66	yes	no	yes	MKS1		yes		yes
+XP_002909588.1_PITG_01067	jgi|Aurli1|12275|gm1.12275_g	29.2	804	463	18	3.11E-102	330	1067	BBS7	Basal body	Transport to flagellar base	0.19	1.32	2.05	0.44	yes	no	yes	BBS7	yes	yes		yes
+XP_002899691.1_PITG_13461	jgi|Aurli1|12282|gm1.12282_g	82	111	20	0	1.06E-54	165	13461	DIP13	Basal body	Basal body component	0.12	0.45	2.27	1.17	yes	no	yes	DIP13		yes		yes
+XP_002900804.1_PITG_12186	jgi|Aurli1|123422|estExt_fgenesh1_pm.C_80189	64.9	353	121	2	7.37E-168	477	12186	MAPK	Regulatory	MAP kinase	0.08	0.88	2.3	0.74	yes	no	no	MAPK	yes	yes	yes	yes
+XP_002901440.1_PITG_11983	jgi|Aurli1|12411|gm1.12411_g	29.5	193	127	5	2.01E-15	72	11983	IFT43	Intraflagellar transport	Intraflagellar transport protein	0.01	1.2	1.67	1.11	yes	no	yes	MOT41 (IFT43)		yes		yes
+XP_002907670.1_PITG_02778	jgi|Aurli1|12425|gm1.12425_g	28.4	1045	614	14	2.3E-95	342	2778	FAP43	Protein interaction	WD domain protein	0.11	0.73	2.77	0.4	yes	no	yes	FAP43	yes	yes		yes
+XP_002997519.1_PITG_18578	jgi|Aurli1|124899|estExt_fgenesh1_pm.C_140111	58.8	328	132	2	7.47E-145	417	18578	CDC14	Regulatory	Cell cycle protein phosphatase	0	0.11	2.19	1.7	yes	no	yes	CDC14	yes	yes		yes
+XP_002907805.1_PITG_02952	jgi|Aurli1|125084|estExt_fgenesh1_pm.C_150122	61.9	367	139	1	4.82E-171	486	2952	BBS4	Basal body	Transport to flagellar base	0.06	0.9	2.7	0.34	yes	no	yes	BBS4	yes	yes		yes
+XP_002907125.1_PITG_02163	jgi|Aurli1|12603|gm1.12603_g	27.5	324	187	10	9.45E-13	67.8	2163	RIB43A	Tubulin-related	Flagellar protofilament ribbon protein	0.23	0.46	1.18	2.14	yes	no	yes	RIB43A		yes		yes
+XP_002997082.1_PITG_19212	jgi|Aurli1|126297|estExt_fgenesh1_pm.C_220045	41.9	503	243	7	4.72E-139	409	19212	TUBE	Tubulin-related	Tubulin epsilon	1.23	0.71	0.76	1.3	no	no	no	TUE (BLD2)	yes	yes		yes
+XP_002909005.1_PITG_00402	jgi|Aurli1|128271|estExt_fgenesh1_pg.C_2_t10267	32.2	317	170	7	9.94E-34	125	402	FBB11	Uncharacterized	Uncharacterized flagella-associated protein	0.34	3.48	0.16	0.03	yes	no	yes	FBB11		yes		yes
+XP_002906007.1_PITG_04376	jgi|Aurli1|132521|estExt_fgenesh1_pg.C_130121	32.8	412	235	10	1.32E-54	194	4376	C1	Protein interaction	Protein with protein and RNA binding domains	1.24	0.84	1.29	0.64	no	yes	no	C1		yes		yes
+XP_002897720.1_PITG_15572	jgi|Aurli1|13339|gm1.13339_g	27.2	518	290	16	2.92E-30	127	15572	ARM1	Protein interaction	Armadillo repeat protein	0.17	0.6	2.9	0.33	yes	no	yes	ARM1		yes	no	yes
+XP_002900570.1_PITG_13031	jgi|Aurli1|133402|estExt_fgenesh1_pg.C_160241	39.4	160	88	2	5.74E-27	115	13031	VFL3	Basal body	Protein required for centriole assembly	0.81	1.06	1.28	0.85	no	no	no	VFL3		yes		yes
+XP_002896013.1_PITG_19773	jgi|Aurli1|136069|estExt_fgenesh1_kg.C_1_t10052	52.8	288	118	2	3.02E-101	312	19773	FM166	Regulatory	"Protein kinase, NIMA-related"	ns	ns	ns	ns	0	no	yes	FM166 (CNK2)	yes	yes		yes
+XP_002900578.1_PITG_13040	jgi|Aurli1|136155|estExt_fgenesh1_kg.C_1_t10138	30.1	458	203	6	1.95E-62	215	13040	FAP256	Protein interaction	Armadillo fold protein	1.12	0.98	1.08	0.82	no	yes	no	FAP256	yes	yes		yes
+XP_002900655.1_PITG_13132	jgi|Aurli1|136379|estExt_fgenesh1_kg.C_1_t10373	89.4	160	14	1	4.83E-76	223	13132	DLE2	Regulatory	centrin-like protein	0.65	2.09	1.26	0.31	yes	yes	no	DLE2 (VFL2)	yes	yes		yes
+XP_002903156.1_PITG_09512	jgi|Aurli1|136654|estExt_fgenesh1_kg.C_1_t20155	53	287	134	1	5.18E-106	310	9512	BBC30	Basal body	Basal body protein	0.98	0.88	1.37	0.78	no	yes	no	BBC30	yes	yes	yes	yes
+XP_002997702.1_PITG_18071	jgi|Aurli1|137309|estExt_fgenesh1_kg.C_30167	40.6	187	108	3	3.2E-49	159	18071	FM14	Uncharacterized	Protein of unknown function DUF298	0.94	1.42	0.74	0.92	no	yes	no	FM14	yes	yes		yes
+XP_002900221.1_PITG_12844	jgi|Aurli1|137778|estExt_fgenesh1_kg.C_40287	32.5	114	76	1	1.18E-10	58.5	12844	FAP111	Protein interaction	Leucine rich repeat protein	0.01	0.19	2.46	1.34	yes	no	yes	FAP111		yes		yes
+XP_002997507.1_PITG_19017	jgi|Aurli1|138233|estExt_fgenesh1_kg.C_60084	64.5	245	73	4	2.39E-102	296	19017	FTT18	Protein interaction	14-3-3 domain protein	1.2	1.07	1.09	0.65	no	yes	no	FTT18 (BBC78)	yes	yes		yes
+XP_002899472.1_PITG_13778	jgi|Aurli1|138238|estExt_fgenesh1_kg.C_60089	42.1	292	150	5	8.52E-73	226	13778	DYF-18	Regulatory	Protein kinase	0.76	0.95	0.96	1.32	no	no	no	DYF-18	yes	yes		yes
+XP_002903764.1_PITG_08375	jgi|Aurli1|138437|estExt_fgenesh1_kg.C_60294	26.8	194	126	5	1.01E-14	69.7	8375	FM106	Metabolism	Glucokinase	1.24	1.09	1.25	0.39	no	yes	no	FM106		yes		yes
+XP_002899472.1_PITG_13778	jgi|Aurli1|138703|estExt_fgenesh1_kg.C_70262	41.3	298	163	7	1.42E-73	227	13778	DYF-18	Regulatory	Protein kinase	0.76	0.95	0.96	1.32	no	no	no	DYF-18	yes	yes		yes
+XP_002899758.1_PITG_13551	jgi|Aurli1|140607|estExt_fgenesh1_kg.C_140197	33.6	357	205	10	1.56E-54	193	13551	FCK	Metabolism	Phosphagen kinase	0.21	2.07	1.26	0.45	yes	no	yes	FCK		yes	yes	yes
+XP_002906099.1_PITG_04489	jgi|Aurli1|140928|estExt_fgenesh1_kg.C_160100	46.2	611	274	15	3.17E-148	464	4489	FM165	Metabolism	AAA ATPase	0.72	0.73	1.01	1.55	no	yes	no	FM165	y	yes		yes
+XP_002900472.1_PITG_12915	jgi|Aurli1|141904|estExt_fgenesh1_kg.C_210091	36.2	437	259	5	1.42E-94	296	12915	TT8061	Regulatory	"Retromer coat complex protein, RAB GTPase"	1.5	1.12	1.23	0.16	no	no	no	TT8061	yes	yes		yes
+XP_002908783.1_PITG_00156	jgi|Aurli1|142419|estExt_fgenesh1_kg.C_250056	94.3	441	25	0	0	865	156	TUBB	Tubulin-related	Tubulin beta	0.24	0.72	2.87	0.18	yes	yes	no	TUB	yes	yes		yes
+XP_002909533.1_PITG_01003	jgi|Aurli1|143955|estExt_Genemark1.C_1_t30212	25.1	569	242	11	8.49E-43	165	1003	SSA7	Uncharacterized	Uncharacterized flagella-associated protein	0.56	1.06	1.85	0.53	yes	yes	yes	SSA7		yes		yes
+XP_002999301.1_PITG_05682	jgi|Aurli1|145675|estExt_Genemark1.C_5_t10425	50.9	55	26	1	1.49E-14	64.7	5682	DLL1	Outer dynein arm	Outer dynein arm light chain protein	0.07	2.08	1.77	0.08	yes	no	yes	DLL1 (ODA-LC8)		yes		yes
+XP_002896853.1_PITG_17354	jgi|Aurli1|146762|estExt_Genemark1.C_8_t10220	63.6	360	127	1	2.59E-178	498	17354	TB-WD	Protein interaction	WD domain protein	0.5	1.69	1.39	0.42	yes	yes	no	TB-WD	yes	yes		yes
+XP_002904228.1_PITG_08038	jgi|Aurli1|147899|estExt_Genemark1.C_110231	30.4	158	88	4	3.99E-13	65.1	8038	MOT25	Uncharacterized	Uncharacterized flagella-associated protein	0.08	0.3	2.24	1.38	yes	no	yes	MOT25	no	yes		yes
+XP_002898370.1_PITG_15414	jgi|Aurli1|1517|gm1.1517_g	70.2	258	54	3	3.9E-83	248	15414	DII1	Inner dynein arm	Inner dynein arm protein	0.07	1.1	2.29	0.55	yes	no	yes	"DII1 (IDA4, IA-IC28)"	yes	yes	yes	yes
+XP_002999244.1_PITG_05619	jgi|Aurli1|1598|gm1.1598_g	27	470	314	8	1.84E-49	174	5619	RSP7	Radial spoke	Radial spoke protein	ns	ns	ns	ns	ns	no	yes	RSP7		yes		yes
+XP_002899371.1_PITG_12594	jgi|Aurli1|2720|gm1.2720_g	31.4	740	448	12	2.93E-86	285	12594	FAP116	Protein interaction	Microtubule interacting protein	0.52	1.31	1.75	0.43	yes	no	yes	FAP116	yes	yes		yes
+XP_002997358.1_PITG_18709	jgi|Aurli1|2830|gm1.2830_g	56.9	318	125	2	7.24E-107	315	18709	FAP263	Uncharacterized	Uncharacterized flagella-associated protein	0.08	1.66	1.62	0.64	yes	no	yes	FAP263	yes	yes		yes
+XP_002997266.1_PITG_18788	jgi|Aurli1|29101|fgenesh1_pg.1_#_758	30.2	507	237	10	1.28E-66	219	18788	TUBD	Tubulin-related	Tubulin delta	1.15	0.9	1.28	0.67	no	no	yes	UNI3 (TUBULIN-DELTA)	yes	yes		yes
+XP_002997819.1_PITG_18373	jgi|Aurli1|29307|fgenesh1_pg.1_#_964	28	1014	560	28	1.62E-82	297	18373	FAP61	Uncharacterized	Uncharacterized flagella-associated protein	0.27	1.43	2.03	0.28	yes	no	yes	FAP61	yes	yes		yes
+XP_002900260.1_PITG_12891	jgi|Aurli1|30627|fgenesh1_pg.3_#_254	31.6	291	186	5	1.78E-29	114	12891	MOT17	Regulatory	IQ calmodulin-binding region	0.32	0.86	1.42	1.4	yes	no	yes	MOT17		yes		yes
+XP_002905355.1_PITG_04600	jgi|Aurli1|3101|gm1.3101_g	25.5	428	200	14	2.31E-22	100	4600	DII6	Inner dynein arm	"Intermediate chain dynein, interacts with inner arm"	0.57	1.14	2	0.29	yes	no	yes	"DII6 (FAP94, IC97)"		yes		yes
+XP_002902733.1_PITG_10212	jgi|Aurli1|31122|fgenesh1_pg.4_#_88	44.1	188	95	2	3.69E-59	182	10212	BBS3	Basal body	Transport to flagellar base	0.02	0.3	2.06	1.62	yes	no	yes	BBS3 (ARL6)		yes	no	yes
+XP_002997466.1_PITG_19155	jgi|Aurli1|32174|fgenesh1_pg.5_#_525	28	1244	612	43	4.74E-101	356	19155	FM134	Uncharacterized	Uncharacterized flagella-associated protein	ns	ns	ns	ns	ns	no	yes	FM134	yes	yes		yes
+XP_002909214.1_PITG_00635	jgi|Aurli1|32281|fgenesh1_pg.6_#_31	33	230	139	3	4.23E-29	125	635	PKD2	Regulatory	Protein kinase	ns	ns	ns	ns	ns	yes	no	PKD2		yes	no	yes
+XP_002905241.1_PITG_07309	jgi|Aurli1|32622|fgenesh1_pg.6_#_372	24.2	356	234	11	6.9E-12	66.6	7309	RSP8	Radial spoke	Radial spoke protein	0.12	0.73	2.49	0.66	yes	no	yes	RSP8		yes		yes
+XP_002907064.1_PITG_02094	jgi|Aurli1|32709|fgenesh1_pg.6_#_459	38.8	320	173	5	2.11E-65	207	2094	RSP16	Radial spoke	Radial spoke protein	0.11	1.01	1.91	0.96	yes	no	no	RSP16		yes		yes
+XP_002901786.1_PITG_10996	jgi|Aurli1|33823|fgenesh1_pg.8_#_361	25.7	175	110	4	0.0000014	51.6	10996	FAP264	Protein interaction	Leucine rich repeat protein	0.26	0.72	2.98	0.04	yes	no	yes	FAP264		yes		yes
+XP_002901793.1_PITG_11003	jgi|Aurli1|34336|fgenesh1_pg.9_#_332	30.5	200	124	7	0.00000138	50.4	11003	TB0810	Uncharacterized	Uncharacterized flagella associated protein	ns	ns	ns	ns	ns	no	yes	TB10.6K15.0810		yes		yes
+XP_002902654.1_PITG_10127	jgi|Aurli1|34338|fgenesh1_pg.9_#_334	41.7	168	96	2	4.54E-36	130	10127	RAB23	Regulatory	Rab-type GTPase	0.05	0.29	1.77	1.88	yes	no	yes	RAB23		yes		yes
+XP_002895573.1_PITG_20749	jgi|Aurli1|35262|fgenesh1_pg.11_#_69	41.8	134	77	1	4.19E-31	110	20749	IFT27	Regulatory	Ras GTPase	0.8	0.96	1.28	0.96	no	no	no	FAP156 (IFT27)		yes		yes
+XP_002896841.1_PITG_17342	jgi|Aurli1|3556|gm1.3556_g	50	450	221	2	9.76E-110	332	17342	PF2	Regulatory	Dynein regulatory complex	0.07	0.9	2.13	0.89	yes	no	yes	PF2 (GAS8)	yes	yes		yes
+XP_002904881.1_PITG_06904	jgi|Aurli1|35834|fgenesh1_pg.12_#_161	33	212	113	7	1.11E-24	98.6	6904	FBB5	Uncharacterized	Uncharacterized flagella-basal body protein	ns	ns	ns	ns	ns	no	yes	FBB5		yes		yes
+XP_002903780.1_PITG_08395	jgi|Aurli1|35868|fgenesh1_pg.12_#_195	48.5	575	239	5	3.05E-139	416	8395	FAP100	Uncharacterized	Uncharacterized flagella-associated protein	0.05	0.46	2.76	0.73	yes	no	yes	FAP100	yes	yes		yes
+XP_002903098.1_PITG_09445	jgi|Aurli1|35988|fgenesh1_pg.12_#_315	55.3	103	46	0	1.83E-30	105	9445	ACP1	Metabolism	Acyl carrier protein	1.08	0.74	1.67	0.51	no	yes	no	ACP1		yes	yes	yes
+XP_002903594.1_PITG_09311	jgi|Aurli1|36260|fgenesh1_pg.13_#_174	26.3	1700	929	52	3.25E-121	422	9311	FAP81	Uncharacterized	Uncharacterized flagella-associated protein	0.26	0.66	2.41	0.67	yes	no	yes	FAP81	yes	yes		yes
+XP_002899990.1_PITG_13346	jgi|Aurli1|36332|fgenesh1_pg.13_#_246	42.3	369	207	2	6.97E-76	239	13346	FAP122	Protein interaction	IQ calmodulin-binding region	0.15	0.81	2.74	0.3	yes	no	yes	FAP122	yes	yes		yes
+XP_002900449.1_PITG_12577	jgi|Aurli1|36581|fgenesh1_pg.14_#_57	50	4817	2066	50	0	4503	12577	DHC14	Outer dynein arm	Outer dynein arm protein	0.07	0.6	2.82	0.51	yes	no	yes	DHC14  (ODA4)		yes		yes
+XP_002897760.1_PITG_15625	jgi|Aurli1|36581|fgenesh1_pg.14_#_57	41.5	5173	2433	70	0	3753	15625	ODA4(C)	Outer dynein arm	Outer dynein arm protein	ns	ns	ns	ns	ns	no	yes	ODA4(C)		yes		yes
+XP_002908502.1_PITG_01908	jgi|Aurli1|3743|gm1.3743_g	34.3	172	95	5	5.53E-22	89	1908	CAH1	Metabolism	Carbonic anhydrase	0.8	2.5	0.7	0.01	yes	no	yes	CAH1		yes	no	yes
+XP_002900446.1_PITG_12574	jgi|Aurli1|37642|fgenesh1_pg.17_#_33	65.6	154	51	2	1.16E-65	200	12574	RABB1	Regulatory	Rab-type GTPase	1.41	1.18	0.94	0.47	no	yes	no	RABB1		yes		yes
+XP_002905596.1_PITG_04893	jgi|Aurli1|37996|fgenesh1_pg.17_#_387	23.4	508	296	20	2.34E-12	70.1	4893	FAP69	Protein interaction	Armadillo repeat protein	0.47	0.86	1.7	0.98	yes	no	yes	FAP69		yes		yes
+XP_002903579.1_PITG_09294	jgi|Aurli1|38427|fgenesh1_pg.19_#_47	26.8	1212	621	34	6.59E-104	358	9294	FM145	Regulatory	Calcium-binding EF-hand	ns	ns	ns	ns	ns	no	no	FM145	yes	yes		yes
+XP_002906917.1_PITG_03878	jgi|Aurli1|38460|fgenesh1_pg.19_#_80	55.5	661	254	7	4.57E-248	704	3878	DIC1	Outer dynein arm	Outer dynein arm intermediate chain protein	0.3	1.2	1.94	0.57	yes	no	yes	"DIC1 (ODA9, ODA-IC1)"	yes	yes		yes
+XP_002907344.1_PITG_02417	jgi|Aurli1|39399|fgenesh1_pg.22_#_53	48.1	591	274	8	1.15E-154	457	2417	DCC2	Outer dynein arm	Outer dynein arm protein	0.04	1.17	2.15	0.63	yes	no	yes	"DCC2 (ODA1, ODA-DC2)"	yes	yes		yes
+XP_002998387.1_PITG_06225	jgi|Aurli1|4023|gm1.4023_g	36.3	430	227	14	1.52E-69	226	6225	RSP4	Radial spoke	Radial spoke protein	0.07	1.69	1.71	0.53	yes	no	yes	RSP4		yes		yes
+XP_002906650.1_PITG_03592	jgi|Aurli1|40621|fgenesh1_pg.28_#_55	22.6	461	319	13	3.12E-15	79.3	3592	FAP14	Protein interaction	Heat repeat protein	2.26	1.37	0.39	0.14	no	no	no	FAP14		yes		yes
+XP_002904210.1_PITG_08015	jgi|Aurli1|40704|fgenesh1_pg.29_#_26	27.3	337	180	9	4.16E-29	115	8015	DLI1	Intraflagellar transport	Dynein light intermediate chain	0.16	0.67	2.46	0.71	yes	no	yes	DLI1 (D1BLIC)		yes		yes
+XP_002908916.1_PITG_00298	jgi|Aurli1|42018|fgenesh1_kg.1_#_438_#_isotig03173	42.2	339	120	4	1.51E-81	261	298	SSA16	Regulatory	Alpha kinase	1.1	0.83	1.12	0.95	no	yes	no	SSA16	yes	yes		yes
+XP_002895421.1_PITG_20801	jgi|Aurli1|42701|fgenesh1_kg.2_#_429_#_isotig06459	30.4	181	98	4	1.49E-19	84.7	20801	TB-WW	Protein interaction	WW domain-containing protein	ns	ns	ns	ns	0	yes	no	TB-WW		yes		yes
+XP_002899758.1_PITG_13551	jgi|Aurli1|42973|fgenesh1_kg.3_#_231_#_isotig05435	34	356	206	10	1.01E-47	174	13551	FCK	Metabolism	Phosphagen kinase	0.21	2.07	1.26	0.45	yes	no	yes	FCK		yes	yes	yes
+XP_002908783.1_PITG_00156	jgi|Aurli1|43132|fgenesh1_kg.4_#_25_#_isotig01301	94.8	441	23	0	0	866	156	TUBB	Tubulin-related	Tubulin beta	0.24	0.72	2.87	0.18	yes	yes	no	TUB	yes	yes		yes
+XP_002900242.1_PITG_12873	jgi|Aurli1|43470|fgenesh1_kg.5_#_38_#_isotig08158	45.1	193	99	2	8.32E-42	150	12873	DAP1	Intraflagellar transport	Intraflagellar transport protein	0.55	1.38	1.79	0.29	yes	no	yes	"DAP1 (MOT45, PF13)"		yes		yes
+XP_002907736.1_PITG_02853	jgi|Aurli1|45721|fgenesh1_kg.12_#_86_#_isotig07081	38.1	268	160	3	3.85E-47	158	2853	ECH1	Metabolism	EnoylCoA hydratase/isomerase	0.81	1.66	1.04	0.49	no	yes	no	ECH1		yes		yes
+XP_002899758.1_PITG_13551	jgi|Aurli1|45810|fgenesh1_kg.12_#_175_#_isotig10864	38.5	179	103	5	2.47E-32	123	13551	FCK	Metabolism	Phosphagen kinase	0.21	2.07	1.26	0.45	yes	no	yes	FCK		yes	yes	yes
+XP_002907607.1_PITG_02707	jgi|Aurli1|45998|fgenesh1_kg.13_#_130_#_isotig04664	27.6	301	182	11	6.8E-19	86.3	2707	SSA20	Metabolism	Chymotrypsin	1.03	1.29	0.53	1.15	no	yes	no	SSA20		yes		yes
+XP_002900775.1_PITG_12155	jgi|Aurli1|46695|fgenesh1_kg.16_#_127_#_isotig10207	69.9	183	53	2	6.52E-92	265	12155	RSP12	Radial spoke	Radial spoke protein	1.34	0.85	1.5	0.31	no	yes	no	RSP12 (MOT14)	yes	yes		yes
+XP_002999251.1_PITG_05629	jgi|Aurli1|47361|fgenesh1_kg.19_#_147_#_isotig02824	31	339	176	10	1.57E-31	129	5629	MOT18	Uncharacterized	non-canonical poly(A) polymerase family	1.48	1.14	0.68	0.7	no	yes	no	MOT18		yes		yes
+XP_002895619.1_PITG_20610	jgi|Aurli1|49215|gw1.10.5.1	36.8	299	167	8	6.79E-51	172	20610	MOT35	Basal body	Basal body associated	ns	ns	ns	ns	ns	no	yes	"MOT35 (FAP21, BUG15)"		yes		yes
+XP_002905551.1_PITG_04848	jgi|Aurli1|50826|gw1.5.60.1	56.8	118	43	2	5.81E-52	160	4848	MOT28	Uncharacterized	Uncharacterized flagella-associated protein	ns	ns	ns	ns	ns	no	yes	MOT28	yes	yes		yes
+XP_002905405.1_PITG_04666	jgi|Aurli1|5124|gm1.5124_g	31.7	271	121	6	1.02E-29	120	4666	SSA13	Regulatory	Calcium-binding EF-hand protein	0.38	0.18	1.06	2.38	yes	yes	yes	SSA13	no	yes		yes
+XP_002998773.1_PITG_06694	jgi|Aurli1|51985|gw1.2.167.1	45.5	77	42	0	2.45E-22	89	6694	MOT5	Intraflagellar transport	Intraflagellar transport protein	0.04	1.42	1.84	0.71	yes	no	yes	MOT5		yes		yes
+XP_002897726.1_PITG_15582	jgi|Aurli1|5252|gm1.5252_g	29.2	3432	1793	93	0	1219	15582	FAP47	Protein interaction	Calponin-like actin-binding protein	0.2	0.57	1.48	1.75	yes	no	yes	FAP47	yes	yes		yes
+XP_002998364.1_PITG_06195	jgi|Aurli1|52826|gw1.20.114.1	32.4	510	258	17	5.89E-63	213	6195	SSA2	Metabolism	Carboxypeptidase A	0.45	1.52	0.92	1.11	yes	no	yes	SSA2		yes		yes
+XP_002908211.1_PITG_01567	jgi|Aurli1|56961|gw1.12.276.1	35.1	231	109	7	9.74E-38	131	1567	MOT39	Regulatory	IQ calmodulin-binding and zinc finger region	0.05	0.2	2.06	1.69	yes	no	yes	MOT39		yes		yes
+XP_002997363.1_PITG_18714	jgi|Aurli1|58218|gw1.32.26.1	42.4	701	355	22	1.7E-177	524	18714	IFT80	Intraflagellar transport	Intraflagellar transport protein	0.1	0.38	3.3	0.22	yes	no	yes	IFT80	yes	yes		yes
+XP_002903267.1_PITG_09652	jgi|Aurli1|59191|gw1.1.1056.1	72.7	44	11	1	8.61E-16	66.2	9652	DPY30	Uncharacterized	Chromatin modifying protein complex protein	0.61	0.94	1.18	1.27	no	no	no	DPY30		yes		yes
+XP_002903506.1_PITG_09209	jgi|Aurli1|60924|gw1.13.387.1	57.4	636	244	7	2.11E-253	711	9209	TPR5	Protein interaction	Tetratricopeptide repeat protein	0.27	1.61	1.68	0.44	yes	no	yes	TPR5 (FAP259)	yes	yes		yes
+XP_002905408.1_PITG_04669	jgi|Aurli1|61684|gw1.19.330.1	58.1	74	31	0	2.26E-25	99.4	4669	MOT16	Uncharacterized	Protein of unknown function DUF1042	0.51	1.25	1.28	0.96	yes	no	yes	MOT16		yes		yes
+XP_002902994.1_PITG_08954	jgi|Aurli1|6201|gm1.6201_g	27.4	372	205	16	1.84E-18	87	8954	TT6659	Basal body	Basal body EF-hand protein	0.82	2.85	0.31	0.02	yes	no	yes	TT6659		yes		yes
+XP_002906691.1_PITG_03634	jgi|Aurli1|62206|gw1.2.764.1	34	350	182	8	1.25E-57	188	3634	FAP67	Metabolism	Nucleoside diphosphate kinase	0.18	1	2.18	0.65	yes	no	yes	FAP67		yes		yes
+XP_002904374.1_PITG_08216	jgi|Aurli1|62749|gw1.11.465.1	44.6	1212	545	14	3.33E-221	668	8216	FAP57	Protein interaction	WD domain protein	0.24	0.44	2.81	0.51	yes	no	yes	FAP57	yes	yes		yes
+XP_002903457.1_PITG_09137	jgi|Aurli1|63667|gw1.1.1510.1	37	119	50	2	5.73E-24	88.2	9137	IFT22	Intraflagellar transport	Intraflagellar transport protein	0.36	1.19	1.79	0.66	yes	no	yes	IFT22 (FAP9)		yes		yes
+XP_002909482.1_PITG_00942	jgi|Aurli1|64270|gw1.21.367.1	48.7	113	57	1	7.66E-29	109	942	DAP2	Uncharacterized	Uncharacterized flagella-associated protein	1.5	1.23	1.26	0.01	no	no	no	DAP2 (MOT 48)		yes		yes
+XP_002902877.1_PITG_08808	jgi|Aurli1|64326|gw1.3.727.1	36.8	223	141	0	2.25E-41	147	8808	MOT6	Regulatory	EF-hand domain protein	1.12	1.02	1.08	0.78	no	yes	no	MOT6		yes	no	yes
+XP_002998158.1_PITG_05920	jgi|Aurli1|64644|gw1.9.714.1	36.2	232	135	9	9.35E-34	122	5920	MOT50	Intraflagellar transport	Intraflagellar transport protein	1.19	0.86	0.86	1.08	no	yes	no	MOT50		yes		yes
+XP_002900733.1_PITG_12109	jgi|Aurli1|65345|gw1.1.1697.1	36.9	222	136	3	4.61E-18	80.1	12109	MOT49 	Uncharacterized	Outer dynein arm protein with leucine-rich repeats	0.3	0.84	2.66	0.21	yes	no	yes	MOT49 		yes		yes
+XP_002898734.1_PITG_15290	jgi|Aurli1|65371|gw1.7.777.1	41.2	906	416	22	2.39E-162	494	15290	FBB15	Uncharacterized	DUF716 domain-containing protein	0.14	0.62	3.02	0.22	yes	no	yes	FBB15	yes	yes		yes
+XP_002900052.1_PITG_13419	jgi|Aurli1|65473|gw1.19.423.1	50.2	203	95	3	1.12E-68	210	13419	PACRG2	Centriole	Parkin co-regulated chaperone complex protein	0.05	0.43	1.71	1.81	yes	no	yes	PACRG2		yes		yes
+XP_002998960.1_PITG_05291	jgi|Aurli1|65553|gw1.5.697.1	39.1	371	175	11	1.45E-66	215	5291	IRK1	Regulatory	Potassium channel protein	1.27	1.33	0.76	0.63	no	yes	no	IRK1		yes		yes
+XP_002902769.1_PITG_08685	jgi|Aurli1|65710|gw1.8.647.1	55.7	185	76	4	5.49E-67	204	8685	POC7	Uncharacterized	Uncharacterized flagella and centriole protein	0.16	1.73	1.89	0.23	yes	no	yes	UNC119 (POC7)	yes	yes		yes
+XP_002997799.1_PITG_18352	jgi|Aurli1|65782|gw1.1.1759.1	40	75	45	0	8.9E-17	69.7	18352	SSA17	Protein interaction	WW domain protein	0.19	0.67	1.94	1.19	yes	no	yes	SSA17		yes		yes
+XP_002907368.1_PITG_02442	jgi|Aurli1|65933|gw1.6.770.1	55.1	127	47	2	1.89E-40	144	2442	MOT15	Metabolism	Cysteine peptidase 	ns	ns	ns	ns	ns	no	yes	MOT15		yes	no	yes
+XP_002904194.1_PITG_07996	jgi|Aurli1|6602|gm1.6602_g	93.8	453	28	0	0	872	7996	TUBA	Tubulin-related	Tubulin alpha	0.16	1.14	2.29	0.42	yes	yes	no	TUBA (TUBULIN-ALPHA)	yes	yes		yes
+XP_002900665.1_PITG_13145	jgi|Aurli1|66057|gw1.13.575.1	27.8	187	86	3	1.01E-16	77.4	13145	DII2	Inner dynein arm	Associates with inner arm	0.11	0.2	2.34	1.36	yes	no	yes	DII2 (FAP146)		yes		yes
+XP_002900004.1_PITG_13367	jgi|Aurli1|66112|gw1.4.748.1	41.1	141	82	1	2.31E-30	113	13367	FM72	Metabolism	Adenylate cyclase-associated domain	ns	ns	ns	ns	ns	no	yes	FM72 (XRP2)		yes	no	yes
+XP_002895351.1_PITG_21017	jgi|Aurli1|67298|gw1.17.494.1	31.7	4532	2556	106	0	2033	21017	HYD3	Uncharacterized	"Similar to mouse hydrocephaly protein, needed for motility"	0.09	0.77	1.84	1.29	yes	no	yes	HYD3 (HYDIN)	yes	yes		yes
+XP_002997652.1_PITG_18539	jgi|Aurli1|67334|gw1.14.523.1	35.8	438	249	8	1.9E-67	224	18539	DIC5	Intraflagellar transport	IFT dynein intermediate chain	ns	ns	ns	ns	ns	no	yes	DIC5 (FAP133)	yes	yes		yes
+XP_002904817.1_PITG_06833	jgi|Aurli1|67587|gw1.20.532.1	37.3	308	162	6	8.05E-64	216	6833	POC18	Centriole	RabGAP WD40 protein	0.14	0.42	0.45	2.99	yes	no	yes	POC18	yes	yes		yes
+XP_002895340.1_PITG_20902	jgi|Aurli1|68209|e_gw1.1.1591.1	43.3	171	85	4	1.11E-40	136	20902	DLE3	Outer dynein arm	"Outer dynein arm docking complex, calcium binding"	0.21	0.27	1.76	1.76	yes	no	yes	"DLE3 (ODA-DC3, ODA14)"		yes		yes
+XP_002900449.1_PITG_12577	jgi|Aurli1|69130|e_gw1.1.1184.1	46.9	4693	2198	50	0	4082	12577	DHC14	Outer dynein arm	Outer dynein arm protein	0.07	0.6	2.82	0.51	yes	no	yes	DHC14  (ODA4)		yes		yes
+XP_002897760.1_PITG_15625	jgi|Aurli1|69130|e_gw1.1.1184.1	45.5	4945	2338	59	0	4007	15625	ODA4(C)	Outer dynein arm	Outer dynein arm protein	ns	ns	ns	ns	ns	no	yes	ODA4(C)		yes		yes
+XP_002903053.1_PITG_09030	jgi|Aurli1|69425|e_gw1.1.1145.1	43.2	95	54	0	4.65E-27	94.7	9030	DLL3	Outer dynein arm	Dynein light chain	ns	ns	ns	ns	ns	no	yes	DLL3 (MOT24)		yes	no	yes
+XP_002900134.1_PITG_12744	jgi|Aurli1|69470|e_gw1.1.1155.1	56.4	133	58	0	1.25E-47	152	12744	CEN3	Regulatory	Centrin (caltractin)	0.26	0.93	2.12	0.69	yes	no	yes	CEN3		yes	no	yes
+XP_002999209.1_PITG_05583	jgi|Aurli1|69564|e_gw1.1.1528.1	30.2	202	132	4	4.22E-19	85.1	5583	GSTS1	Metabolism	Glutathione S transferase	1.09	1.46	0.99	0.42	no	yes	no	FM107 (GSTS1)		yes		yes
+XP_002997419.1_PITG_19102	jgi|Aurli1|70270|e_gw1.2.3.1	29.1	728	405	22	1.39E-81	271	19102	CEP76	Basal body	Basal body protein	0.62	1.67	1.03	0.31	yes	no	yes	CEP76	yes	yes		yes
+XP_002902732.1_PITG_10211	jgi|Aurli1|70288|e_gw1.2.344.1	93.1	189	13	0	4.04E-129	362	10211	BUG22	Basal body	DUF667-containing basal body protein	0.15	1.51	2.04	0.3	yes	no	yes	BUG22 (FAP20)	yes	yes		yes
+XP_002908460.1_PITG_01859	jgi|Aurli1|71135|e_gw1.2.1143.1	37.1	326	177	9	1.07E-62	204	1859	MOT4	Uncharacterized	"Zn-finger-like, PHD finger"	0.32	0.8	2.24	0.64	yes	no	yes	MOT4	yes	yes		yes
+XP_002999178.1_PITG_05548	jgi|Aurli1|71598|e_gw1.3.666.1	47.3	452	198	8	1.21E-124	382	5548	FBB17	Uncharacterized	Carboxypeptidase	0.33	0.7	2.49	0.48	yes	no	yes	FBB17	yes	yes		yes
+XP_002902625.1_PITG_10094	jgi|Aurli1|71789|e_gw1.3.569.1	50	528	227	8	5.6E-149	459	10094	IFT88	Intraflagellar transport	Intraflagellar transport protein	0.11	1.71	0.95	1.24	yes	no	yes	IFT88	yes	yes		yes
+XP_002904074.1_PITG_07855	jgi|Aurli1|71976|e_gw1.3.870.1	37.9	327	189	5	1.92E-63	209	7855	MOT20	Uncharacterized	Uncharacterized flagella-associated protein	0.17	0.22	0.25	3.36	no	yes	no	MOT20	yes	yes		yes
+XP_002906177.1_PITG_03077	jgi|Aurli1|72199|e_gw1.4.177.1	44	357	179	4	2.7E-99	306	3077	SSA11	Tubulin-related	Tubulin-tyrosine ligase	0.22	0.44	2.5	0.83	yes	no	no	SSA11	yes	yes		yes
+XP_002909206.1_PITG_00627	jgi|Aurli1|72388|e_gw1.4.647.1	80.4	224	42	1	1.58E-125	354	627	FBB9	Uncharacterized	Uncharacterized flagella-basal body protein	ns	ns	ns	ns	ns	no	yes	FBB9	yes	yes		yes
+XP_002907620.1_PITG_02721	jgi|Aurli1|724|gm1.724_g	55.9	392	157	5	1.25E-163	466	2721	FAP267	Tubulin-related	Tubulin-tyrosine ligase	0.18	0.87	2.4	0.55	yes	no	no	FAP267	yes	yes		yes
+XP_002906489.1_PITG_03419	jgi|Aurli1|7270|gm1.7270_g	21.3	733	444	23	6.1E-17	86.3	3419	CPC1	Central pair	Central pair complex adenylate kinase 	0.17	0.12	0.77	2.94	yes	no	yes	CPC1		yes		yes
+XP_002905292.1_PITG_04513	jgi|Aurli1|72712|e_gw1.4.210.1	34.1	413	226	11	4.62E-60	205	4513	RIB72	Metabolism	Nucleoside-diphosphokinase regulatory subunit	0.19	0.48	1.36	1.98	yes	no	yes	RIB72		yes		yes
+XP_002903573.1_PITG_09288	jgi|Aurli1|72767|e_gw1.4.92.1	32.3	470	270	15	1.42E-66	232	9288	POC10	Centriole	IQ calmodulin-binding region	0.44	1.08	2.37	0.1	yes	no	yes	NPH4 (POC10)	yes	yes		yes
+XP_002997963.1_PITG_18032	jgi|Aurli1|72776|e_gw1.4.187.1	34.3	137	87	2	4.29E-15	71.6	18032	FAP279	Protein interaction	Leucine-rich repeat protein	ns	ns	ns	ns	ns	no	yes	FAP279		yes		yes
+XP_002903807.1_PITG_08424	jgi|Aurli1|72885|e_gw1.4.563.1	39.4	831	405	18	1.95E-168	505	8424	KLP1	Central pair	Kinesin-like protein	0.22	0.83	2.21	0.74	yes	no	yes	KLP1	yes	yes		yes
+XP_002900972.1_PITG_11375	jgi|Aurli1|73169|e_gw1.5.796.1	25.7	113	73	3	6.28E-10	52.4	11375	DLX2	Outer dynein arm	Outer dynein arm light chain protein	0.04	1.19	1.89	0.88	yes	no	yes	"DLX2 (ODA-LC5, DLC5)"		yes		yes
+XP_002895259.1_PITG_21013	jgi|Aurli1|73281|e_gw1.5.806.1	40.3	663	318	7	2.04E-151	454	21013	KAP	Intraflagellar transport	Kinesin-associated protein	0.46	0.98	1.8	0.75	yes	no	yes	KAP	yes	yes		yes
+XP_002903590.1_PITG_09306	jgi|Aurli1|73306|e_gw1.5.700.1	34.1	417	160	9	2.64E-67	215	9306	MAS1	Mastigoneme	Mastigoneme protein	0.12	0.26	1.35	2.28	yes	no	yes	MAS1		yes		yes
+XP_002901515.1_PITG_10664	jgi|Aurli1|73352|e_gw1.5.230.1	44.8	1264	629	17	0	1058	10664	IFT122	Intraflagellar transport	Intraflagellar transport protein	ns	ns	ns	ns	ns	no	yes	IFT122		yes		yes
+XP_002897191.1_PITG_16973	jgi|Aurli1|73589|e_gw1.5.141.1	50	56	27	1	3.8E-15	64.7	16973	DLL2	Outer dynein arm	Outer dynein arm light chain protein	0.51	1.02	1.75	0.73	yes	no	yes	DLL2 (ODA13)		yes	no	yes
+XP_002902933.1_PITG_08880	jgi|Aurli1|73614|e_gw1.5.671.1	69.5	177	52	1	7.05E-88	254	8880	ARLC2	Regulatory	ARF-like GTPase	0.04	1.23	1.07	1.66	yes	no	no	ARLC2 (ARL3)	yes	yes	yes	yes
+XP_002907419.1_PITG_02495	jgi|Aurli1|73615|e_gw1.5.245.1	46	439	215	6	4.34E-102	337	2495	TB6300	Regulatory	Phosphatidylinositol 3-related kinase	ns	ns	ns	ns	0	yes	no	TB11.01.6300	yes	yes		yes
+XP_002909609.1_PITG_01088	jgi|Aurli1|73860|e_gw1.6.794.1	48.8	4147	1929	41	0	3777	1088	DHC10	Inner dynein arm	Inner dynein arm protein	0.08	0.36	1.72	1.84	yes	no	yes	DHC10 (IDA2)		yes		yes
+XP_002906123.1_PITG_03018	jgi|Aurli1|73860|e_gw1.6.794.1	50.2	4123	1906	31	0	3974	3018	DHC2	Inner dynein arm	Dynein  heavy chain protein	0.03	0.66	1.61	1.7	yes	no	yes	DHC2		yes		yes
+XP_002904019.1_PITG_07793	jgi|Aurli1|74180|e_gw1.6.666.1	33.3	126	81	3	3.8E-19	76.6	7793	DLT2	Outer dynein arm	Outer dynein arm light chain protein	0.05	1.36	2.11	0.48	yes	no	yes	DLT2 (ODA-LC2)		yes		yes
+XP_002904926.1_PITG_06949	jgi|Aurli1|7509|gm1.7509_g	45.5	123	67	0	5.9E-26	94	6949	IFT20	Intraflagellar transport	Intraflagellar transport protein	0.24	1.54	1.81	0.41	yes	no	yes	IFT20		yes		yes
+XP_002900247.1_PITG_12878	jgi|Aurli1|75101|e_gw1.7.500.1	47.1	210	97	3	1.94E-63	196	12878	MAS4	Mastigoneme	Mastigoneme protein	0.04	1.55	2.31	0.1	yes	no	yes	MAS4		yes		yes
+XP_002998291.1_PITG_06106	jgi|Aurli1|7514|gm1.7514_g	38.3	705	411	8	4.01E-130	399	6106	IFT81	Intraflagellar transport	Intraflagellar transport protein	0.37	1.11	2.2	0.32	yes	no	yes	IFT81	yes	yes		yes
+XP_002902837.1_PITG_08756	jgi|Aurli1|75425|e_gw1.7.408.1	52	402	182	4	7.14E-150	431	8756	MOT11	Tubulin-related	Tubulin-tyrosine ligase	0.33	0.67	2	1	yes	no	yes	MOT11	yes	yes		yes
+XP_002901621.1_PITG_10796	jgi|Aurli1|75623|e_gw1.8.427.1	51.7	522	244	5	9.73E-156	455	10796	FAP250	Uncharacterized	Uncharacterized flagella-associated protein	0.16	0.49	2.15	1.19	yes	no	yes	FAP250	yes	yes		yes
+XP_002896903.1_PITG_16674	jgi|Aurli1|75705|e_gw1.8.382.1	42.8	362	181	4	7.92E-77	246	16674	MOT47	Protein interaction	Leucine-rich repeat protein	ns	ns	ns	ns	ns	no	yes	MOT47	yes	yes		yes
+XP_002898617.1_PITG_14740	jgi|Aurli1|75718|e_gw1.8.572.1	27.5	298	206	3	7.58E-12	66.6	14740	TT18010	Basal body	Basal body protein	0.09	1.28	2.55	0.09	yes	no	yes	TT18010		yes		yes
+XP_002905444.1_PITG_04711	jgi|Aurli1|76112|e_gw1.8.369.1	36.4	132	75	3	2.59E-25	92.8	4711	IFT25	Intraflagellar transport	Intraflagella transport protein	ns	ns	ns	ns	ns	no	yes	IFT25		yes		yes
+XP_002906384.1_PITG_03309	jgi|Aurli1|76241|e_gw1.9.543.1	37.5	1567	794	27	0	986	3309	IFT140	Intraflagellar transport	Intraflagellar transport protein	0.3	1.46	1.68	0.55	yes	no	yes	IFT140	yes	yes		yes
+XP_002906657.1_PITG_03600	jgi|Aurli1|76245|e_gw1.9.508.1	36.4	764	412	14	1.72E-149	452	3600	BBS2	Basal body	Transport to flagellar base	0.09	0.83	3.05	0.04	yes	no	yes	BBS2	yes	yes		yes
+XP_002907499.1_PITG_02583	jgi|Aurli1|76635|e_gw1.9.460.1	39.6	950	491	20	1.81E-221	652	2583	FAP251	Protein interaction	WD domain protein	ns	ns	ns	ns	ns	no	yes	FAP251	yes	yes		yes
+XP_002907680.1_PITG_02788	jgi|Aurli1|76659|e_gw1.9.457.1	51.7	145	70	0	1.8E-48	152	2788	DLE1	Outer dynein arm	Outer dynein arm light chain protein	0.21	0.68	2.33	0.78	yes	no	yes	"DLE1 (MOT54, ODA-LC4)"		yes	no	yes
+XP_002901017.1_PITG_11437	jgi|Aurli1|77161|e_gw1.10.817.1	49.1	4235	1951	46	0	3711	11437	DHC10	Inner dynein arm	Inner dynein arm protein	0.08	0.36	1.72	1.84	yes	no	yes	DHC10 (IDA2)		yes		yes
+XP_002903867.1_PITG_08492	jgi|Aurli1|77207|e_gw1.10.614.1	48.1	231	113	3	1.32E-71	217	8492	FAP198	Uncharacterized	Cytochrome b5-like heme-binding domain protein	0.18	0.58	2.91	0.32	yes	no	yes	FAP198	yes	yes		yes
+XP_002899505.1_PITG_13825	jgi|Aurli1|77714|e_gw1.10.693.1	57.6	170	70	1	4.39E-68	205	13825	RJL1	Regulatory	Rab-type GTPase	ns	ns	ns	ns	ns	no	yes	RJL1	yes	yes		yes
+XP_002899626.1_PITG_13968	jgi|Aurli1|77776|e_gw1.10.692.1	26.8	3622	2302	85	0	1128	13968	DHC16	Intraflagellar transport	Dynein heavy chain protein	0.23	0.92	2	0.86	yes	no	yes	DHC16 (DHC1B)		yes		yes
+XP_002907416.1_PITG_02492	jgi|Aurli1|77971|e_gw1.11.509.1	35.3	2126	1116	52	0	1197	2492	MOT51	Protein interaction	WD domain protein	0.28	0.66	2.4	0.66	yes	no	yes	MOT51	yes	yes		yes
+XP_002905071.1_PITG_07108	jgi|Aurli1|77979|e_gw1.11.107.1	43.2	199	102	3	3.02E-60	189	7108	FM136	Uncharacterized	B9 domain protein	ns	ns	ns	ns	ns	no	yes	FM136	yes	yes		yes
+XP_002905408.1_PITG_04669	jgi|Aurli1|78174|e_gw1.11.351.1	57	79	34	0	4.99E-27	104	4669	MOT16	Uncharacterized	Protein of unknown function DUF1042	0.51	1.25	1.28	0.96	yes	no	yes	MOT16		yes		yes
+XP_002907198.1_PITG_02248	jgi|Aurli1|78549|e_gw1.12.360.1	44.8	718	365	2	3.24E-174	521	2248	MBO2	Protein interaction	Coiled-coil protein	0.11	0.69	2.72	0.48	yes	no	yes	MBO2	yes	yes		yes
+XP_002904931.1_PITG_06954	jgi|Aurli1|79249|e_gw1.13.86.1	34.7	683	371	15	2.37E-119	375	6954	FM177	Metabolism	Oxidoreductase FAD/NAD(P)-binding	0.75	0.46	0.44	2.35	yes	no	yes	FM177	y	yes		yes
+XP_002900440.1_PITG_12568	jgi|Aurli1|80070|e_gw1.14.513.1	52	304	140	4	4.09E-100	295	12568	PACRG	Centriole	Parkin co-regulated chaperone complex protein	0.05	0.88	2.36	0.71	yes	no	yes	PACRG (BUG21)	yes	yes		yes
+XP_002897861.1_PITG_16089	jgi|Aurli1|80228|e_gw1.15.101.1	40.1	217	129	1	4.21E-52	173	16089	SSA4	Uncharacterized	Uncharacterized flagella-associated protein	0.29	0.63	2.64	0.44	yes	no	yes	SSA4	yes	yes		yes
+XP_002902497.1_PITG_09952	jgi|Aurli1|80279|e_gw1.15.523.1	35.4	260	153	7	1.13E-42	145	9952	RSP9	Radial spoke	Radial spoke protein	0.08	1.19	2.1	0.63	yes	no	yes	RSP9		yes		yes
+XP_002898510.1_PITG_14607	jgi|Aurli1|80567|e_gw1.15.576.1	32.8	259	161	6	2.66E-36	130	14607	MOT19	Uncharacterized	Uncharacterized flagella-associated protein	0.01	0.06	0.93	3	yes	yes	no	MOT19		yes		yes
+XP_002897195.1_PITG_16977	jgi|Aurli1|80677|e_gw1.15.133.1	59.3	258	105	0	1.45E-113	333	16977	CALK	Regulatory	Protein kinase	0.87	ns	0.95	1.18	no	yes	no	CALK	yes	yes	no	yes
+XP_002906818.1_PITG_03772	jgi|Aurli1|80766|e_gw1.16.105.1	31.2	189	120	5	5.4E-29	112	3772	ARLP1	Regulatory	ARF-like GTPase	ns	ns	ns	ns	ns	no	yes	ARLP1		yes	no	yes
+XP_002907931.1_PITG_01258	jgi|Aurli1|80953|e_gw1.16.392.1	54.2	166	73	3	2.05E-58	181	1258	RABL2A	Regulatory	Rab-type GTPase	ns	ns	ns	ns	ns	no	yes	RABL2A	yes	yes		yes
+XP_002909609.1_PITG_01088	jgi|Aurli1|81383|e_gw1.17.352.1	50.2	4153	1898	39	0	4029	1088	DHC10	Inner dynein arm	Inner dynein arm protein	0.08	0.36	1.72	1.84	yes	no	yes	DHC10 (IDA2)		yes		yes
+XP_002906123.1_PITG_03018	jgi|Aurli1|81383|e_gw1.17.352.1	49.6	4154	1925	44	0	3948	3018	DHC2	Inner dynein arm	Dynein  heavy chain protein	0.03	0.66	1.61	1.7	yes	no	yes	DHC2		yes		yes
+XP_002909670.1_PITG_01154	jgi|Aurli1|8149|gm1.8149_g	39.2	836	389	19	1.48E-170	541	1154	GCP2	Tubulin-related	Gamma-tubulin complex component	1.53	0.7	0.87	0.9	no	yes	no	GCP2	yes	yes		yes
+XP_002999234.1_PITG_05608	jgi|Aurli1|81850|e_gw1.18.205.1	33.4	946	564	23	9.34E-149	462	5608	FM135	Uncharacterized	Uncharacterized flagella-associated protein	0.19	0.76	1.14	1.9	yes	no	yes	FM135	yes	yes		yes
+XP_002903309.1_PITG_09704	jgi|Aurli1|81996|e_gw1.18.70.1	43.2	111	56	1	1.3E-28	99.8	9704	DLT3	Inner dynein arm	Inner arm dynein light chain protein	0.75	1.63	1.62	0.01	no	no	no	DLT3 (TCTEX1)		yes		yes
+XP_002899375.1_PITG_12600	jgi|Aurli1|82177|e_gw1.18.274.1	43	314	155	4	6.01E-52	174	12600	RSP3	Radial spoke	Radial spoke protein	0.21	0.77	2.56	0.47	yes	no	yes	RSP3		yes		yes
+XP_002997696.1_PITG_18065	jgi|Aurli1|82299|e_gw1.19.463.1	37.9	1379	769	21	2.74E-286	850	18065	IFT144	Intraflagellar transport	WD40-containing protein	0.15	0.39	3.05	0.41	yes	no	yes	FAP66 (IFT144)	yes	yes		yes
+XP_002901086.1_PITG_11526	jgi|Aurli1|82352|e_gw1.19.369.1	33.4	933	524	21	1.1E-140	440	11526	BBS9	Basal body	Transport to flagellar base	0.12	0.92	2.8	0.16	yes	no	yes	BBS9	yes	yes		yes
+XP_002908085.1_PITG_01416	jgi|Aurli1|82473|e_gw1.19.341.1	50.5	519	236	3	1.07E-179	514	1416	BBS8	Basal body	basal body protein with peptidase activity	0.26	1.33	2.27	0.13	yes	no	yes	BBS8	yes	yes		yes
+XP_002907013.1_PITG_03986	jgi|Aurli1|82692|e_gw1.20.459.1	34.7	590	342	13	1.46E-100	316	3986	BBS1	Basal body	basal body protein	0.09	1.2	2.17	0.54	yes	no	yes	BBS1	yes	yes		yes
+XP_002900992.1_PITG_11403	jgi|Aurli1|82739|e_gw1.20.257.1	55.3	47	21	0	4.45E-09	56.6	11403	POC1	Centriole	WD domain protein	1.14	2.47	0.38	0.01	no	no	no	POC1		yes		yes
+XP_002999090.1_PITG_05447	jgi|Aurli1|83025|e_gw1.20.354.1	36	261	117	5	3.62E-43	145	5447	SPEF1	Uncharacterized	DUF1042-containing protein	0.27	0.8	1.87	1.05	yes	no	yes	SPEF1	yes	yes		yes
+XP_002904769.1_PITG_06778	jgi|Aurli1|83949|e_gw1.22.340.1	40.6	325	190	1	6.1E-71	230	6778	FAP22	Protein interaction	Coiled-coil protein	0.51	1.86	1.62	0.01	yes	no	yes	FAP22	yes	yes		yes
+XP_002906555.1_PITG_03487	jgi|Aurli1|84052|e_gw1.23.305.1	43	865	458	12	6.27E-218	638	3487	FAP50	Protein interaction	Leucine rich repeat protein	0.16	0.78	2.69	0.38	yes	no	yes	FAP50	yes	yes		yes
+XP_002907680.1_PITG_02788	jgi|Aurli1|84266|e_gw1.23.293.1	51.3	152	67	2	4.45E-47	149	2788	DLE1	Outer dynein arm	Outer dynein arm light chain protein	0.21	0.68	2.33	0.78	yes	no	yes	"DLE1 (MOT54, ODA-LC4)"		yes	no	yes
+XP_002901735.1_PITG_10933	jgi|Aurli1|84586|e_gw1.24.198.1	39.8	206	83	3	2.34E-48	158	10933	MAS2	Mastigoneme	Mastigoneme (possibly truncated gene)	0.05	2.04	1.17	0.73	yes	no	yes	MAS2		no		yes
+XP_002900150.1_PITG_12763	jgi|Aurli1|84805|e_gw1.25.187.1	47	379	188	4	2.09E-107	323	12763	FBB4	Protein interaction	IQ calmodulin-binding motif protein	0.09	1.2	0.87	1.83	yes	no	yes	FBB4	yes	yes		yes
+XP_002895941.1_PITG_20157	jgi|Aurli1|84975|e_gw1.26.56.1	31.5	797	277	18	9E-100	328	20157	DIC4	Inner dynein arm	Axonemal inner arm protein	ns	ns	ns	ns	ns	no	yes	"DIC4 (IC138, BOP5)"	yes	yes		yes
+XP_002907368.1_PITG_02442	jgi|Aurli1|85076|e_gw1.27.121.1	52.7	131	59	1	2.05E-42	150	2442	MOT15	Metabolism	Cysteine peptidase 	ns	ns	ns	ns	ns	no	yes	MOT15		yes	no	yes
+XP_002997410.1_PITG_19093	jgi|Aurli1|85687|e_gw1.30.45.1	35.4	350	196	10	3.06E-57	191	19093	FAP240	Uncharacterized	Uncharacterized flagella-associated protein	0.16	1.14	2.29	0.42	yes	no	yes	FAP240	yes	yes		yes
+XP_002998194.1_PITG_05972	jgi|Aurli1|85749|e_gw1.31.24.1	34.3	566	290	16	1.34E-81	276	5972	FAP74	Central pair	Central pair projection protein	0.25	0.71	2.48	0.56	yes	no	yes	FAP74		yes		yes
+XP_002907676.1_PITG_02784	jgi|Aurli1|85774|e_gw1.31.50.1	65	257	88	1	9.76E-45	157	2784	DAU1	Outer dynein arm	Outer dynein arm protein with leucine-rich repeats	0.29	0.59	1.89	1.23	yes	no	yes	"DAU1 (MOT49, ODA7)"		yes		yes
+XP_002997896.1_PITG_18274	jgi|Aurli1|86123|e_gw1.35.23.1	27.3	271	133	10	7.66E-10	60.5	18274	TB-PEP	Metabolism	Subtilisin-related peptidase	0.72	0.94	1.19	1.16	no	yes	no	TB-PEP		yes		yes
+XP_002901046.1_PITG_11472	jgi|Aurli1|86266|e_gw1.36.102.1	38.3	543	329	2	4.35E-100	316	11472	IFT72	Intraflagellar transport	Intraflagellar transport protein	0.05	1.02	2.51	0.42	yes	no	yes	IFT72/74	yes	yes		yes
+XP_002906743.1_PITG_03691	jgi|Aurli1|8709|gm1.8709_g	25.5	243	157	9	3.21E-13	70.1	3691	BBC52	Basal body	Basal body EF-hand protein	0.23	1.49	2.06	0.23	yes	no	yes	BBC52		yes	no	yes
+XP_002895751.1_PITG_20382	jgi|Aurli1|92008|estExt_Genewise1.C_8_t10210	27.9	154	93	3	3.26E-14	65.1	20382	FM128	Protein interaction	Protein chaperone	0.74	0.82	1.45	2.27	no	yes	no	FM128 (DNJ29)		yes		yes
+XP_002907526.1_PITG_02616	jgi|Aurli1|93432|estExt_Genewise1.C_10_t20037	66	188	58	3	1.93E-75	224	2616	CEN1/2	Regulatory	Centrin (caltractin)	0.05	2.17	1.12	0.66	yes	no	yes	CEN1/2	yes	yes	no	yes
+XP_002905394.1_PITG_04651	jgi|Aurli1|93773|estExt_Genewise1.C_11_t10116	30.9	1164	674	28	5.21E-149	477	4651	MOT46	Intraflagellar transport	Intraflagellar transport protein	ns	ns	ns	ns	ns	yes	yes	MOT46	yes	yes		yes
