@@ -1,2 +1,0 @@
-
-fastafetch -F  --fasta /Users/jrest/Documents/collaborations/jackie/laby/proteomics/DEP_results_fasta/detected.all_set.fasta --query /Users/jrest/Documents/collaborations/jackie/laby/proteomics/DEP_results_fasta/clusterc1.txt --index /Users/jrest/Documents/collaborations/jackie/laby/proteomics/DEP_results_fasta/cand_sig.ALL_SIGN.fasta.fai >/Users/jrest/Documents/collaborations/jackie/laby/proteomics/DEP_results_fasta/clusterc1.fas
