@@ -4,7 +4,9 @@ Proteomics/output_blasts/diamond_to_marDB/JGI_to_Aurantio_only.out
 Proteomics/output_blasts/diamond_to_marDB/JGI_to_Aurli_only.out
 Proteomics/output_blasts/diamond_to_marDB/mmetspENA_to_Aurli_only.out
 Proteomics/output_blasts/diamond_to_marDB/mmetspENA_to_Aurantio_only.out
-Phylogenomics
+Phylogenomics/data/proteomes
+Phylogenomics/data/*fasta
+Phylogenomics/data/*dmnd
 Phylogenomics/data/genome_assemblies/Aurli1_AssemblyScaffolds.fasta
 Phylogenomics/data/genome_assemblies/Aurli2_AssemblyScaffolds.fasta
 Phylogenomics/data/proteomes/OrthoFinder/Results_Nov11/Gene_Duplication_Events/Duplications.tsv
